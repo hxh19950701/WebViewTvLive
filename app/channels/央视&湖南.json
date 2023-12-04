@@ -1,0 +1,206 @@
+{
+  "title": "央视\u0026湖南",
+  "groups": [
+    {
+      "name": "央视\u0026湖南",
+      "channels": [
+        {
+          "name": "CCTV-1",
+          "url": "https://tv.cctv.com/live/cctv1/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-2",
+          "url": "https://tv.cctv.com/live/cctv2/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-3",
+          "url": "https://tv.cctv.com/live/cctv3/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-4",
+          "url": "https://tv.cctv.com/live/cctv4/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-5",
+          "url": "https://tv.cctv.com/live/cctv5/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-5+",
+          "url": "https://tv.cctv.com/live/cctv5plus/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-6",
+          "url": "https://tv.cctv.com/live/cctv6/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-7",
+          "url": "https://tv.cctv.com/live/cctv7/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-8",
+          "url": "https://tv.cctv.com/live/cctv8/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-9",
+          "url": "https://tv.cctv.com/live/cctvjilu/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-10",
+          "url": "https://tv.cctv.com/live/cctv10/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-11",
+          "url": "https://tv.cctv.com/live/cctv11/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-12",
+          "url": "https://tv.cctv.com/live/cctv12/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-13",
+          "url": "https://tv.cctv.com/live/cctv13/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-14",
+          "url": "https://tv.cctv.com/live/cctv14/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-15",
+          "url": "https://tv.cctv.com/live/cctv15/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-16",
+          "url": "https://tv.cctv.com/live/cctv16/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-17",
+          "url": "https://tv.cctv.com/live/cctv17/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-4 欧洲",
+          "url": "https://tv.cctv.com/live/cctveurope/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "CCTV-4 美洲",
+          "url": "https://tv.cctv.com/live/cctvamerica/",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南经视",
+          "url": "https://live.mgtv.com/?channelId\u003d280",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南电影",
+          "url": "https://live.mgtv.com/?channelId\u003d221",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南娱乐",
+          "url": "https://live.mgtv.com/?channelId\u003d344",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南都市",
+          "url": "https://live.mgtv.com/?channelId\u003d346",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南电视剧",
+          "url": "https://live.mgtv.com/?channelId\u003d484",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "湖南国际",
+          "url": "https://live.mgtv.com/?channelId\u003d229",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "金鹰卡通",
+          "url": "https://live.mgtv.com/?channelId\u003d287",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        },
+        {
+          "name": "深圳卫视",
+          "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7867",
+          "x": -1.0,
+          "y": -1.0,
+          "groupName": "央视\u0026湖南"
+        }
+      ]
+    }
+  ]
+}
