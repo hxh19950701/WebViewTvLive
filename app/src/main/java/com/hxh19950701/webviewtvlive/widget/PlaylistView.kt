@@ -1,4 +1,4 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.widget
 
 import android.content.Context
 import android.graphics.Color
@@ -7,15 +7,15 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.view.postDelayed
 import androidx.recyclerview.widget.RecyclerView
-import com.hxh19950701.webviewtvlive.Playlist.Companion.firstChannel
+import com.hxh19950701.webviewtvlive.playlist.Channel
+import com.hxh19950701.webviewtvlive.playlist.ChannelGroup
+import com.hxh19950701.webviewtvlive.playlist.Playlist
+import com.hxh19950701.webviewtvlive.playlist.Playlist.Companion.firstChannel
+import com.hxh19950701.webviewtvlive.R
 
 class PlaylistView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

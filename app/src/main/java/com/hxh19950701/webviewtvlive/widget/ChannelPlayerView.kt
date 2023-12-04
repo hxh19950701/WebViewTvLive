@@ -1,8 +1,7 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.widget
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.SystemClock
 import android.util.AttributeSet
@@ -13,6 +12,9 @@ import android.view.MotionEvent
 import android.view.View
 import android.webkit.JavascriptInterface
 import android.widget.FrameLayout
+import com.hxh19950701.webviewtvlive.playlist.Channel
+import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.delayBy
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest

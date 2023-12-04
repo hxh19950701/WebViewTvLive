@@ -1,4 +1,4 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.widget
 
 import android.content.Context
 import android.util.AttributeSet

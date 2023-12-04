@@ -1,11 +1,12 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.widget
 
 import android.content.Context
-import android.graphics.Color
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.hxh19950701.webviewtvlive.playlist.Channel
+import com.hxh19950701.webviewtvlive.R
 
 class ChannelBarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

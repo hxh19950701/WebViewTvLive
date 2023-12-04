@@ -8,14 +8,21 @@
 	android:layout_height="match_parent"
 	tools:context=".MainActivity">
 
-	<com.hxh19950701.webviewtvlive.ChannelPlayerView
+	<com.hxh19950701.webviewtvlive.widget.ChannelPlayerView
 		android:id="@+id/player"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 
-	<com.hxh19950701.webviewtvlive.PlaylistView
+	<com.hxh19950701.webviewtvlive.widget.PlaylistView
 		android:id="@+id/playlist"
 		android:layout_width="300dp"
 		android:layout_height="match_parent"
 		android:visibility="gone" />
+
+	<TextView
+		android:id="@+id/loadingView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="left|bottom"
+		android:text="正在加载列表..." />
 </FrameLayout>

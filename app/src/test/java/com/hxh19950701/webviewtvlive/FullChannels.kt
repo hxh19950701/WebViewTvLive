@@ -1,5 +1,7 @@
 package com.hxh19950701.webviewtvlive
 
+import com.hxh19950701.webviewtvlive.playlist.Channel
+
 val fullChannels = mutableListOf<Channel>()
     .addChannels(
         "央视",

@@ -1,6 +1,8 @@
 package com.hxh19950701.webviewtvlive
 
 import com.google.gson.GsonBuilder
+import com.hxh19950701.webviewtvlive.playlist.Channel
+import com.hxh19950701.webviewtvlive.playlist.Playlist
 import java.io.File
 
 fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channel): MutableCollection<Channel> {
