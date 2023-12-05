@@ -3,7 +3,7 @@ package com.hxh19950701.webviewtvlive.widget
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
-import android.os.SystemClock
+import android.graphics.Point
 import android.util.AttributeSet
 import android.util.Log
 import android.view.GestureDetector
@@ -13,9 +13,10 @@ import android.view.MotionEvent
 import android.view.View
 import android.webkit.JavascriptInterface
 import android.widget.FrameLayout
-import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.R
-import com.hxh19950701.webviewtvlive.delayBy
+import com.hxh19950701.webviewtvlive.adapter.WebpageAdapter
+import com.hxh19950701.webviewtvlive.adapter.getSuitableAdapter
+import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.settings.SettingsManager
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
@@ -29,38 +30,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.cancelAndJoin
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ChannelPlayerView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : FrameLayout(context, attrs, defStyleAttr), WebpageAdapter.IPlayer {
 
     companion object {
         const val TAG = "ChannelPlayerView"
-        const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-        const val JS = """javascript:
-             var v = document.getElementsByTagName('video')[0];
-             if (v == null) {
-                 console.log("No video tag found.");
-                 window.main.schemeEnterFullscreen();
-             } else {
-                 v.addEventListener('timeupdate', function() { v.volume = 1 });
-                 console.log("v.paused: " + v.paused)
-                 if (v.paused) {
-                      v.addEventListener('canplay', function(e) { window.main.schemeEnterFullscreen() });
-                 } else {
-                      window.main.schemeEnterFullscreen();
-                 }
-             }
-//             document.onkeyup = function(e) {
-//              console.log(e.key)
-//             }
-"""
-        const val ENTER_FULLSCREEN_DELAY = 500L
-        const val CLICK_DURATION = 50L
-        const val DOUBLE_CLICK_INTERVAL = 50L
-        const val ENTER_FULLSCREEN_MAX_TRY = 20
         const val URL_BLANK = "chrome://blank"
     }
 
@@ -74,12 +51,15 @@ class ChannelPlayerView @JvmOverloads constructor(
             field = value
             //webView.loadUrl(URL_BLANK)
             value?.apply {
-                //webView.settings.userAgentString = if (value.requirePCUserAgent) PC_USER_AGENT else null
+                webpageAdapter = getSuitableAdapter(url)
+                Log.i(TAG, "WebAdapter is ${webpageAdapter!!.name}")
+                webView.settings.userAgentString = webpageAdapter!!.userAgent()
                 webView.loadUrl(url)
                 channelBarView.setCurrentChannelAndShow(value)
             }
         }
     var dismissAllViewCallback: (() -> Unit)? = null
+    private var webpageAdapter: WebpageAdapter? = null
 
     private val client = object : WebViewClient() {
 
@@ -100,7 +80,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             super.onPageFinished(view, url)
             //if (url.startsWith("chrome://")) return
             while (view.canZoomOut()) view.zoomOut()
-            view.evaluateJavascript(JS) {}
+            view.evaluateJavascript(webpageAdapter!!.javascript()) {}
             channelBarView.dismiss()
             Log.i(TAG, "Load complete, $url")
         }
@@ -154,7 +134,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             val lastJob = currentJob
             currentJob = CoroutineScope(Dispatchers.Main).launch {
                 lastJob?.apply { cancelAndJoin() }
-                enterFullScreen()
+                webpageAdapter!!.enterFullscreen(this@ChannelPlayerView)
             }
         }
 
@@ -191,7 +171,6 @@ class ChannelPlayerView @JvmOverloads constructor(
             cacheMode = WebSettings.LOAD_NO_CACHE
             mediaPlaybackRequiresUserGesture = false
 
-            userAgentString = PC_USER_AGENT
             useWideViewPort = true
             loadWithOverviewMode = true
             setSupportZoom(true)
@@ -201,25 +180,6 @@ class ChannelPlayerView @JvmOverloads constructor(
             webChromeClient = chromeClient
             setBackgroundColor(Color.BLACK)
             addJavascriptInterface(javascriptInterface, "main")
-        }
-    }
-
-
-    private suspend fun enterFullScreen() {
-        delay(ENTER_FULLSCREEN_DELAY)
-        var times = 0
-        val x = if (channel!!.x >= 0) channel!!.x else width * 0.4F
-        val y = if (channel!!.y >= 0) channel!!.y else height * 0.6F
-        while (!isInFullScreen && times < ENTER_FULLSCREEN_MAX_TRY) {
-            Log.i(TAG, "enterFullscreen trying for ${++times} times")
-            var canceled = false
-            val canceledCallback = { canceled = true }
-            click(x, y, canceledCallback)
-            delayBy(DOUBLE_CLICK_INTERVAL, canceledCallback)
-            click(x, y, canceledCallback)
-            if (canceled) break
-            delayBy(ENTER_FULLSCREEN_DELAY, canceledCallback)
-            if (canceled) break
         }
     }
 
@@ -240,10 +200,15 @@ class ChannelPlayerView @JvmOverloads constructor(
         return false
     }
 
-    private suspend fun click(x: Float, y: Float, canceledCallback: () -> Unit) {
-        val downTime = SystemClock.uptimeMillis()
-        super.dispatchTouchEvent(MotionEvent.obtain(downTime, downTime, MotionEvent.ACTION_DOWN, x, y, 0))
-        delayBy(CLICK_DURATION, canceledCallback)
-        super.dispatchTouchEvent(MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, 0))
+    override fun isInFullscreen() = isInFullScreen
+
+    override fun getScreenSize() = Point(width, height)
+
+    override fun sendKeyEvent(event: KeyEvent) {
+        super.dispatchKeyEvent(event)
+    }
+
+    override fun sendMotionEvent(event: MotionEvent) {
+        super.dispatchTouchEvent(event)
     }
 }

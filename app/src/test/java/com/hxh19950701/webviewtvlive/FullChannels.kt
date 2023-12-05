@@ -58,5 +58,5 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("东森新闻", "https://news.ebc.net.tw/live", 0.01F, 0.01F),
+        Channel("东森新闻", "https://news.ebc.net.tw/live"),
     )
