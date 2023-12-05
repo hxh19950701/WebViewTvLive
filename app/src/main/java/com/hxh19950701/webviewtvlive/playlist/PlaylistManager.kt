@@ -18,7 +18,7 @@ object PlaylistManager {
     private val file = File(application.filesDir, "playlist.json")
     private val builtInPlaylists = listOf(
         Pair("中央&湖南", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/%E5%A4%AE%E8%A7%86%26%E6%B9%96%E5%8D%97.json"),
-        Pair("完整", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/%E5%A4%AE%E8%A7%86%26%E6%B9%96%E5%8D%97.json"),
+        Pair("完整", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/%E5%AE%8C%E6%95%B4.json"),
     )
 
     fun getBuiltInPlaylists() = builtInPlaylists
@@ -32,7 +32,7 @@ object PlaylistManager {
 
     fun getPlaylistUrl() = preference.getString(KEY_PLAYLIST_URL, builtInPlaylists[0].second)!!
 
-    fun setLastUpdate(time: Long) = preference.edit().putLong(KEY_LAST_UPDATE, System.currentTimeMillis()).apply()
+    fun setLastUpdate(time: Long) = preference.edit().putLong(KEY_LAST_UPDATE, time).apply()
 
     private fun hasLocalPlaylist(): Boolean {
         if (!file.isFile) return false

@@ -10,6 +10,7 @@ class LiveApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setApplication(this)
+        cacheDir.listFiles().forEach { it.delete() }
         QbSdk.initX5Environment(this, object : PreInitCallback {
 
             override fun onCoreInitFinished() {

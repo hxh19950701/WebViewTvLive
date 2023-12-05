@@ -37,5 +37,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="left|bottom"
-		android:text="正在加载频道列表..." />
+		android:paddingLeft="5dp"
+		android:paddingBottom="5dp"
+		android:text="正在加载频道列表..."
+		android:textSize="18sp" />
 </FrameLayout>

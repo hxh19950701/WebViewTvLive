@@ -7,6 +7,12 @@ import org.junit.Test
 class ChannelListJsonGenerator {
 
     @Test
+    fun makeAll() {
+        makeFull()
+        makeCCTVAndHunanTV()
+    }
+
+    @Test
     fun makeCCTVAndHunanTV() {
         val title = "央视&湖南"
         val channels = mutableListOf<Channel>()

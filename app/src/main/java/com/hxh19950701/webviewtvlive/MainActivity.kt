@@ -21,6 +21,10 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val LAST_CHANNEL = "last_channel"
+    }
+
     enum class UiMode {
         STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS
     }
@@ -118,7 +122,7 @@ class MainActivity : AppCompatActivity() {
             UiMode.SETTINGS -> if (settingsView.dispatchKeyEvent(event)) return true
             else -> if(event.action == KeyEvent.ACTION_UP) onKeyUp(event.keyCode, event)
         }
-        return false
+        return super.dispatchKeyEvent(event)
     }
 
     override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {

@@ -9,7 +9,6 @@ class FixedSizeWebView @JvmOverloads constructor(
 ) : WebView(context, attrs, defStyleAttr) {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        println("${MeasureSpec.getSize(widthMeasureSpec)} ${MeasureSpec.getSize(heightMeasureSpec)}")
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
 

@@ -38,7 +38,7 @@ class ChannelPlayerView @JvmOverloads constructor(
 
     companion object {
         const val TAG = "ChannelPlayerView"
-        const val UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
+        const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
         const val JS = """javascript:
              var v = document.getElementsByTagName('video')[0];
              if (v == null) {
@@ -60,6 +60,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         const val ENTER_FULLSCREEN_DELAY = 500L
         const val CLICK_DURATION = 50L
         const val DOUBLE_CLICK_INTERVAL = 50L
+        const val ENTER_FULLSCREEN_MAX_TRY = 20
         const val URL_BLANK = "chrome://blank"
     }
 
@@ -73,6 +74,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             field = value
             //webView.loadUrl(URL_BLANK)
             value?.apply {
+                //webView.settings.userAgentString = if (value.requirePCUserAgent) PC_USER_AGENT else null
                 webView.loadUrl(url)
                 channelBarView.setCurrentChannelAndShow(value)
             }
@@ -189,9 +191,9 @@ class ChannelPlayerView @JvmOverloads constructor(
             cacheMode = WebSettings.LOAD_NO_CACHE
             mediaPlaybackRequiresUserGesture = false
 
+            userAgentString = PC_USER_AGENT
             useWideViewPort = true
             loadWithOverviewMode = true
-            userAgentString = UA
             setSupportZoom(true)
         }
         webView.apply {
@@ -208,7 +210,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         var times = 0
         val x = if (channel!!.x >= 0) channel!!.x else width * 0.4F
         val y = if (channel!!.y >= 0) channel!!.y else height * 0.6F
-        while (!isInFullScreen) {
+        while (!isInFullScreen && times < ENTER_FULLSCREEN_MAX_TRY) {
             Log.i(TAG, "enterFullscreen trying for ${++times} times")
             var canceled = false
             val canceledCallback = { canceled = true }

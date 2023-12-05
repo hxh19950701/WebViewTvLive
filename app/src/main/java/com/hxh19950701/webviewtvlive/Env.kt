@@ -14,6 +14,4 @@ fun setApplication(application: Context) {
     _application = application
 }
 
-const val LAST_CHANNEL = "last_channel"
-
 val preference: SharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(application) }
