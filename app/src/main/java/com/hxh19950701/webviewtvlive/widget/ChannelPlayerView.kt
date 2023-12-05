@@ -99,7 +99,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             //if (url.startsWith("chrome://")) return
             while (view.canZoomOut()) view.zoomOut()
             view.evaluateJavascript(JS) {}
-            channelBarView.dismiss();
+            channelBarView.dismiss()
             Log.i(TAG, "Load complete, $url")
         }
 

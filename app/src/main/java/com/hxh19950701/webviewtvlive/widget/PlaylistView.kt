@@ -37,7 +37,7 @@ class PlaylistView @JvmOverloads constructor(
                 btnPageUp.visibility = GONE
             } else {
                 currentPage = 0
-                val singleGroup = value.groups == null || value.groups.size <= 1
+                val singleGroup = value.groups.size <= 1
                 btnPageDown.visibility = if (singleGroup) GONE else VISIBLE
                 btnPageUp.visibility = if (singleGroup) GONE else VISIBLE
             }
