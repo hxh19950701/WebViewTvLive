@@ -4,7 +4,6 @@
 	android:layout_width="match_parent"
 	android:layout_height="40dp"
 	android:background="@drawable/bg_item"
-	android:focusableInTouchMode="true"
 	android:gravity="center_vertical"
 	android:orientation="horizontal"
 	android:paddingLeft="5dp"

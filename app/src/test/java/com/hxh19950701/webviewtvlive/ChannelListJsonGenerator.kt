@@ -15,4 +15,11 @@ class ChannelListJsonGenerator {
         val playlist = Playlist.createFromAllChannels(title, channels)
         savePlaylist(playlist)
     }
+
+    @Test
+    fun makeFull() {
+        val title = "完整"
+        val playlist = Playlist.createFromAllChannels(title, fullChannels)
+        savePlaylist(playlist)
+    }
 }

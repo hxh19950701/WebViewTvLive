@@ -5,7 +5,6 @@ import com.hxh19950701.webviewtvlive.setApplication
 import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 
-
 class LiveApplication : Application() {
 
     override fun onCreate() {

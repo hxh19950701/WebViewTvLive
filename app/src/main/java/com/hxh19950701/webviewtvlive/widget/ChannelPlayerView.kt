@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.SystemClock
 import android.util.AttributeSet
 import android.util.Log
+import android.view.GestureDetector
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -15,6 +16,7 @@ import android.widget.FrameLayout
 import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.R
 import com.hxh19950701.webviewtvlive.delayBy
+import com.hxh19950701.webviewtvlive.settings.SettingsManager
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
@@ -75,6 +77,7 @@ class ChannelPlayerView @JvmOverloads constructor(
                 channelBarView.setCurrentChannelAndShow(value)
             }
         }
+    var dismissAllViewCallback: (() -> Unit)? = null
 
     private val client = object : WebViewClient() {
 
@@ -160,6 +163,22 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
     }
 
+    private val gestureDetector = GestureDetector(context, object : GestureDetector.OnGestureListener {
+
+        override fun onDown(e: MotionEvent) = true
+
+        override fun onShowPress(e: MotionEvent) = Unit
+
+        override fun onSingleTapUp(e: MotionEvent) = performClick()
+
+        override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float) = false
+
+        override fun onLongPress(e: MotionEvent) = Unit
+
+        override fun onFling(e1: MotionEvent?, e2: MotionEvent, velocityX: Float, velocityY: Float) = false
+
+    })
+
     init {
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
         webView = findViewById(R.id.webView)
@@ -203,7 +222,12 @@ class ChannelPlayerView @JvmOverloads constructor(
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
-        return false
+        return if (SettingsManager.isWebViewTouchable()) {
+            dismissAllViewCallback?.invoke()
+            super.dispatchTouchEvent(ev)
+        } else {
+            gestureDetector.onTouchEvent(ev)
+        }
     }
 
     override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean {

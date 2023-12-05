@@ -11,7 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.hxh19950701.webviewtvlive.playlist.Playlist.Companion.firstChannel
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
 import com.hxh19950701.webviewtvlive.widget.ChannelPlayerView
+import com.hxh19950701.webviewtvlive.widget.ExitConfirmView
 import com.hxh19950701.webviewtvlive.widget.PlaylistView
+import com.hxh19950701.webviewtvlive.widget.SettingsView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,41 +21,28 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        enum class UiMode {
-            STANDARD, CHANNELS, CHANNEL_SETTINGS, SETTINGS
-        }
+    enum class UiMode {
+        STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS
     }
 
     private lateinit var playerView: ChannelPlayerView
     private lateinit var mainLayout: FrameLayout
     private lateinit var playlistView: PlaylistView
-    private lateinit var loadingView: TextView
+    private lateinit var loadingPlaylistView: TextView
+    private lateinit var exitConfirmView: ExitConfirmView
+    private lateinit var settingsView: SettingsView
     private var isDestroyed = false
 
     private var uiMode = UiMode.STANDARD
         set(value) {
             if (field == value) return
             field = value
-            when (value) {
-                UiMode.STANDARD -> {
-                    playlistView.visibility = View.GONE
-                }
-
-                UiMode.CHANNELS -> {
-                    playlistView.visibility = View.VISIBLE
-                }
-
-                UiMode.CHANNEL_SETTINGS -> {
-                    playlistView.visibility = View.GONE
-                }
-
-                else -> {}
-            }
-
+            playlistView.visibility = if (value == UiMode.CHANNELS) View.VISIBLE else View.GONE
+            exitConfirmView.visibility = if (value == UiMode.EXIT_CONFIRM) View.VISIBLE else View.GONE
+            settingsView.visibility = if (value == UiMode.SETTINGS) View.VISIBLE else View.GONE
         }
 
-    private val backToStandardModeAction = { uiMode = UiMode.STANDARD }
+    private val backToStandardModeAction = Runnable { uiMode = UiMode.STANDARD }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,21 +50,28 @@ class MainActivity : AppCompatActivity() {
         mainLayout = findViewById(R.id.mainLayout)
         playerView = findViewById(R.id.player)
         playlistView = findViewById(R.id.playlist)
-        loadingView = findViewById(R.id.loadingView)
+        loadingPlaylistView = findViewById(R.id.loadingPlaylist)
+        exitConfirmView = findViewById(R.id.exitConfirm)
+        settingsView = findViewById(R.id.settings)
 
         playlistView.onChannelSelectCallback = {
             preference.edit().putString(LAST_CHANNEL, it.name).apply()
             playerView.channel = it
             playlistView.post { uiMode = UiMode.STANDARD }
         }
+        exitConfirmView.onUserSelection = {
+            if (it == ExitConfirmView.Selection.EXIT) finish() else uiMode = UiMode.SETTINGS
+        }
         playerView.activity = this
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        playerView.dismissAllViewCallback = { uiMode = UiMode.STANDARD }
+        playerView.setOnClickListener { uiMode = if (uiMode == UiMode.STANDARD) UiMode.CHANNELS else UiMode.STANDARD }
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         CoroutineScope(Dispatchers.Main).launch {
             val playlist = withContext(Dispatchers.IO) { PlaylistManager.loadPlaylist() }
             if (!isDestroyed) {
                 playlistView.playlist = playlist
-                loadingView.visibility = View.GONE
+                loadingPlaylistView.visibility = View.GONE
                 autoPlay()
             }
         }
@@ -105,8 +101,7 @@ class MainActivity : AppCompatActivity() {
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        if (uiMode != UiMode.STANDARD) uiMode = UiMode.STANDARD
-        else finish()
+        uiMode = if (uiMode == UiMode.STANDARD) UiMode.EXIT_CONFIRM else UiMode.STANDARD
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -114,29 +109,16 @@ class MainActivity : AppCompatActivity() {
         return super.dispatchTouchEvent(ev)
     }
 
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_UP) {
-            if (event.x < playerView.width / 2) {
-                uiMode = if (uiMode == UiMode.STANDARD) UiMode.CHANNELS else UiMode.STANDARD
-            } else {
-                uiMode = if (uiMode == UiMode.STANDARD) UiMode.CHANNEL_SETTINGS else UiMode.STANDARD
-            }
-        }
-        return super.onTouchEvent(event)
-    }
-
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        println(KeyEvent.keyCodeToString(event.keyCode))
         repostBackToStandardModeAction()
         when (uiMode) {
-            UiMode.CHANNELS -> {
-                if (playlistView.dispatchKeyEvent(event)) {
-                    return true
-                }
-            }
-
-            else -> {}
+            UiMode.CHANNELS -> if (playlistView.dispatchKeyEvent(event)) return true
+            UiMode.EXIT_CONFIRM -> if (exitConfirmView.dispatchKeyEvent(event)) return true
+            UiMode.SETTINGS -> if (settingsView.dispatchKeyEvent(event)) return true
+            else -> if(event.action == KeyEvent.ACTION_UP) onKeyUp(event.keyCode, event)
         }
-        return super.dispatchKeyEvent(event)
+        return false
     }
 
     override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {

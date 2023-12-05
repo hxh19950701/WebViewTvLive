@@ -35,7 +35,17 @@ val fullChannels = mutableListOf<Channel>()
         Channel("湖南电视剧", "https://live.mgtv.com/?channelId=484"),
         Channel("湖南国际", "https://live.mgtv.com/?channelId=229"),
         Channel("金鹰卡通", "https://live.mgtv.com/?channelId=287"),
+    )
+    .addChannels(
+        "广东",
+        Channel("广东卫视", "https://www.gdtv.cn/tvChannelDetail/43"),
         Channel("深圳卫视", "https://www.sztv.com.cn/dianshi.shtml?id=7867"),
+        Channel("深圳电视剧", "https://www.sztv.com.cn/dianshi.shtml?id=7880"),
+        Channel("深圳公共", "https://www.sztv.com.cn/dianshi.shtml?id=7874"),
+        Channel("深圳娱乐", "https://www.sztv.com.cn/dianshi.shtml?id=7872"),
+        Channel("深圳财经", "https://www.sztv.com.cn/dianshi.shtml?id=7871"),
+        Channel("深圳国际", "https://www.sztv.com.cn/dianshi.shtml?id=7944"),
+        Channel("深圳少儿", "https://www.sztv.com.cn/dianshi.shtml?id=7881"),
     )
     .addChannels(
         "海外",

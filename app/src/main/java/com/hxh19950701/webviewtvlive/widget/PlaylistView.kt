@@ -33,8 +33,13 @@ class PlaylistView @JvmOverloads constructor(
             if (value == null) {
                 rvChannels.adapter = null
                 tvGroupName.text = null
+                btnPageDown.visibility = GONE
+                btnPageUp.visibility = GONE
             } else {
                 currentPage = 0
+                val singleGroup = value.groups == null || value.groups.size <= 1
+                btnPageDown.visibility = if (singleGroup) GONE else VISIBLE
+                btnPageUp.visibility = if (singleGroup) GONE else VISIBLE
             }
         }
 
@@ -51,7 +56,6 @@ class PlaylistView @JvmOverloads constructor(
             setCurrentGroup(group)
         }
     var onChannelSelectCallback: ((Channel) -> Unit)? = null
-    var onIdleListener: (() -> Unit)? = null
 
     init {
         orientation = VERTICAL
@@ -111,7 +115,6 @@ class PlaylistView @JvmOverloads constructor(
                 val holder = rvChannels.getChildViewHolder(child) as ViewHolder
                 if (holder.channel == currentChannel) {
                     child.requestFocus()
-                    child.requestFocusFromTouch()
                 }
             }
         }

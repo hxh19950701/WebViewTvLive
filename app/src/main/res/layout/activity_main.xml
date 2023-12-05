@@ -19,10 +19,23 @@
 		android:layout_height="match_parent"
 		android:visibility="gone" />
 
+	<com.hxh19950701.webviewtvlive.widget.ExitConfirmView
+		android:id="@+id/exitConfirm"
+		android:layout_width="200dp"
+		android:layout_height="match_parent"
+		android:visibility="gone" />
+
+	<com.hxh19950701.webviewtvlive.widget.SettingsView
+		android:id="@+id/settings"
+		android:layout_width="400dp"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:visibility="gone" />
+
 	<TextView
-		android:id="@+id/loadingView"
+		android:id="@+id/loadingPlaylist"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_gravity="left|bottom"
-		android:text="正在加载列表..." />
+		android:text="正在加载频道列表..." />
 </FrameLayout>
