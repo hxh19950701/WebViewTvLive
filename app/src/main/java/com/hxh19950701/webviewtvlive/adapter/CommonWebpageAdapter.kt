@@ -7,7 +7,7 @@ import android.view.MotionEvent
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 
-open class CommonWebpageAdapter(name: String = "Common") : WebpageAdapter(name) {
+open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
         const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"

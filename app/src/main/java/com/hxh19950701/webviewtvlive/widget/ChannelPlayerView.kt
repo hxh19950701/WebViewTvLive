@@ -1,5 +1,6 @@
 package com.hxh19950701.webviewtvlive.widget
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
@@ -52,7 +53,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             //webView.loadUrl(URL_BLANK)
             value?.apply {
                 webpageAdapter = getSuitableAdapter(url)
-                Log.i(TAG, "WebAdapter is ${webpageAdapter!!.name}")
+                Log.i(TAG, "WebpageAdapter is ${webpageAdapter!!.javaClass.simpleName}")
                 webView.settings.userAgentString = webpageAdapter!!.userAgent()
                 webView.loadUrl(url)
                 channelBarView.setCurrentChannelAndShow(value)
@@ -107,6 +108,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             return true
         }
 
+        @Suppress("DEPRECATION")
         override fun onShowCustomView(view: View, callback: IX5WebChromeClient.CustomViewCallback) {
             this.view = view
             this.callback = callback
@@ -115,6 +117,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             isInFullScreen = true
         }
 
+        @Suppress("DEPRECATION")
         override fun onHideCustomView() {
             removeView(view)
             callback?.onCustomViewHidden()
@@ -166,9 +169,10 @@ class ChannelPlayerView @JvmOverloads constructor(
         webView = findViewById(R.id.webView)
         channelBarView = findViewById(R.id.channelBarView)
         webView.settings.apply {
+            @Suppress("DEPRECATION")
             javaScriptEnabled = true
             domStorageEnabled = true
-            cacheMode = WebSettings.LOAD_NO_CACHE
+            //cacheMode = WebSettings.LOAD_NO_CACHE
             mediaPlaybackRequiresUserGesture = false
 
             useWideViewPort = true

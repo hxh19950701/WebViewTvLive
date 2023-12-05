@@ -10,12 +10,6 @@ abstract class WebpageAdapter {
         internal const val TAG = "WebpageAdapter"
     }
 
-    val name: String
-
-    constructor(name: String) {
-        this.name = name
-    }
-
     abstract fun userAgent(): String?
 
     abstract fun isAdaptedUrl(url: String): Boolean
@@ -40,6 +34,7 @@ abstract class WebpageAdapter {
 val supportedWebpageAdapters = mutableListOf<WebpageAdapter>(
     MgtvWebpageAdapter(),
     CctvWebpageAdapter(),
+    GdtvWebpageAdapter(),
     CommonWebpageAdapter(),
 )
 
