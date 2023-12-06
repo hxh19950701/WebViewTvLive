@@ -36,7 +36,7 @@ class ChannelPlayerView @JvmOverloads constructor(
 ) : FrameLayout(context, attrs, defStyleAttr), WebpageAdapter.IPlayer {
 
     companion object {
-        const val TAG = "ChannelPlayerView"
+        const val TAG = "ChannelPlayer"
         const val URL_BLANK = "chrome://blank"
     }
 
@@ -68,10 +68,12 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
 
         override fun shouldOverrideKeyEvent(view: WebView, event: KeyEvent): Boolean {
+            Log.i(TAG, "shouldOverrideKeyEvent $event")
             return super.shouldOverrideKeyEvent(view, event)
         }
 
         override fun onUnhandledKeyEvent(view: WebView, event: KeyEvent) {
+            Log.i(TAG, "onUnhandledKeyEvent $event")
             super.onUnhandledKeyEvent(view, event)
         }
 
@@ -102,7 +104,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
 
         override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
-            Log.i("console.log", msg.message())
+            Log.i("$TAG.log", msg.message())
             return true
         }
 
@@ -137,12 +139,6 @@ class ChannelPlayerView @JvmOverloads constructor(
                 lastJob?.apply { cancelAndJoin() }
                 webpageAdapter!!.enterFullscreen(this@ChannelPlayerView)
             }
-        }
-
-        @Suppress("unused")
-        @JavascriptInterface
-        fun log(s: String) {
-            Log.i(TAG, s)
         }
     }
 
@@ -207,10 +203,13 @@ class ChannelPlayerView @JvmOverloads constructor(
     override fun getScreenSize() = Point(width, height)
 
     override fun sendKeyEvent(event: KeyEvent) {
-        super.dispatchKeyEvent(event)
+        Log.i(TAG, "Inject $event")
+        requestFocus()
+        webView.dispatchKeyEvent(event)
     }
 
-    override fun sendMotionEvent(event: MotionEvent) {
-        super.dispatchTouchEvent(event)
+    override fun sendTouchEvent(event: MotionEvent) {
+        Log.i(TAG, "Inject $event")
+        webView.dispatchTouchEvent(event)
     }
 }

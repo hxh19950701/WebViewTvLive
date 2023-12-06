@@ -33,6 +33,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
     }
 
     protected suspend fun enterFullscreenByDoubleScreenClick(player: IPlayer, xPos: Float = 0.4F, yPos: Float = 0.6F) {
+        if (player.isInFullscreen()) return
         delay(ENTER_FULLSCREEN_DELAY)
         var times = 0
         val size = player.getScreenSize()
@@ -41,7 +42,11 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         while (!player.isInFullscreen() && times < ENTER_FULLSCREEN_MAX_TRY) {
             Log.i(TAG, "enterFullscreen trying for ${++times} times")
             var canceled = false
-            val canceledCallback = { canceled = true }
+            val canceledCallback = {
+                canceled = true
+                Log.i(TAG, "cancel enterFullscreenByDoubleScreenClick")
+                Unit
+            }
             screenClick(player, x, y, canceledCallback)
             delayBy(DOUBLE_CLICK_INTERVAL, canceledCallback)
             screenClick(player, x, y, canceledCallback)
@@ -52,6 +57,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
     }
 
     protected suspend fun enterFullscreenByPressKey(player: IPlayer, code: Int) {
+        if (player.isInFullscreen()) return
         delay(ENTER_FULLSCREEN_DELAY)
         val canceledCallback = { }
         keyClick(player, code, canceledCallback)
@@ -59,9 +65,9 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     private suspend fun screenClick(player: IPlayer, x: Float, y: Float, canceledCallback: () -> Unit) {
         val downTime = SystemClock.uptimeMillis()
-        player.sendMotionEvent(MotionEvent.obtain(downTime, downTime, MotionEvent.ACTION_DOWN, x, y, 0))
+        player.sendTouchEvent(MotionEvent.obtain(downTime, downTime, MotionEvent.ACTION_DOWN, x, y, 0))
         delayBy(CLICK_DURATION, canceledCallback)
-        player.sendMotionEvent(MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, 0))
+        player.sendTouchEvent(MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, 0))
     }
 
     private suspend fun keyClick(player: IPlayer, code: Int, canceledCallback: () -> Unit) {

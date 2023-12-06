@@ -26,7 +26,7 @@ abstract class WebpageAdapter {
 
         fun sendKeyEvent(event: KeyEvent)
 
-        fun sendMotionEvent(event: MotionEvent)
+        fun sendTouchEvent(event: MotionEvent)
     }
 
 }

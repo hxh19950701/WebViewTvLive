@@ -114,7 +114,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-        println(KeyEvent.keyCodeToString(event.keyCode))
         repostBackToStandardModeAction()
         when (uiMode) {
             UiMode.CHANNELS -> if (playlistView.dispatchKeyEvent(event)) return true

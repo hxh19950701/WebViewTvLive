@@ -1,7 +1,7 @@
 var video = document.getElementsByTagName('video')[0];
 if (video) {
     console.log("Video tag found.");
-    video.addEventListener('timeupdate', function() { console.log(video.currentTime); video.volume = 1 });
+    video.addEventListener('timeupdate', function() { video.volume = 1 });
     video.addEventListener('pause', function() { console.log("New state: PAUSE.") });
     video.addEventListener('play', function() { console.log("New state: PLAY.") });
     if (video.paused) {
@@ -12,8 +12,8 @@ if (video) {
         window.main.schemeEnterFullscreen();
     }
     document.onkeyup = function(e) {
-    	console.log(e.key);
-    	if (e.key == 'Enter') { video.requestFullscreen() }
+    	console.log('Key up: ' + e.key);
+    	if (e.key == 'f') { video.requestFullscreen() }
     }
 } else {
     console.log("No video tag found.");

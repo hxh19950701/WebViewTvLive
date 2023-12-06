@@ -7,6 +7,7 @@ object WebpageAdapterManager {
         CctvWebpageAdapter(),
         GdtvWebpageAdapter(),
         NtdtvWebpageAdapter(),
+        EbcWebpageAdapter(),
         CommonWebpageAdapter(),
     )
 
