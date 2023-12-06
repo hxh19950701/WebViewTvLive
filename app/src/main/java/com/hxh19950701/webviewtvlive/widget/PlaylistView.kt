@@ -104,7 +104,7 @@ class PlaylistView @JvmOverloads constructor(
     }
 
     private fun setCurrentGroup(group: ChannelGroup) {
-        rvChannels.adapter = ChannelAdapter(group.channels)
+        rvChannels.adapter = ChannelAdapter(group)
         tvGroupName.text = group.name + "(${group.channels.size})"
     }
 
@@ -123,26 +123,31 @@ class PlaylistView @JvmOverloads constructor(
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
         super.onVisibilityChanged(changedView, visibility)
         if (visibility == VISIBLE && playlist != null && currentChannel != null) {
-            val index = playlist!!.indexOf(currentChannel!!)
-            if (index != null) {
-                currentPage = index.first
-                rvChannels.scrollToPosition(index.second)
-                focusCurrentChannel()
+            val adapter = rvChannels.adapter as ChannelAdapter
+            if (currentChannel!!.groupName != adapter.group.name) {
+                val index = playlist!!.indexOf(currentChannel!!)
+                if (index != null) {
+                    currentPage = index.first
+                    rvChannels.scrollToPosition(index.second)
+                }
+            } else {
+                adapter.notifyDataSetChanged()
             }
+            focusCurrentChannel()
         }
     }
 
-    private inner class ChannelAdapter(private val channels: List<Channel>) : RecyclerView.Adapter<ViewHolder>() {
+    private inner class ChannelAdapter(val group: ChannelGroup) : RecyclerView.Adapter<ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_channel, parent, false)
             return ViewHolder(view)
         }
 
-        override fun getItemCount() = channels.size
+        override fun getItemCount() = group.channels.size
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.bind(position + 1, channels[position])
+            holder.bind(position + 1, group.channels[position])
         }
 
     }

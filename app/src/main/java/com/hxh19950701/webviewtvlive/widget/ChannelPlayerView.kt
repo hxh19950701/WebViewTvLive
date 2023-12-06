@@ -68,12 +68,12 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
 
         override fun shouldOverrideKeyEvent(view: WebView, event: KeyEvent): Boolean {
-            Log.i(TAG, "shouldOverrideKeyEvent $event")
+            //Log.i(TAG, "shouldOverrideKeyEvent $event")
             return super.shouldOverrideKeyEvent(view, event)
         }
 
         override fun onUnhandledKeyEvent(view: WebView, event: KeyEvent) {
-            Log.i(TAG, "onUnhandledKeyEvent $event")
+            //Log.i(TAG, "onUnhandledKeyEvent $event")
             super.onUnhandledKeyEvent(view, event)
         }
 
