@@ -4,29 +4,15 @@ import android.os.SystemClock
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
+import com.hxh19950701.webviewtvlive.application
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
+import java.io.BufferedReader
 
 open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
         const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-
-        internal val COMMON_JAVASCRIPT = """javascript:
-            var v = document.getElementsByTagName('video')[0];
-            if (v == null) {
-                console.log("No video tag found.");
-                window.main.schemeEnterFullscreen();
-            } else {
-                v.addEventListener('timeupdate', function() { v.volume = 1 });
-                console.log("v.paused: " + v.paused)
-                if (v.paused) {
-                     v.addEventListener('canplay', function(e) { window.main.schemeEnterFullscreen() });
-                } else {
-                     window.main.schemeEnterFullscreen();
-                }
-            }
-        """.trimIndent()
 
         internal const val ENTER_FULLSCREEN_DELAY = 2000L
         internal const val CLICK_DURATION = 50L
@@ -38,7 +24,9 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     override fun isAdaptedUrl(url: String) = true
 
-    override fun javascript() = COMMON_JAVASCRIPT
+    override fun javascript(): String {
+        return application.assets.open("default.js").bufferedReader().use(BufferedReader::readText)
+    }
 
     override suspend fun enterFullscreen(player: IPlayer) {
         enterFullscreenByDoubleScreenClick(player)
@@ -61,6 +49,12 @@ open class CommonWebpageAdapter : WebpageAdapter() {
             delayBy(ENTER_FULLSCREEN_DELAY, canceledCallback)
             if (canceled) break
         }
+    }
+
+    protected suspend fun enterFullscreenByPressKey(player: IPlayer, code: Int) {
+        delay(ENTER_FULLSCREEN_DELAY)
+        val canceledCallback = { }
+        keyClick(player, code, canceledCallback)
     }
 
     private suspend fun screenClick(player: IPlayer, x: Float, y: Float, canceledCallback: () -> Unit) {

@@ -3,6 +3,7 @@ package com.hxh19950701.webviewtvlive.playlist
 import com.google.gson.GsonBuilder
 import com.hxh19950701.webviewtvlive.application
 import com.hxh19950701.webviewtvlive.preference
+import kotlinx.coroutines.delay
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
@@ -45,7 +46,7 @@ object PlaylistManager {
         }
     }
 
-    private fun updatePlaylist() {
+    private suspend fun updatePlaylist() {
         do {
             try {
                 val request = Request.Builder().url(getPlaylistUrl()).get().build()
@@ -53,14 +54,16 @@ object PlaylistManager {
                 if (response.isSuccessful) {
                     file.writeText(response.body!!.string())
                     setLastUpdate(System.currentTimeMillis())
+                    break
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+            delay(1000L)
         } while (!hasLocalPlaylist())
     }
 
-    fun loadPlaylist(): Playlist {
+    suspend fun loadPlaylist(): Playlist {
         val updateTime = preference.getLong(KEY_LAST_UPDATE, 0L)
         if (System.currentTimeMillis() - updateTime > CACHE_EXPIRATION_MS || !hasLocalPlaylist()) {
             updatePlaylist()

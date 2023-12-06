@@ -12,10 +12,11 @@
 	<com.hxh19950701.webviewtvlive.widget.ChannelBarView
 		android:id="@+id/channelBarView"
 		android:layout_width="match_parent"
-		android:layout_height="50dp"
+		android:layout_height="wrap_content"
 		android:layout_gravity="bottom"
-		android:layout_marginHorizontal="150dp"
-		android:layout_marginBottom="20dp"
+		android:layout_marginLeft="150dp"
+		android:layout_marginRight="150dp"
+		android:layout_marginBottom="50dp"
 		android:visibility="gone" />
 
 </merge>

@@ -125,7 +125,7 @@ class PlaylistView @JvmOverloads constructor(
         if (visibility == VISIBLE && playlist != null && currentChannel != null) {
             val index = playlist!!.indexOf(currentChannel!!)
             if (index != null) {
-                setCurrentGroup(playlist!!.groups[index.first])
+                currentPage = index.first
                 rvChannels.scrollToPosition(index.second)
                 focusCurrentChannel()
             }

@@ -17,7 +17,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="#00000000"
-			android:text="◀" />
+			android:text="◀"
+			android:visibility="gone" />
 
 		<TextView
 			android:id="@+id/tvGroupName"
@@ -25,6 +26,7 @@
 			android:layout_height="50dp"
 			android:layout_weight="1"
 			android:gravity="center"
+			android:text="未加载列表"
 			android:textSize="18sp" />
 
 		<Button
@@ -32,7 +34,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="#00000000"
-			android:text="▶" />
+			android:text="▶"
+			android:visibility="gone" />
 	</LinearLayout>
 
 	<TextView

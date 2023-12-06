@@ -338,6 +338,11 @@
           "name": "东森新闻",
           "url": "https://news.ebc.net.tw/live",
           "groupName": "海外"
+        },
+        {
+          "name": "新唐人亚太台",
+          "url": "https://www.ntdtv.com.tw/",
+          "groupName": "海外"
         }
       ]
     }

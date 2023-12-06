@@ -14,6 +14,13 @@ class GdtvWebpageAdapter : CommonWebpageAdapter() {
         videoPlayerDiv.style.left = '0';
         videoPlayerDiv.style.zIndex = '9999';
       }
+      var v = document.getElementsByTagName('video')[0];
+      if (v == null) {
+          console.log("No video tag found.");
+      } else {
+          console.log("Video tag found.");
+          //v.addEventListener('pause', function() { setTimeout(() => { v.play(); }, 1000); });
+      }
     """.trimIndent()
 
     override fun userAgent() = null

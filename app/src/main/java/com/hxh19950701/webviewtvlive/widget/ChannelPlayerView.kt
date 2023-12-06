@@ -1,6 +1,5 @@
 package com.hxh19950701.webviewtvlive.widget
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
@@ -16,7 +15,7 @@ import android.webkit.JavascriptInterface
 import android.widget.FrameLayout
 import com.hxh19950701.webviewtvlive.R
 import com.hxh19950701.webviewtvlive.adapter.WebpageAdapter
-import com.hxh19950701.webviewtvlive.adapter.getSuitableAdapter
+import com.hxh19950701.webviewtvlive.adapter.WebpageAdapterManager
 import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.settings.SettingsManager
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
@@ -24,7 +23,6 @@ import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebChromeClient
-import com.tencent.smtt.sdk.WebSettings
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.coroutines.CoroutineScope
@@ -52,7 +50,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             field = value
             //webView.loadUrl(URL_BLANK)
             value?.apply {
-                webpageAdapter = getSuitableAdapter(url)
+                webpageAdapter = WebpageAdapterManager.getSuitableAdapter(url)
                 Log.i(TAG, "WebpageAdapter is ${webpageAdapter!!.javaClass.simpleName}")
                 webView.settings.userAgentString = webpageAdapter!!.userAgent()
                 webView.loadUrl(url)
@@ -69,12 +67,12 @@ class ChannelPlayerView @JvmOverloads constructor(
             return true
         }
 
-        override fun shouldOverrideKeyEvent(p0: WebView, p1: KeyEvent): Boolean {
-            return super.shouldOverrideKeyEvent(p0, p1)
+        override fun shouldOverrideKeyEvent(view: WebView, event: KeyEvent): Boolean {
+            return super.shouldOverrideKeyEvent(view, event)
         }
 
-        override fun onUnhandledKeyEvent(p0: WebView, p1: KeyEvent) {
-            super.onUnhandledKeyEvent(p0, p1)
+        override fun onUnhandledKeyEvent(view: WebView, event: KeyEvent) {
+            super.onUnhandledKeyEvent(view, event)
         }
 
         override fun onPageFinished(view: WebView, url: String) {
@@ -82,7 +80,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             //if (url.startsWith("chrome://")) return
             while (view.canZoomOut()) view.zoomOut()
             view.evaluateJavascript(webpageAdapter!!.javascript()) {}
-            channelBarView.dismiss()
+            channelBarView.requestDismiss()
             Log.i(TAG, "Load complete, $url")
         }
 
@@ -104,7 +102,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
 
         override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
-            Log.i(TAG, msg.message())
+            Log.i("console.log", msg.message())
             return true
         }
 
