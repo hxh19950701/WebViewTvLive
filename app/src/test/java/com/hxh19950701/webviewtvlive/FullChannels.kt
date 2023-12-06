@@ -46,7 +46,7 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "广东",
-        Channel("广东卫视", "https://www.gdtv.cn/tvChannelDetail/43"),
+        Channel("广东卫视", "https://m.gdtv.cn/tvChannelDetail/43"),
         Channel("深圳卫视", "https://www.sztv.com.cn/dianshi.shtml?id=7867"),
         Channel("深圳都市", "https://www.sztv.com.cn/dianshi.shtml?id=7868"),
         Channel("深圳电视剧", "https://www.sztv.com.cn/dianshi.shtml?id=7880"),
