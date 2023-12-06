@@ -29,7 +29,7 @@ class SettingsView @JvmOverloads constructor(
             null,
             SettingsManager::setSelectedPlaylistPosition
         ),
-        SettingItem("刷新频道列表", null, 0, { PlaylistManager.setLastUpdate(0) }, null),
+        SettingItem("刷新频道列表", onClick = { PlaylistManager.setLastUpdate(0) }),
         SettingItem(
             "操作 WebView",
             arrayOf("关", "开"),
@@ -45,7 +45,7 @@ class SettingsView @JvmOverloads constructor(
         rvSettings.adapter = SettingsAdapter()
     }
 
-    private inner class SettingsAdapter() : RecyclerView.Adapter<ViewHolder>() {
+    private inner class SettingsAdapter : RecyclerView.Adapter<ViewHolder>() {
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
             val view = LayoutInflater.from(parent.context).inflate(R.layout.item_settings, parent, false)

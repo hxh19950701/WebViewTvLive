@@ -28,13 +28,13 @@ open class CommonWebpageAdapter : WebpageAdapter() {
             }
         """.trimIndent()
 
-        internal const val ENTER_FULLSCREEN_DELAY = 500L
+        internal const val ENTER_FULLSCREEN_DELAY = 2000L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
-        internal const val ENTER_FULLSCREEN_MAX_TRY = 20
+        internal const val ENTER_FULLSCREEN_MAX_TRY = 5
     }
 
-    override fun userAgent() = PC_USER_AGENT
+    override fun userAgent(): String? = PC_USER_AGENT
 
     override fun isAdaptedUrl(url: String) = true
 
