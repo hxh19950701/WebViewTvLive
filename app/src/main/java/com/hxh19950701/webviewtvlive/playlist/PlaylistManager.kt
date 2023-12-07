@@ -1,15 +1,15 @@
 package com.hxh19950701.webviewtvlive.playlist
 
-import android.net.http.HttpException
 import android.util.Log
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.hxh19950701.webviewtvlive.application
-import com.hxh19950701.webviewtvlive.preference
+import com.hxh19950701.webviewtvlive.misc.application
+import com.hxh19950701.webviewtvlive.misc.preference
 import kotlinx.coroutines.delay
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
+import java.util.concurrent.TimeUnit
 
 object PlaylistManager {
 
@@ -19,7 +19,7 @@ object PlaylistManager {
     private const val KEY_LAST_UPDATE = "last_update"
     private const val UPDATE_MAX_TRY = 3
 
-    private val client = OkHttpClient()
+    private val client = OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).readTimeout(5, TimeUnit.SECONDS).build()
     private val gson = GsonBuilder().setPrettyPrinting().create()!!
     private val jsonType = object : TypeToken<List<Channel>>() {}
     private val file = File(application.filesDir, "playlist.json")
@@ -59,6 +59,7 @@ object PlaylistManager {
                 Log.w(TAG, "Can't update playlist. ${e.message}")
             }
             ++times
+            delay(1000L)
         }
     }
 

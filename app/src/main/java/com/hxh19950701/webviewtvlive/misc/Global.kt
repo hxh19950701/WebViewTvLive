@@ -1,4 +1,4 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.misc
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -14,4 +14,6 @@ fun setApplication(application: Context) {
     _application = application
 }
 
-val preference: SharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(application) }
+val preference: SharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(
+    application
+) }

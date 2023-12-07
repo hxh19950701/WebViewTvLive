@@ -1,14 +1,14 @@
 package com.hxh19950701.webviewtvlive.settings
 
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
-import com.hxh19950701.webviewtvlive.preference
+import com.hxh19950701.webviewtvlive.misc.preference
 
 object SettingsManager {
 
     private const val KEY_WEBVIEW_TOUCHABLE = "webview_touchable"
 
     fun getPlaylistNames(): Array<String> {
-        var builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
+        val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
         val names = arrayOfNulls<String>(PlaylistManager.getBuiltInPlaylists().size)
         for (i in names.indices) {
             names[i] = builtInPlaylists[i].first
@@ -18,7 +18,7 @@ object SettingsManager {
 
     fun getSelectedPlaylistPosition(): Int {
         val playlistUrl = PlaylistManager.getPlaylistUrl()
-        var builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
+        val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
         for (i in builtInPlaylists.indices) {
             if (builtInPlaylists[i].second == playlistUrl) {
                 return i;
@@ -28,7 +28,7 @@ object SettingsManager {
     }
 
     fun setSelectedPlaylistPosition(position: Int) {
-        var builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
+        val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
         PlaylistManager.setPlaylistUrl(builtInPlaylists[position].second)
     }
 

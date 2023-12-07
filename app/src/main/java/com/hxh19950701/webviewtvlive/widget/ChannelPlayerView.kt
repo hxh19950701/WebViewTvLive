@@ -2,6 +2,7 @@ package com.hxh19950701.webviewtvlive.widget
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.graphics.Point
 import android.util.AttributeSet
@@ -33,114 +34,28 @@ import kotlinx.coroutines.launch
 
 class ChannelPlayerView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr), WebpageAdapter.IPlayer {
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     companion object {
-        const val TAG = "ChannelPlayer"
-        const val URL_BLANK = "chrome://blank"
+        private const val TAG = "ChannelPlayer"
     }
 
-    private val webView: WebView
-    private lateinit var channelBarView: ChannelBarView
-    private var isInFullScreen: Boolean = false
+    private val webView: WebpageAdapterWebView
+    private val channelBarView: ChannelBarView
     var activity: Activity? = null
     var channel: Channel? = null
         set(value) {
             if (field == value) return
             field = value
-            //webView.loadUrl(URL_BLANK)
-            value?.apply {
-                webpageAdapter = WebpageAdapterManager.getSuitableAdapter(url)
-                Log.i(TAG, "WebpageAdapter is ${webpageAdapter!!.javaClass.simpleName}")
-                webView.settings.userAgentString = webpageAdapter!!.userAgent()
-                webView.loadUrl(url)
+            if (value == null) {
+                webView.stopLoading()
+                channelBarView.requestDismiss()
+            } else {
+                webView.loadUrl(value.url)
                 channelBarView.setCurrentChannelAndShow(value)
             }
         }
     var dismissAllViewCallback: (() -> Unit)? = null
-    private var webpageAdapter: WebpageAdapter? = null
-
-    private val client = object : WebViewClient() {
-
-        override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-            view.loadUrl(url)
-            return true
-        }
-
-        override fun shouldOverrideKeyEvent(view: WebView, event: KeyEvent): Boolean {
-            //Log.i(TAG, "shouldOverrideKeyEvent $event")
-            return super.shouldOverrideKeyEvent(view, event)
-        }
-
-        override fun onUnhandledKeyEvent(view: WebView, event: KeyEvent) {
-            //Log.i(TAG, "onUnhandledKeyEvent $event")
-            super.onUnhandledKeyEvent(view, event)
-        }
-
-        override fun onPageFinished(view: WebView, url: String) {
-            super.onPageFinished(view, url)
-            //if (url.startsWith("chrome://")) return
-            while (view.canZoomOut()) view.zoomOut()
-            view.evaluateJavascript(webpageAdapter!!.javascript()) {}
-            channelBarView.requestDismiss()
-            Log.i(TAG, "Load complete, $url")
-        }
-
-        override fun onReceivedHttpError(view: WebView, request: WebResourceRequest, response: WebResourceResponse) {
-            super.onReceivedHttpError(view, request, response)
-            Log.i(TAG, "Http error: ${response.statusCode}")
-        }
-
-    }
-
-    private val chromeClient = object : WebChromeClient() {
-
-        private var view: View? = null
-        private var callback: IX5WebChromeClient.CustomViewCallback? = null
-
-        override fun onProgressChanged(view: WebView, progress: Int) {
-            super.onProgressChanged(view, progress)
-            channelBarView.setProgress(progress)
-        }
-
-        override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
-            Log.i("$TAG.log", msg.message())
-            return true
-        }
-
-        @Suppress("DEPRECATION")
-        override fun onShowCustomView(view: View, callback: IX5WebChromeClient.CustomViewCallback) {
-            this.view = view
-            this.callback = callback
-            addView(view)
-            activity?.apply { window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN }
-            isInFullScreen = true
-        }
-
-        @Suppress("DEPRECATION")
-        override fun onHideCustomView() {
-            removeView(view)
-            callback?.onCustomViewHidden()
-            activity?.apply { window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN }
-            isInFullScreen = false
-        }
-    }
-
-    private val javascriptInterface = object {
-
-        private var currentJob: Job? = null
-
-        @Suppress("unused")
-        @JavascriptInterface
-        fun schemeEnterFullscreen() {
-            Log.i(TAG, "schemeEnterFullscreen")
-            val lastJob = currentJob
-            currentJob = CoroutineScope(Dispatchers.Main).launch {
-                lastJob?.apply { cancelAndJoin() }
-                webpageAdapter!!.enterFullscreen(this@ChannelPlayerView)
-            }
-        }
-    }
 
     private val gestureDetector = GestureDetector(context, object : GestureDetector.OnGestureListener {
 
@@ -162,22 +77,12 @@ class ChannelPlayerView @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
         webView = findViewById(R.id.webView)
         channelBarView = findViewById(R.id.channelBarView)
-        webView.settings.apply {
-            @Suppress("DEPRECATION")
-            javaScriptEnabled = true
-            domStorageEnabled = true
-            //cacheMode = WebSettings.LOAD_NO_CACHE
-            mediaPlaybackRequiresUserGesture = false
-
-            useWideViewPort = true
-            loadWithOverviewMode = true
-            setSupportZoom(true)
-        }
         webView.apply {
-            webViewClient = client
-            webChromeClient = chromeClient
-            setBackgroundColor(Color.BLACK)
-            addJavascriptInterface(javascriptInterface, "main")
+            onPageFinished = { channelBarView.requestDismiss() }
+            onProgressChanged = { channelBarView.setProgress(progress) }
+            onFullscreenStateChanged = { activity?.window?.decorView?.systemUiVisibility =
+                if(it) View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN else View.SYSTEM_UI_FLAG_FULLSCREEN
+            }
         }
     }
 
@@ -196,20 +101,5 @@ class ChannelPlayerView @JvmOverloads constructor(
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         return false
-    }
-
-    override fun isInFullscreen() = isInFullScreen
-
-    override fun getScreenSize() = Point(width, height)
-
-    override fun sendKeyEvent(event: KeyEvent) {
-        Log.i(TAG, "Inject $event")
-        requestFocus()
-        webView.dispatchKeyEvent(event)
-    }
-
-    override fun sendTouchEvent(event: MotionEvent) {
-        Log.i(TAG, "Inject $event")
-        webView.dispatchTouchEvent(event)
     }
 }

@@ -11,7 +11,7 @@ object WebpageAdapterManager {
         CommonWebpageAdapter(),
     )
 
-    fun getSuitableAdapter(url: String): WebpageAdapter {
+    fun get(url: String): WebpageAdapter {
         for (adapter in supportedWebpageAdapters) {
             if (adapter.isAdaptedUrl(url)) return adapter
         }

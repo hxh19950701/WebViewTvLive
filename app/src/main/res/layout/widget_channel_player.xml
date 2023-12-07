@@ -4,7 +4,7 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<com.hxh19950701.webviewtvlive.widget.FixedSizeWebView
+	<com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
 		android:id="@+id/webView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />

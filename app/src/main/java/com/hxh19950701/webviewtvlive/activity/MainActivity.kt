@@ -1,4 +1,4 @@
-package com.hxh19950701.webviewtvlive
+package com.hxh19950701.webviewtvlive.activity
 
 import android.os.Bundle
 import android.view.KeyEvent
@@ -8,6 +8,8 @@ import android.view.WindowManager
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.misc.preference
 import com.hxh19950701.webviewtvlive.playlist.Playlist.Companion.firstChannel
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
 import com.hxh19950701.webviewtvlive.widget.ChannelPlayerView
@@ -25,9 +27,7 @@ class MainActivity : AppCompatActivity() {
         const val LAST_CHANNEL = "last_channel"
     }
 
-    enum class UiMode {
-        STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS
-    }
+    enum class UiMode { STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS }
 
     private lateinit var playerView: ChannelPlayerView
     private lateinit var mainLayout: FrameLayout
@@ -100,6 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         isDestroyed = true
+        playerView.channel = null
         super.onDestroy()
     }
 

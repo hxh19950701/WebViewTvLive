@@ -14,7 +14,7 @@ class ChannelBarView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     companion object {
-        const val MIN_SHOW_DURATION = 5000L
+        private const val MIN_SHOW_DURATION = 5000L
     }
 
     private val tvChannelName: TextView

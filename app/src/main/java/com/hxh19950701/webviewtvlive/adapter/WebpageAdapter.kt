@@ -3,6 +3,7 @@ package com.hxh19950701.webviewtvlive.adapter
 import android.graphics.Point
 import android.view.KeyEvent
 import android.view.MotionEvent
+import com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
 
 abstract class WebpageAdapter {
 
@@ -16,17 +17,6 @@ abstract class WebpageAdapter {
 
     abstract fun javascript(): String
 
-    abstract suspend fun enterFullscreen(player: IPlayer)
-
-    interface IPlayer {
-
-        fun isInFullscreen(): Boolean
-
-        fun getScreenSize(): Point
-
-        fun sendKeyEvent(event: KeyEvent)
-
-        fun sendTouchEvent(event: MotionEvent)
-    }
+    abstract suspend fun enterFullscreen(webView: WebpageAdapterWebView)
 
 }

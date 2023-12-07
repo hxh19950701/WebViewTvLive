@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.Gravity
 import android.view.LayoutInflater
+import android.webkit.WebView
 import android.widget.Button
 import android.widget.LinearLayout
 import com.hxh19950701.webviewtvlive.R

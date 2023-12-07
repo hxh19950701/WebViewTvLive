@@ -1,10 +1,12 @@
 package com.hxh19950701.webviewtvlive.adapter
 
+import android.graphics.Point
 import android.os.SystemClock
 import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
-import com.hxh19950701.webviewtvlive.application
+import com.hxh19950701.webviewtvlive.misc.application
+import com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.delay
 import java.io.BufferedReader
@@ -28,70 +30,66 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         return application.assets.open("default.js").bufferedReader().use(BufferedReader::readText)
     }
 
-    override suspend fun enterFullscreen(player: IPlayer) {
-        enterFullscreenByDoubleScreenClick(player)
+    override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
+        enterFullscreenByDoubleScreenClick(webView)
     }
 
-    protected suspend fun enterFullscreenByDoubleScreenClick(player: IPlayer, xPos: Float = 0.4F, yPos: Float = 0.6F) {
-        if (player.isInFullscreen()) return
-        delay(ENTER_FULLSCREEN_DELAY)
-        var times = 0
-        val size = player.getScreenSize()
-        val x = size.x * xPos
-        val y = size.y * yPos
-        while (!player.isInFullscreen() && times < ENTER_FULLSCREEN_MAX_TRY) {
-            Log.i(TAG, "enterFullscreen trying for ${++times} times")
-            var canceled = false
-            val canceledCallback = {
-                canceled = true
-                Log.i(TAG, "cancel enterFullscreenByDoubleScreenClick")
-                Unit
+    protected suspend fun enterFullscreenByDoubleScreenClick(webView: WebpageAdapterWebView, xPos: Float = 0.4F, yPos: Float = 0.6F) {
+        try {
+            val url = webView.url
+            checkBreak(webView, url)
+            var times = 0
+            val size = Point(webView.width, webView.height)
+            val x = size.x * xPos
+            val y = size.y * yPos
+            while (times < ENTER_FULLSCREEN_MAX_TRY) {
+                Log.i(TAG, "enterFullscreen trying for ${++times} times")
+                delay(ENTER_FULLSCREEN_DELAY)
+                checkBreak(webView, url)
+                screenClick(webView, x, y)
+                checkBreak(webView, url)
+                delay(DOUBLE_CLICK_INTERVAL)
+                checkBreak(webView, url)
+                screenClick(webView, x, y)
             }
-            screenClick(player, x, y, canceledCallback)
-            delayBy(DOUBLE_CLICK_INTERVAL, canceledCallback)
-            screenClick(player, x, y, canceledCallback)
-            if (canceled) break
-            delayBy(ENTER_FULLSCREEN_DELAY, canceledCallback)
-            if (canceled) break
+        } catch (e: Exception){
+            e.message?.let { Log.i(TAG, it) }
         }
     }
 
-    protected suspend fun enterFullscreenByPressKey(player: IPlayer, code: Int) {
-        if (player.isInFullscreen()) return
-        delay(ENTER_FULLSCREEN_DELAY)
-        val canceledCallback = { }
-        keyClick(player, code, canceledCallback)
-    }
-
-    private suspend fun screenClick(player: IPlayer, x: Float, y: Float, canceledCallback: () -> Unit) {
-        val downTime = SystemClock.uptimeMillis()
-        player.sendTouchEvent(MotionEvent.obtain(downTime, downTime, MotionEvent.ACTION_DOWN, x, y, 0))
-        delayBy(CLICK_DURATION, canceledCallback)
-        player.sendTouchEvent(MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, 0))
-    }
-
-    private suspend fun keyClick(player: IPlayer, code: Int, canceledCallback: () -> Unit) {
-        val downTime = SystemClock.uptimeMillis()
-        player.sendKeyEvent(KeyEvent(downTime, downTime, KeyEvent.ACTION_DOWN, code, 0))
-        delayBy(CLICK_DURATION, canceledCallback)
-        player.sendKeyEvent(KeyEvent(downTime, SystemClock.uptimeMillis(), KeyEvent.ACTION_UP, code, 0))
-    }
-
-    private suspend fun delayBy(mills: Long, canceledCallback: () -> Unit) {
-        val start = SystemClock.uptimeMillis()
-        var duration = mills
-        var canceled = false
-        do {
-            try {
-                delay(duration)
-            } catch (_: CancellationException) {
-                canceled = true
-            }
-            duration = start + mills - SystemClock.uptimeMillis()
-        } while (duration > 0)
-
-        if (canceled) {
-            canceledCallback()
+    protected suspend fun enterFullscreenByPressKey(webView: WebpageAdapterWebView, code: Int) {
+        try {
+            val url = webView.url
+            checkBreak(webView, url)
+            delay(ENTER_FULLSCREEN_DELAY)
+            checkBreak(webView, url)
+            keyClick(webView, code)
+        } catch (e: Exception){
+            e.message?.let { Log.i(TAG, it) }
         }
     }
+
+    protected fun checkBreak(webView: WebpageAdapterWebView, url: String) {
+        if (webView.isInFullscreen()) {
+            throw Exception("Already fullscreen.")
+        }
+        if (webView.url != url) {
+            throw Exception("Url changed, $url -> ${webView.url}")
+        }
+    }
+
+    private suspend fun screenClick(webView: WebpageAdapterWebView, x: Float, y: Float) {
+        val downTime = SystemClock.uptimeMillis()
+        webView.dispatchTouchEvent(MotionEvent.obtain(downTime, downTime, MotionEvent.ACTION_DOWN, x, y, 0))
+        delay(CLICK_DURATION)
+        webView.dispatchTouchEvent(MotionEvent.obtain(downTime, SystemClock.uptimeMillis(), MotionEvent.ACTION_UP, x, y, 0))
+    }
+
+    private suspend fun keyClick(webView: WebpageAdapterWebView, code: Int) {
+        val downTime = SystemClock.uptimeMillis()
+        webView.dispatchKeyEvent(KeyEvent(downTime, downTime, KeyEvent.ACTION_DOWN, code, 0))
+        delay(CLICK_DURATION)
+        webView.dispatchKeyEvent(KeyEvent(downTime, SystemClock.uptimeMillis(), KeyEvent.ACTION_UP, code, 0))
+    }
+
 }
