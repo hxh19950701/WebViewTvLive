@@ -33,9 +33,8 @@ data class Playlist(
     fun indexOf(c: Channel): Pair<Int, Int>? {
         for ((i, group) in groups.withIndex()) {
             if (group.name == c.groupName) {
-                for ((j, channel) in groups[i].channels.withIndex()) {
-                    if (channel.name == c.name) return Pair(i, j)
-                }
+                val j = groups[i].channels.indexOf(c)
+                if (j >= 0) return Pair(i, j)
             }
         }
         return null

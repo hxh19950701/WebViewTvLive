@@ -109,6 +109,9 @@ class PlaylistView @JvmOverloads constructor(
     }
 
     private fun focusCurrentChannel() {
+        val adapter = rvChannels.adapter as ChannelAdapter
+        val position = adapter.group.channels.indexOf(currentChannel)
+        rvChannels.scrollToPosition(position)
         rvChannels.post {
             for (i in 0..<rvChannels.childCount) {
                 val child = rvChannels.getChildAt(i)
@@ -128,7 +131,6 @@ class PlaylistView @JvmOverloads constructor(
                 val index = playlist!!.indexOf(currentChannel!!)
                 if (index != null) {
                     currentPage = index.first
-                    rvChannels.scrollToPosition(index.second)
                 }
             } else {
                 adapter.notifyDataSetChanged()
