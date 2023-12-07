@@ -1,6 +1,10 @@
 package com.hxh19950701.webviewtvlive.adapter
 
+import android.util.Log
+
 object WebpageAdapterManager {
+
+    private const val TAG = "WebpageAdapterManager"
 
     private val supportedWebpageAdapters = mutableListOf<WebpageAdapter>(
         MgtvWebpageAdapter(),
@@ -12,9 +16,14 @@ object WebpageAdapterManager {
     )
 
     fun get(url: String): WebpageAdapter {
-        for (adapter in supportedWebpageAdapters) {
-            if (adapter.isAdaptedUrl(url)) return adapter
+        var adapter = supportedWebpageAdapters[supportedWebpageAdapters.lastIndex]
+        for (a in supportedWebpageAdapters) {
+            if (a.isAdaptedUrl(url)) {
+                adapter = a
+                break
+            }
         }
-        return supportedWebpageAdapters[supportedWebpageAdapters.lastIndex]
+        Log.i(TAG, "Use ${adapter.javaClass.simpleName} for $url")
+        return adapter
     }
 }

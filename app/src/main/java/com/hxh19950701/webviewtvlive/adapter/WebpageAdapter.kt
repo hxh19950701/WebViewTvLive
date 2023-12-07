@@ -11,11 +11,23 @@ abstract class WebpageAdapter {
         internal const val TAG = "WebpageAdapter"
     }
 
+    private var tryingEnterFullscreen = false
+
+    abstract fun isBlockNetworkImage(): Boolean
+
     abstract fun userAgent(): String?
 
     abstract fun isAdaptedUrl(url: String): Boolean
 
     abstract fun javascript(): String
+
+    suspend fun tryEnterFullscreen(webView: WebpageAdapterWebView) {
+        if (!tryingEnterFullscreen) {
+            tryingEnterFullscreen = true
+            enterFullscreen(webView)
+            tryingEnterFullscreen = false
+        }
+    }
 
     abstract suspend fun enterFullscreen(webView: WebpageAdapterWebView)
 

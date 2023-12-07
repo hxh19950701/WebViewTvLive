@@ -14,11 +14,15 @@ class EbcWebpageAdapter : CommonWebpageAdapter() {
         var start = link.lastIndexOf('/');
         var end = link.lastIndexOf('?');
         var id = link.substring(start + 1, end);
-        console.log(id);
-        var url = "http://www.youtube.com/watch?v=" + id;
-        window.location.replace(url);
+        console.log("Youtube video id is " + id);
+        var url = "https://m.youtube.com/watch?v=" + id;
+        window.main.loadUrl(url);
     } else {
-    """.trimIndent() + super.javascript() + "}"
+        console.log("No youtube player");
+    }
+    """.trimIndent()
+
+    override fun isBlockNetworkImage() = true
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
         enterFullscreenByPressKey(webView, KeyEvent.KEYCODE_F)

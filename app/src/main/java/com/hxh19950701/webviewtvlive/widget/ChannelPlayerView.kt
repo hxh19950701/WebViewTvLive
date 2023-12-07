@@ -2,35 +2,16 @@ package com.hxh19950701.webviewtvlive.widget
 
 import android.app.Activity
 import android.content.Context
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.Point
 import android.util.AttributeSet
-import android.util.Log
 import android.view.GestureDetector
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.webkit.JavascriptInterface
 import android.widget.FrameLayout
 import com.hxh19950701.webviewtvlive.R
-import com.hxh19950701.webviewtvlive.adapter.WebpageAdapter
-import com.hxh19950701.webviewtvlive.adapter.WebpageAdapterManager
 import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.settings.SettingsManager
-import com.tencent.smtt.export.external.interfaces.ConsoleMessage
-import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
-import com.tencent.smtt.export.external.interfaces.WebResourceRequest
-import com.tencent.smtt.export.external.interfaces.WebResourceResponse
-import com.tencent.smtt.sdk.WebChromeClient
-import com.tencent.smtt.sdk.WebView
-import com.tencent.smtt.sdk.WebViewClient
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.cancelAndJoin
-import kotlinx.coroutines.launch
 
 class ChannelPlayerView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -79,9 +60,11 @@ class ChannelPlayerView @JvmOverloads constructor(
         channelBarView = findViewById(R.id.channelBarView)
         webView.apply {
             onPageFinished = { channelBarView.requestDismiss() }
-            onProgressChanged = { channelBarView.setProgress(progress) }
-            onFullscreenStateChanged = { activity?.window?.decorView?.systemUiVisibility =
-                if(it) View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN else View.SYSTEM_UI_FLAG_FULLSCREEN
+            onProgressChanged = { channelBarView.setProgress(it) }
+            @Suppress("DEPRECATION")
+            onFullscreenStateChanged = {
+                val visibility = if (it) SYSTEM_UI_FLAG_HIDE_NAVIGATION or SYSTEM_UI_FLAG_FULLSCREEN else SYSTEM_UI_FLAG_FULLSCREEN
+                activity?.apply { window?.decorView?.systemUiVisibility = visibility }
             }
         }
     }

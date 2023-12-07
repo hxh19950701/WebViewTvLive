@@ -14,13 +14,14 @@ import java.io.BufferedReader
 open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
-        const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36"
-
+        internal const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         internal const val ENTER_FULLSCREEN_DELAY = 2000L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
         internal const val ENTER_FULLSCREEN_MAX_TRY = 5
     }
+
+    override fun isBlockNetworkImage() = false
 
     override fun userAgent(): String? = PC_USER_AGENT
 
@@ -36,45 +37,49 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     protected suspend fun enterFullscreenByDoubleScreenClick(webView: WebpageAdapterWebView, xPos: Float = 0.4F, yPos: Float = 0.6F) {
         try {
-            val url = webView.url
-            checkBreak(webView, url)
+            val url = webView.getRequestedUrl()
+            checkCancellation(webView, url)
             var times = 0
             val size = Point(webView.width, webView.height)
             val x = size.x * xPos
             val y = size.y * yPos
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
-                Log.i(TAG, "enterFullscreen trying for ${++times} times")
                 delay(ENTER_FULLSCREEN_DELAY)
-                checkBreak(webView, url)
+                checkCancellation(webView, url)
                 screenClick(webView, x, y)
-                checkBreak(webView, url)
+                checkCancellation(webView, url)
                 delay(DOUBLE_CLICK_INTERVAL)
-                checkBreak(webView, url)
+                checkCancellation(webView, url)
                 screenClick(webView, x, y)
+                Log.i(TAG, "enterFullscreen, tried ${++times} times")
             }
-        } catch (e: Exception){
+        } catch (e: Exception) {
             e.message?.let { Log.i(TAG, it) }
         }
     }
 
     protected suspend fun enterFullscreenByPressKey(webView: WebpageAdapterWebView, code: Int) {
         try {
-            val url = webView.url
-            checkBreak(webView, url)
-            delay(ENTER_FULLSCREEN_DELAY)
-            checkBreak(webView, url)
-            keyClick(webView, code)
-        } catch (e: Exception){
+            val url = webView.getRequestedUrl()
+            checkCancellation(webView, url)
+            var times = 0
+            while (times < ENTER_FULLSCREEN_MAX_TRY) {
+                delay(ENTER_FULLSCREEN_DELAY)
+                checkCancellation(webView, url)
+                keyClick(webView, code)
+                Log.i(TAG, "enterFullscreen, tried ${++times} times")
+            }
+        } catch (e: Exception) {
             e.message?.let { Log.i(TAG, it) }
         }
     }
 
-    protected fun checkBreak(webView: WebpageAdapterWebView, url: String) {
+    private fun checkCancellation(webView: WebpageAdapterWebView, url: String) {
         if (webView.isInFullscreen()) {
-            throw Exception("Already fullscreen.")
+            throw CancellationException("Already fullscreen, stop.")
         }
         if (webView.url != url) {
-            throw Exception("Url changed, $url -> ${webView.url}")
+            throw CancellationException("Url changed: $url -> ${webView.url}, stop.")
         }
     }
 

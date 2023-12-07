@@ -4,14 +4,18 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.os.Looper
 import android.util.AttributeSet
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.JavascriptInterface
+import androidx.core.view.postDelayed
 import com.hxh19950701.webviewtvlive.adapter.WebpageAdapterManager
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
+import com.tencent.smtt.export.external.interfaces.SslError
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebChromeClient
@@ -21,6 +25,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@Suppress("DEPRECATION")
 @SuppressLint("SetJavaScriptEnabled")
 class WebpageAdapterWebView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -33,10 +38,14 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     }
 
     private var isInFullScreen = false
+    private var requestedUrl: String? = null
+    private var isLoading = false
+    private val mainLooper = Looper.getMainLooper()
+    private val stopLoadingAction = Runnable { stopLoading() }
 
-    var onPageFinished: ((String)->Unit)? = null
-    var onProgressChanged: ((Int)->Unit)? = null
-    var onFullscreenStateChanged: ((Boolean)->Unit)? = null
+    var onPageFinished: ((String) -> Unit)? = null
+    var onProgressChanged: ((Int) -> Unit)? = null
+    var onFullscreenStateChanged: ((Boolean) -> Unit)? = null
 
     private val client = object : WebViewClient() {
 
@@ -60,23 +69,27 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             super.onLoadResource(view, url)
         }
 
+        override fun onReceivedSslError(view: WebView, handler: SslErrorHandler, error: SslError) {
+            handler.proceed()
+        }
+
         override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
             Log.i(TAG, "onPageStarted, $url")
             super.onPageStarted(view, url, favicon)
+            isLoading = true
         }
 
-        @Suppress("DEPRECATION")
         override fun onPageFinished(view: WebView, url: String) {
             Log.i(TAG, "onPageFinished, $url")
+            if (getUrl() != url) return
             super.onPageFinished(view, url)
-            while (view.canZoomOut()) view.zoomOut()
-            view.evaluateJavascript(WebpageAdapterManager.get(url).javascript()) {}
-            onPageFinished?.invoke(url)
+            isLoading = false
+            onPageLoadFinished()
         }
 
         override fun onReceivedHttpError(view: WebView, request: WebResourceRequest, response: WebResourceResponse) {
             super.onReceivedHttpError(view, request, response)
-            Log.i(TAG, "Http error: ${response.statusCode}")
+            Log.i(TAG, "Http error: ${response.statusCode} ${request.url}")
         }
 
     }
@@ -87,9 +100,13 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         private var callback: IX5WebChromeClient.CustomViewCallback? = null
 
         override fun onProgressChanged(view: WebView, progress: Int) {
-            Log.i(TAG, "onProgressChanged, ${view.url} $progress")
+            Log.i(TAG, "onProgressChanged, $progress")
             super.onProgressChanged(view, progress)
             onProgressChanged?.invoke(progress)
+            if (progress == 100 && isLoading) {
+                removeCallbacks(stopLoadingAction)
+                postDelayed(stopLoadingAction, 10000L)
+            }
         }
 
         override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
@@ -117,7 +134,6 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     init {
         settings.apply {
-            @Suppress("DEPRECATION")
             javaScriptEnabled = true
             domStorageEnabled = true
             //cacheMode = WebSettings.LOAD_NO_CACHE
@@ -134,11 +150,24 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             addJavascriptInterface(this, "main")
         }
     }
+
     @JavascriptInterface
     override fun loadUrl(url: String) {
-        stopLoading()
-        settings.userAgentString = WebpageAdapterManager.get(url).userAgent()
-        super.loadUrl(url)
+        if (Looper.myLooper() != mainLooper) {
+            post { loadUrl(url) }
+        } else {
+            stopLoading()
+            val adapter = WebpageAdapterManager.get(url)
+            settings.blockNetworkImage = adapter.isBlockNetworkImage()
+            settings.userAgentString = adapter.userAgent()
+            Log.i(TAG, "Load url $url")
+            this.requestedUrl = url
+            super.loadUrl(url)
+        }
+    }
+
+    fun getRequestedUrl(): String {
+        return requestedUrl ?: super.getUrl()
     }
 
     fun isInFullscreen() = isInFullScreen
@@ -148,9 +177,18 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     fun schemeEnterFullscreen() {
         Log.i(TAG, "schemeEnterFullscreen")
         CoroutineScope(Dispatchers.Main).launch {
-            //lastJob?.apply { cancelAndJoin() }
-            //webpageAdapter!!.enterFullscreen(this@ChannelPlayerView)
-            WebpageAdapterManager.get(url).enterFullscreen(this@WebpageAdapterWebView)
+            WebpageAdapterManager.get(url).tryEnterFullscreen(this@WebpageAdapterWebView)
         }
+    }
+
+    override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
+        requestFocus()
+        return super.dispatchKeyEvent(event)
+    }
+
+    private fun onPageLoadFinished() {
+        while (canZoomOut()) zoomOut()
+        evaluateJavascript(WebpageAdapterManager.get(url).javascript()) {}
+        onPageFinished?.invoke(url)
     }
 }
