@@ -21,8 +21,6 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         internal const val ENTER_FULLSCREEN_MAX_TRY = 5
     }
 
-    override fun isBlockNetworkImage() = false
-
     override fun userAgent(): String? = PC_USER_AGENT
 
     override fun isAdaptedUrl(url: String) = true
@@ -78,7 +76,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         if (webView.isInFullscreen()) {
             throw CancellationException("Already fullscreen, stop.")
         }
-        if (webView.url != url) {
+        if (webView.getRequestedUrl() != url) {
             throw CancellationException("Url changed: $url -> ${webView.url}, stop.")
         }
     }

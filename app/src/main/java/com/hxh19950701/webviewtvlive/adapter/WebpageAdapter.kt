@@ -1,6 +1,7 @@
 package com.hxh19950701.webviewtvlive.adapter
 
 import android.graphics.Point
+import android.util.Log
 import android.view.KeyEvent
 import android.view.MotionEvent
 import com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
@@ -13,16 +14,18 @@ abstract class WebpageAdapter {
 
     private var tryingEnterFullscreen = false
 
-    abstract fun isBlockNetworkImage(): Boolean
+    open fun isBlockNetworkImage() = false
 
-    abstract fun userAgent(): String?
+    open fun userAgent(): String? = null
 
     abstract fun isAdaptedUrl(url: String): Boolean
 
     abstract fun javascript(): String
 
     suspend fun tryEnterFullscreen(webView: WebpageAdapterWebView) {
-        if (!tryingEnterFullscreen) {
+        if (tryingEnterFullscreen) {
+            Log.i(TAG, "Repeated calls.")
+        } else {
             tryingEnterFullscreen = true
             enterFullscreen(webView)
             tryingEnterFullscreen = false

@@ -34,14 +34,19 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     companion object {
         private const val TAG = "WebpageAdapterWebView"
         private const val URL_CHROME = "chrome://"
-        private const val URL_BLANK = "chrome://blank"
+        const val URL_BLANK = "chrome://blank"
     }
 
     private var isInFullScreen = false
-    private var requestedUrl: String? = null
+    private var requestedUrl = URL_BLANK
     private var isLoading = false
     private val mainLooper = Looper.getMainLooper()
-    private val stopLoadingAction = Runnable { stopLoading() }
+    private val stopLoadingAction = Runnable {
+        if (isLoading) {
+            Log.i(TAG, "Loading time is too long, stop loading.")
+            stopLoading()
+        }
+    }
 
     var onPageFinished: ((String) -> Unit)? = null
     var onProgressChanged: ((Int) -> Unit)? = null
@@ -84,6 +89,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             if (getUrl() != url) return
             super.onPageFinished(view, url)
             isLoading = false
+            removeCallbacks(stopLoadingAction)
             onPageLoadFinished()
         }
 
@@ -156,19 +162,19 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         if (Looper.myLooper() != mainLooper) {
             post { loadUrl(url) }
         } else {
-            stopLoading()
+            if (isLoading) {
+                stopLoading()
+            }
             val adapter = WebpageAdapterManager.get(url)
             settings.blockNetworkImage = adapter.isBlockNetworkImage()
             settings.userAgentString = adapter.userAgent()
             Log.i(TAG, "Load url $url")
-            this.requestedUrl = url
-            super.loadUrl(url)
+            this.requestedUrl = "https://www.ntdtv.com/b5/television"
+            super.loadUrl(requestedUrl)
         }
     }
 
-    fun getRequestedUrl(): String {
-        return requestedUrl ?: super.getUrl()
-    }
+    fun getRequestedUrl() = requestedUrl
 
     fun isInFullscreen() = isInFullScreen
 

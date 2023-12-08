@@ -2,16 +2,22 @@ var video = document.getElementsByTagName('video')[0];
 if (video) {
     console.log("Video tag found.");
     //video.addEventListener('timeupdate', function() { video.muted = false; video.volume = 1 });
-    video.addEventListener('pause', function() { console.log("New state: PAUSE.") });
+    video.addEventListener('pause', function() {
+        console.log("New state: PAUSE.");
+    });
     video.addEventListener('play', function() {
     	console.log("New state: PLAY.")
     	video.muted = false;
     	video.volume = 1
         window.main.schemeEnterFullscreen();
     });
+    video.addEventListener('canplay', function(e) {
+        console.log("New state: CANPLAY.")
+    });
     if (video.paused) {
     	console.log("Video is not playing, waiting for play.")
-        video.addEventListener('canplay', function(e) { window.main.schemeEnterFullscreen() });
+    	video.autoplay = true;
+    	video.play();
     } else {
     	console.log("Video is playing already, enter fullscreen immediately.")
     	video.muted = false;

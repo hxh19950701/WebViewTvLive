@@ -29,7 +29,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             if (field == value) return
             field = value
             if (value == null) {
-                webView.stopLoading()
+                webView.loadUrl(WebpageAdapterWebView.URL_BLANK)
                 channelBarView.requestDismiss()
             } else {
                 webView.loadUrl(value.url)

@@ -320,8 +320,68 @@
     "groupName": "海外"
   },
   {
+    "name": "民視第一台",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv003?set\u003d4\u0026ch\u003d1",
+    "groupName": "海外"
+  },
+  {
+    "name": "民視台灣台",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv001?set\u003d4\u0026ch\u003d2",
+    "groupName": "海外"
+  },
+  {
+    "name": "民視",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv002?set\u003d4\u0026ch\u003d3",
+    "groupName": "海外"
+  },
+  {
+    "name": "大愛電視",
+    "url": "https://www.4gtv.tv/channel/4gtv-live007?set\u003d4\u0026ch\u003d209",
+    "groupName": "海外"
+  },
+  {
+    "name": "中視",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv040?set\u003d4\u0026ch\u003d4",
+    "groupName": "海外"
+  },
+  {
+    "name": "中視經典台",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv080?set\u003d4\u0026ch\u003d124",
+    "groupName": "海外"
+  },
+  {
+    "name": "華視",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv041?set\u003d4\u0026ch\u003d6",
+    "groupName": "海外"
+  },
+  {
+    "name": "三立綜合台",
+    "url": "https://www.4gtv.tv/channel/4gtv-live207?set\u003d4\u0026ch\u003d169",
+    "groupName": "海外"
+  },
+  {
+    "name": "ARIRANG阿里郎頻道",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv079?set\u003d4\u0026ch\u003d189",
+    "groupName": "海外"
+  },
+  {
+    "name": "DW德国之声",
+    "url": "https://m.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849",
+    "groupName": "海外"
+  },
+  {
+    "name": "VOA美国之音",
+    "url": "https://www.voanews.com/live/video/116",
+    "groupName": "海外"
+  },
+  {
     "name": "新唐人亚太台",
     "url": "https://www.ntdtv.com.tw/",
+    "groupName": "海外"
+  },
+  {
+    "name": "新唐人美东台",
+    "url": "https://www.ntdtv.com/",
     "groupName": "海外"
   }
 ]

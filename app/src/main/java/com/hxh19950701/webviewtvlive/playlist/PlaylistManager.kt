@@ -17,7 +17,7 @@ object PlaylistManager {
     private const val CACHE_EXPIRATION_MS = 24 * 60 * 60 * 1000L
     private const val KEY_PLAYLIST_URL = "playlist_url"
     private const val KEY_LAST_UPDATE = "last_update"
-    private const val UPDATE_MAX_TRY = 3
+    private const val UPDATE_MAX_TRY = 2
 
     private val client = OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).readTimeout(5, TimeUnit.SECONDS).build()
     private val gson = GsonBuilder().setPrettyPrinting().create()!!
