@@ -169,7 +169,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             settings.blockNetworkImage = adapter.isBlockNetworkImage()
             settings.userAgentString = adapter.userAgent()
             Log.i(TAG, "Load url $url")
-            this.requestedUrl = "https://www.ntdtv.com/b5/television"
+            this.requestedUrl = url
             super.loadUrl(requestedUrl)
         }
     }

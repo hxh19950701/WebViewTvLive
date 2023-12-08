@@ -18,10 +18,12 @@
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
+			android:singleLine="true"
 			android:textSize="20sp" />
 
 		<TextView
 			android:id="@+id/tvProgress"
+			android:singleLine="true"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="20dp"
@@ -30,6 +32,7 @@
 
 	<TextView
 		android:id="@+id/tvChannelUrl"
+		android:singleLine="true"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content" />
 

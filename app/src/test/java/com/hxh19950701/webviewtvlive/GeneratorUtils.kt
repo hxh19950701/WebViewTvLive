@@ -2,8 +2,9 @@ package com.hxh19950701.webviewtvlive
 
 import com.google.gson.GsonBuilder
 import com.hxh19950701.webviewtvlive.playlist.Channel
-import com.hxh19950701.webviewtvlive.playlist.Playlist
 import java.io.File
+
+const val VERSION_NAME = "1.0"
 
 fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channel): MutableCollection<Channel> {
     channels.forEach { it.groupName = name }
@@ -17,8 +18,11 @@ fun MutableCollection<Channel>.extractGroup(groupName: String): Array<Channel> {
 
 fun savePlaylist(title: String, channels: Collection<Channel>) {
     val json = gson.toJson(channels)
-    val file = File("channels/$title.json")
-    if (!file.parentFile.exists()) file.parentFile.mkdir()
+    val file = File("channels/$VERSION_NAME/$title.json")
+    val parentFile = file.parentFile
+    if (parentFile != null && !parentFile.exists()) {
+        parentFile.mkdir()
+    }
     file.writeText(json)
 }
 

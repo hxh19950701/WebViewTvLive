@@ -78,6 +78,8 @@ val fullChannels = mutableListOf<Channel>()
     .addChannels(
         "海外",
         Channel("东森新闻", "https://news.ebc.net.tw/live"),
+        Channel("新唐人亚太台", "https://www.ntdtv.com.tw/"),
+        Channel("新唐人美东台", "https://www.ntdtv.com/b5/television"),
         Channel("民視第一台", "https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1"),
         Channel("民視台灣台", "https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2"),
         Channel("民視", "https://www.4gtv.tv/channel/4gtv-4gtv002?set=4&ch=3"),
@@ -87,8 +89,10 @@ val fullChannels = mutableListOf<Channel>()
         Channel("華視", "https://www.4gtv.tv/channel/4gtv-4gtv041?set=4&ch=6"),
         Channel("三立綜合台", "https://www.4gtv.tv/channel/4gtv-live207?set=4&ch=169"),
         Channel("ARIRANG阿里郎頻道", "https://www.4gtv.tv/channel/4gtv-4gtv079?set=4&ch=189"),
-        Channel("DW德国之声", "https://m.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849"),
-        Channel("VOA美国之音", "https://www.voanews.com/live/video/116"),
-        Channel("新唐人亚太台", "https://www.ntdtv.com.tw/"),
-        Channel("新唐人美东台", "https://www.ntdtv.com/"),
+        Channel("DW ENGLISH", "https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=1"),
+        Channel("DW DEUTSCH+", "https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=4"),
+        Channel("DW ESPAÑOL", "https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=3"),
+        Channel("عربية DW", "https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=2"),
+        Channel("VOA English TV", "https://www.voanews.com/live/video/116"),
+        Channel("VOA LIVE", "https://www.voanews.com/live/video/126"),
     )
