@@ -7,8 +7,7 @@ import java.io.File
 const val VERSION_NAME = "1.0"
 
 fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channel): MutableCollection<Channel> {
-    channels.forEach { it.groupName = name }
-    addAll(channels)
+    channels.forEach { add(Channel(it.name, it.url, name)) }
     return this
 }
 
