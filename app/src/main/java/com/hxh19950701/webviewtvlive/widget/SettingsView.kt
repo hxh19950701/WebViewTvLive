@@ -1,6 +1,7 @@
 package com.hxh19950701.webviewtvlive.widget
 
 import android.content.Context
+import android.content.Intent
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.activity.TbsDebugActivity
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
 import com.hxh19950701.webviewtvlive.settings.SettingItem
 import com.hxh19950701.webviewtvlive.settings.SettingsManager
@@ -30,6 +32,8 @@ class SettingsView @JvmOverloads constructor(
             SettingsManager::setSelectedPlaylistPosition
         ),
         SettingItem("刷新频道列表", onClick = { PlaylistManager.setLastUpdate(0) }),
+        SettingItem("Tbs 调试界面",
+            onClick = { context.startActivity(Intent(context, TbsDebugActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }),
         SettingItem(
             "操作 WebView",
             arrayOf("关", "开"),
@@ -43,6 +47,13 @@ class SettingsView @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.widget_settings, this)
         rvSettings = findViewById(R.id.rvSettings)
         rvSettings.adapter = SettingsAdapter()
+    }
+
+    override fun onVisibilityChanged(changedView: View, visibility: Int) {
+        super.onVisibilityChanged(changedView, visibility)
+        if (visibility == VISIBLE) {
+            post { rvSettings.getChildAt(0)?.requestFocus() }
+        }
     }
 
     private inner class SettingsAdapter : RecyclerView.Adapter<ViewHolder>() {

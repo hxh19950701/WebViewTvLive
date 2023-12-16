@@ -5,6 +5,7 @@ import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
+import android.view.accessibility.AccessibilityEvent
 import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -109,6 +110,21 @@ class MainActivity : AppCompatActivity() {
         uiMode = if (uiMode == UiMode.STANDARD) UiMode.EXIT_CONFIRM else UiMode.STANDARD
     }
 
+    override fun dispatchGenericMotionEvent(ev: MotionEvent): Boolean {
+        repostBackToStandardModeAction()
+        return super.dispatchGenericMotionEvent(ev)
+    }
+
+    override fun dispatchPopulateAccessibilityEvent(event: AccessibilityEvent): Boolean {
+        repostBackToStandardModeAction()
+        return super.dispatchPopulateAccessibilityEvent(event)
+    }
+
+    override fun dispatchTrackballEvent(ev: MotionEvent): Boolean {
+        repostBackToStandardModeAction()
+        return super.dispatchTrackballEvent(ev)
+    }
+
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         repostBackToStandardModeAction()
         return super.dispatchTouchEvent(ev)
@@ -116,28 +132,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         repostBackToStandardModeAction()
+        println(event.keyCode)
+        if (event.keyCode == KeyEvent.KEYCODE_BACK) {
+            return super.dispatchKeyEvent(event)
+        }
         when (uiMode) {
             UiMode.CHANNELS -> if (playlistView.dispatchKeyEvent(event)) return true
             UiMode.EXIT_CONFIRM -> if (exitConfirmView.dispatchKeyEvent(event)) return true
             UiMode.SETTINGS -> if (settingsView.dispatchKeyEvent(event)) return true
-            else -> if(event.action == KeyEvent.ACTION_UP) onKeyUp(event.keyCode, event)
+            else -> if (event.action == KeyEvent.ACTION_UP) {
+                standardAction(event.keyCode); return true
+            }
         }
         return super.dispatchKeyEvent(event)
     }
 
-    override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
-        when (uiMode) {
-            UiMode.STANDARD -> {
-                when (event.keyCode) {
-                    KeyEvent.KEYCODE_DPAD_UP -> playlistView.previousChannel()
-                    KeyEvent.KEYCODE_DPAD_DOWN -> playlistView.nextChannel()
-                    KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_ENTER -> uiMode = UiMode.CHANNELS
-                }
-            }
-
-            else -> {}
+    private fun standardAction(keyCode: Int) {
+        when (keyCode) {
+            KeyEvent.KEYCODE_DPAD_UP -> playlistView.previousChannel()
+            KeyEvent.KEYCODE_DPAD_DOWN -> playlistView.nextChannel()
+            KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_DPAD_CENTER -> uiMode = UiMode.CHANNELS
         }
-        return super.onKeyUp(keyCode, event)
     }
 
     private fun repostBackToStandardModeAction() {

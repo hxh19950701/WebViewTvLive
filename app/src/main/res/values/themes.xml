@@ -1,7 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-	<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+	<style name="FullscreenTheme" parent="Theme.AppCompat.NoActionBar">
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowFullscreen">true</item>
+	</style>
+
+	<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowFullscreen">false</item>
 	</style>
 </resources>

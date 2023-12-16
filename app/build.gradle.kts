@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.hxh19950701.webviewtvlive"
-        minSdk = 16
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -35,8 +35,9 @@ android {
 dependencies {
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.tencent.tbs:tbssdk:44286")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("com.tencent.tbs:tbssdk:44286")
+    implementation("com.github.JessYanCoding:AndroidAutoSize:v1.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
     testImplementation("junit:junit:4.13.2")

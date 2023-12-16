@@ -19,7 +19,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("CCTV-11", "https://tv.cctv.com/live/cctv11/"),
         Channel("CCTV-12", "https://tv.cctv.com/live/cctv12/"),
         Channel("CCTV-13", "https://tv.cctv.com/live/cctv13/"),
-        Channel("CCTV-14", "https://tv.cctv.com/live/cctv14/"),
+        Channel("CCTV-14", "https://tv.cctv.com/live/cctvchild/"),
         Channel("CCTV-15", "https://tv.cctv.com/live/cctv15/"),
         Channel("CCTV-16", "https://tv.cctv.com/live/cctv16/"),
         Channel("CCTV-17", "https://tv.cctv.com/live/cctv17/"),

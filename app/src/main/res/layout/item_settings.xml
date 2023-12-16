@@ -6,6 +6,7 @@
 	android:background="@drawable/bg_item"
 	android:orientation="horizontal"
 	android:paddingLeft="5dp"
+	android:focusable="true"
 	android:paddingRight="5dp">
 
 	<TextView

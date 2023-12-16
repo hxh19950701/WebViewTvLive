@@ -80,7 +80,7 @@ class PlaylistView @JvmOverloads constructor(
             KeyEvent.KEYCODE_DPAD_LEFT -> btnPageUp.performClick()
             KeyEvent.KEYCODE_DPAD_RIGHT -> btnPageDown.performClick()
         }
-        return super.onKeyDown(keyCode, event)
+        return true
     }
 
     private fun selectChannel(next: Boolean) {
