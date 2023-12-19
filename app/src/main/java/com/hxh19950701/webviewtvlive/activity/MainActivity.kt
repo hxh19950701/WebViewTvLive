@@ -1,6 +1,8 @@
 package com.hxh19950701.webviewtvlive.activity
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
@@ -21,11 +23,22 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import me.jessyan.autosize.AutoSize
 
 class MainActivity : AppCompatActivity() {
 
     companion object {
-        const val LAST_CHANNEL = "last_channel"
+        private const val LAST_CHANNEL = "last_channel"
+        private val KEYS = arrayOf(
+            KeyEvent.KEYCODE_DPAD_UP,
+            KeyEvent.KEYCODE_DPAD_DOWN,
+            KeyEvent.KEYCODE_DPAD_LEFT,
+            KeyEvent.KEYCODE_DPAD_RIGHT,
+            KeyEvent.KEYCODE_DPAD_CENTER,
+            KeyEvent.KEYCODE_ENTER,
+            KeyEvent.KEYCODE_MENU,
+            KeyEvent.KEYCODE_BACK
+        )
     }
 
     enum class UiMode { STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS }
@@ -94,6 +107,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
+        AutoSize.autoConvertDensityOfGlobal(this)
+        return super.onCreateView(parent, name, context, attrs)
+    }
+
     override fun onPause() {
         super.onPause()
         uiMode = UiMode.STANDARD
@@ -132,27 +150,29 @@ class MainActivity : AppCompatActivity() {
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         repostBackToStandardModeAction()
-        println(event.keyCode)
-        if (event.keyCode == KeyEvent.KEYCODE_BACK) {
+        val keyCode = event.keyCode
+        if (!KEYS.contains(keyCode)) {
+            return false
+        }
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return super.dispatchKeyEvent(event)
         }
         when (uiMode) {
             UiMode.CHANNELS -> if (playlistView.dispatchKeyEvent(event)) return true
             UiMode.EXIT_CONFIRM -> if (exitConfirmView.dispatchKeyEvent(event)) return true
             UiMode.SETTINGS -> if (settingsView.dispatchKeyEvent(event)) return true
-            else -> if (event.action == KeyEvent.ACTION_UP) {
-                standardAction(event.keyCode); return true
+            else -> {
+                if (event.action == KeyEvent.ACTION_UP) {
+                    when (keyCode) {
+                        KeyEvent.KEYCODE_DPAD_UP -> playlistView.previousChannel()
+                        KeyEvent.KEYCODE_DPAD_DOWN -> playlistView.nextChannel()
+                        KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_DPAD_CENTER -> uiMode = UiMode.CHANNELS
+                    }
+                }
+                return true
             }
         }
         return super.dispatchKeyEvent(event)
-    }
-
-    private fun standardAction(keyCode: Int) {
-        when (keyCode) {
-            KeyEvent.KEYCODE_DPAD_UP -> playlistView.previousChannel()
-            KeyEvent.KEYCODE_DPAD_DOWN -> playlistView.nextChannel()
-            KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_DPAD_CENTER -> uiMode = UiMode.CHANNELS
-        }
     }
 
     private fun repostBackToStandardModeAction() {

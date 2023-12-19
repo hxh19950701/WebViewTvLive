@@ -10,10 +10,14 @@ import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.JavascriptInterface
-import androidx.core.view.postDelayed
 import com.hxh19950701.webviewtvlive.adapter.WebpageAdapterManager
+import com.tencent.smtt.export.external.extension.interfaces.IX5WebSettingsExtension
+import com.tencent.smtt.export.external.extension.proxy.ProxyWebChromeClientExtension
+import com.tencent.smtt.export.external.extension.proxy.ProxyWebViewClientExtension
 import com.tencent.smtt.export.external.interfaces.ConsoleMessage
 import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient
+import com.tencent.smtt.export.external.interfaces.JsResult
+import com.tencent.smtt.export.external.interfaces.MediaAccessPermissionsCallback
 import com.tencent.smtt.export.external.interfaces.SslError
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
@@ -100,10 +104,19 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     }
 
+    private val clientExtension = object : ProxyWebViewClientExtension() {
+
+    }
+
     private val chromeClient = object : WebChromeClient() {
 
         private var view: View? = null
         private var callback: IX5WebChromeClient.CustomViewCallback? = null
+
+        override fun onJsAlert(view: WebView, url: String, message: String?, result: JsResult): Boolean {
+            result.confirm()
+            return true
+        }
 
         override fun onProgressChanged(view: WebView, progress: Int) {
             Log.i(TAG, "onProgressChanged, $progress")
@@ -116,7 +129,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         }
 
         override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
-            Log.i("ConsoleMessage", msg.message())
+            Log.i(TAG, msg.message())
             return true
         }
 
@@ -138,20 +151,38 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         }
     }
 
+    private val chromeClientExtension = object : ProxyWebChromeClientExtension() {
+
+        override fun jsRequestFullScreen() {
+            Log.i(TAG, "jsRequestFullScreen")
+            super.jsRequestFullScreen()
+        }
+
+        override fun h5videoRequestFullScreen(p0: String?) {
+            Log.i(TAG, "h5videoRequestFullScreen")
+            super.h5videoRequestFullScreen(p0)
+        }
+
+        override fun onPermissionRequest(p0: String?, p1: Long, callback: MediaAccessPermissionsCallback): Boolean {
+            return true
+        }
+    }
+
     init {
         settings.apply {
             javaScriptEnabled = true
             domStorageEnabled = true
-            //cacheMode = WebSettings.LOAD_NO_CACHE
             mediaPlaybackRequiresUserGesture = false
 
             useWideViewPort = true
             loadWithOverviewMode = true
-            setSupportZoom(true)
+            //setSupportZoom(true)
         }
         apply {
             webViewClient = client
+            webViewClientExtension = clientExtension
             webChromeClient = chromeClient
+            webChromeClientExtension = chromeClientExtension
             setBackgroundColor(Color.BLACK)
             addJavascriptInterface(this, "main")
         }
@@ -166,8 +197,20 @@ class WebpageAdapterWebView @JvmOverloads constructor(
                 stopLoading()
             }
             val adapter = WebpageAdapterManager.get(url)
-            settings.blockNetworkImage = adapter.isBlockNetworkImage()
-            settings.userAgentString = adapter.userAgent()
+            settings.apply {
+                loadsImagesAutomatically = false
+                blockNetworkImage = true
+                userAgentString = adapter.userAgent()
+            }
+            settingsExtension.apply {
+                setPicModel(
+                    if (true) {
+                        IX5WebSettingsExtension.PicModel_NoPic
+                    } else {
+                        IX5WebSettingsExtension.PicModel_NORMAL
+                    }
+                )
+            }
             Log.i(TAG, "Load url $url")
             this.requestedUrl = url
             super.loadUrl(requestedUrl)

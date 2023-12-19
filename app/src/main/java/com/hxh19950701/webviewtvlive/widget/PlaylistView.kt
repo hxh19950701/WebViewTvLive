@@ -11,11 +11,12 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.misc.adjustValue
 import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.playlist.ChannelGroup
 import com.hxh19950701.webviewtvlive.playlist.Playlist
 import com.hxh19950701.webviewtvlive.playlist.Playlist.Companion.firstChannel
-import com.hxh19950701.webviewtvlive.R
 
 class PlaylistView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
@@ -67,20 +68,29 @@ class PlaylistView @JvmOverloads constructor(
         tvGroupName = findViewById(R.id.tvGroupName)
         rvChannels = findViewById(R.id.rvChannels)
 
-        btnPageUp.setOnClickListener { currentPage = if (currentPage - 1 < 0) playlist!!.groups.size - 1 else currentPage - 1 }
-        btnPageDown.setOnClickListener { currentPage = if (currentPage + 1 >= playlist!!.groups.size) 0 else currentPage + 1 }
+        btnPageUp.setOnClickListener { turnPage(false) }
+        btnPageDown.setOnClickListener { turnPage(true) }
     }
 
     fun previousChannel() = selectChannel(false)
 
     fun nextChannel() = selectChannel(true)
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-        when (keyCode) {
-            KeyEvent.KEYCODE_DPAD_LEFT -> btnPageUp.performClick()
-            KeyEvent.KEYCODE_DPAD_RIGHT -> btnPageDown.performClick()
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        val keyCode = event.keyCode
+        if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+            if (event.action == KeyEvent.ACTION_DOWN) {
+                turnPage(keyCode == KeyEvent.KEYCODE_DPAD_RIGHT)
+            }
+            return true
         }
-        return true
+        return super.dispatchKeyEvent(event)
+    }
+
+    private fun turnPage(down: Boolean) {
+        if (playlist!!.groups.size <= 1) return
+        currentPage = adjustValue(currentPage, playlist!!.groups.size, down)
+        rvChannels.post { rvChannels.getChildAt(0)?.requestFocus() }
     }
 
     private fun selectChannel(next: Boolean) {
@@ -93,11 +103,7 @@ class PlaylistView @JvmOverloads constructor(
                 playlist.firstChannel()
             } else {
                 val channels = playlist!!.groups[index.first].channels
-                val j = if (next) {
-                    if (index.second + 1 >= channels.size) 0 else index.second + 1
-                } else {
-                    if (index.second - 1 < 0) channels.size - 1 else index.second - 1
-                }
+                val j = adjustValue(index.second, channels.size, next)
                 channels[j]
             }
         }

@@ -30,7 +30,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
     }
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
-        enterFullscreenByDoubleScreenClick(webView)
+        enterFullscreenByPressKey(webView, KeyEvent.KEYCODE_F)
     }
 
     protected suspend fun enterFullscreenByDoubleScreenClick(webView: WebpageAdapterWebView, xPos: Float = 0.4F, yPos: Float = 0.6F) {

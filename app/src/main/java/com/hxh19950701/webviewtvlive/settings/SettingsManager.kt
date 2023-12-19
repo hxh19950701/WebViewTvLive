@@ -21,10 +21,10 @@ object SettingsManager {
         val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
         for (i in builtInPlaylists.indices) {
             if (builtInPlaylists[i].second == playlistUrl) {
-                return i;
+                return i
             }
         }
-        return 0;
+        return 0
     }
 
     fun setSelectedPlaylistPosition(position: Int) {

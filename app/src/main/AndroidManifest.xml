@@ -3,6 +3,9 @@
 	xmlns:tools="http://schemas.android.com/tools">
 
 	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 	<application
 		android:name=".app.LiveApplication"
@@ -17,8 +20,12 @@
 		android:usesCleartextTraffic="true"
 		tools:targetApi="31">
 
-		<meta-data android:name="design_width_in_dp" android:value="720"/>
-		<meta-data android:name="design_height_in_dp" android:value="1280"/>
+		<meta-data
+			android:name="design_width_in_dp"
+			android:value="720" />
+		<meta-data
+			android:name="design_height_in_dp"
+			android:value="1280" />
 
 		<activity
 			android:name=".activity.MainActivity"
@@ -30,6 +37,16 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+
+		<activity
+			android:name=".activity.TbsDebugActivity"
+			android:screenOrientation="portrait"
+			android:theme="@style/AppTheme" />
+
+		<service
+			android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"
+			android:label="dexopt"
+			android:process=":dexopt" />
 
 	</application>
 

@@ -9,7 +9,10 @@
 	</item>
 
 	<item android:state_pressed="true">
-		<color android:color="#AAAAAAAA" />
+		<shape android:shape="rectangle">
+			<corners android:radius="5dp" />
+			<solid android:color="#55888888" />
+		</shape>
 	</item>
 
 	<item>

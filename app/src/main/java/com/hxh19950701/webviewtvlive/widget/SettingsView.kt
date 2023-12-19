@@ -3,6 +3,7 @@ package com.hxh19950701.webviewtvlive.widget
 import android.content.Context
 import android.content.Intent
 import android.util.AttributeSet
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.hxh19950701.webviewtvlive.R
 import com.hxh19950701.webviewtvlive.activity.TbsDebugActivity
+import com.hxh19950701.webviewtvlive.misc.adjustValue
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
 import com.hxh19950701.webviewtvlive.settings.SettingItem
 import com.hxh19950701.webviewtvlive.settings.SettingsManager
@@ -28,18 +30,22 @@ class SettingsView @JvmOverloads constructor(
             "频道列表",
             SettingsManager.getPlaylistNames(),
             SettingsManager.getSelectedPlaylistPosition(),
-            null,
-            SettingsManager::setSelectedPlaylistPosition
+            onItemSelect = SettingsManager::setSelectedPlaylistPosition
         ),
-        SettingItem("刷新频道列表", onClick = { PlaylistManager.setLastUpdate(0) }),
-        SettingItem("Tbs 调试界面",
-            onClick = { context.startActivity(Intent(context, TbsDebugActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }),
+        SettingItem(
+            "刷新频道列表",
+            onClick = { PlaylistManager.setLastUpdate(0) }
+        ),
+        SettingItem(
+            "Tbs 调试界面",
+            onClick = { context.startActivity(Intent(context, TbsDebugActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+        ),
         SettingItem(
             "操作 WebView",
             arrayOf("关", "开"),
             if (SettingsManager.isWebViewTouchable()) 1 else 0,
-            null
-        ) { SettingsManager.setWebViewTouchable(it != 0) },
+            onItemSelect = {SettingsManager.setWebViewTouchable(it != 0)}
+        )
     )
 
     init {
@@ -78,10 +84,20 @@ class SettingsView @JvmOverloads constructor(
         private val btnRight: Button = itemView.findViewById(R.id.btnRight)
         private val tvItem: TextView = itemView.findViewById(R.id.tvItem)
         private val llItem: LinearLayout = itemView.findViewById(R.id.llItem)
-        lateinit var setting: SettingItem
+        private lateinit var setting: SettingItem
 
         init {
             itemView.setOnClickListener { setting.onClick?.invoke() }
+            itemView.setOnKeyListener { _, keyCode, event ->
+                if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+                    if (event.action == KeyEvent.ACTION_DOWN) {
+                        adjustItem(keyCode == KeyEvent.KEYCODE_DPAD_RIGHT)
+                    }
+                    true
+                } else {
+                    false
+                }
+            }
             btnLeft.setOnClickListener { adjustItem(false) }
             btnRight.setOnClickListener { adjustItem(true) }
         }
@@ -100,11 +116,7 @@ class SettingsView @JvmOverloads constructor(
         private fun adjustItem(next: Boolean) {
             if (setting.items.isNullOrEmpty()) return
             var selectedItemPosition = setting.selectedItemPosition
-            selectedItemPosition = if (next) {
-                if (selectedItemPosition + 1 >= setting.items!!.size) 0 else selectedItemPosition + 1
-            } else {
-                if (selectedItemPosition - 1 < 0) setting.items!!.size - 1 else selectedItemPosition - 1
-            }
+            selectedItemPosition = adjustValue(selectedItemPosition, setting.items!!.size, next)
             setting.selectedItemPosition = selectedItemPosition
             tvItem.text = setting.items!![selectedItemPosition]
             setting.onItemSelect?.invoke(selectedItemPosition)

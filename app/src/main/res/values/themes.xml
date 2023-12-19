@@ -3,10 +3,12 @@
 	<style name="FullscreenTheme" parent="Theme.AppCompat.NoActionBar">
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowBackground">@drawable/splash</item>
 	</style>
 
 	<style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowFullscreen">false</item>
+		<item name="android:windowBackground">@drawable/splash</item>
 	</style>
 </resources>
