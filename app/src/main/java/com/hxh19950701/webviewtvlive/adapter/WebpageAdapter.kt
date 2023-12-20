@@ -1,9 +1,6 @@
 package com.hxh19950701.webviewtvlive.adapter
 
-import android.graphics.Point
 import android.util.Log
-import android.view.KeyEvent
-import android.view.MotionEvent
 import com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
 
 abstract class WebpageAdapter {
@@ -13,8 +10,6 @@ abstract class WebpageAdapter {
     }
 
     private var tryingEnterFullscreen = false
-
-    open fun isBlockNetworkImage() = false
 
     open fun userAgent(): String? = null
 

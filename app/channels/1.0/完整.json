@@ -315,8 +315,8 @@
     "groupName": "广东"
   },
   {
-    "name": "东森新闻",
-    "url": "https://news.ebc.net.tw/live",
+    "name": "无线新闻",
+    "url": "https://news.tvb.com/tc/live/83",
     "groupName": "海外"
   },
   {
@@ -326,7 +326,12 @@
   },
   {
     "name": "新唐人美东台",
-    "url": "https://www.ntdtv.com/b5/television",
+    "url": "https://www.ntdtv.com/",
+    "groupName": "海外"
+  },
+  {
+    "name": "东森新闻",
+    "url": "https://news.ebc.net.tw/live",
     "groupName": "海外"
   },
   {

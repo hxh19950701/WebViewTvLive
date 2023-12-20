@@ -1,7 +1,10 @@
 var video = document.getElementsByTagName('video')[0];
 if (video) {
     console.log("Video tag found.");
-    //video.addEventListener('timeupdate', function() { video.muted = false; video.volume = 1 });
+    video.addEventListener('timeupdate', function() {
+    	video.muted = false;
+    	video.volume = 1;
+    });
     video.addEventListener('pause', function() {
         console.log("New state: PAUSE.");
     });
@@ -13,6 +16,7 @@ if (video) {
     });
     video.addEventListener('canplay', function(e) {
         console.log("New state: CANPLAY.")
+        window.main.schemeEnterFullscreen();
     });
     if (video.paused) {
     	console.log("Video is not playing, waiting for play.")

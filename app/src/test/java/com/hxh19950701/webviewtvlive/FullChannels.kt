@@ -77,9 +77,10 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("东森新闻", "https://news.ebc.net.tw/live"),
+        Channel("无线新闻", "https://news.tvb.com/tc/live/83"),
         Channel("新唐人亚太台", "https://www.ntdtv.com.tw/"),
-        Channel("新唐人美东台", "https://www.ntdtv.com/b5/television"),
+        Channel("新唐人美东台", "https://www.ntdtv.com/"),
+        Channel("东森新闻", "https://news.ebc.net.tw/live"),
         Channel("民視第一台", "https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1"),
         Channel("民視台灣台", "https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2"),
         Channel("民視", "https://www.4gtv.tv/channel/4gtv-4gtv002?set=4&ch=3"),

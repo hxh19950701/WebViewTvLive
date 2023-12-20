@@ -12,12 +12,14 @@ object WebpageAdapterManager {
         MgtvWebpageAdapter(),
         CctvWebpageAdapter(),
         GdtvWebpageAdapter(),
+        SztvWebpageAdapter(),
         NtdtvWebpageAdapter(),
         EbcWebpageAdapter(),
         VoaNewsWebpageAdapter(),
         DwWebpageAdapter(),
         YoutubeWebpageAdapter(),
         FgtvWebpageAdapter(),
+        TvbWebpageAdapter(),
         CommonWebpageAdapter(),
     )
 

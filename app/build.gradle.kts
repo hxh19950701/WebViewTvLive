@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId = "com.hxh19950701.webviewtvlive"
         minSdk = 21
-        targetSdk = 34
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
 

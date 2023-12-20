@@ -22,8 +22,6 @@ class EbcWebpageAdapter : CommonWebpageAdapter() {
     }
     """.trimIndent()
 
-    override fun isBlockNetworkImage() = true
-
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
         enterFullscreenByPressKey(webView, KeyEvent.KEYCODE_F)
     }

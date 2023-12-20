@@ -14,6 +14,4 @@ fun setApplication(application: Context) {
     _application = application
 }
 
-val preference: SharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(
-    application
-) }
+val preference: SharedPreferences by lazy { PreferenceManager.getDefaultSharedPreferences(application) }
