@@ -1,101 +1,101 @@
 [
   {
-    "name": "CCTV-1",
+    "name": "CCTV-1 综合",
     "url": "https://tv.cctv.com/live/cctv1/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-2",
+    "name": "CCTV-2 财经",
     "url": "https://tv.cctv.com/live/cctv2/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-3",
+    "name": "CCTV-3 综艺",
     "url": "https://tv.cctv.com/live/cctv3/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-4",
+    "name": "CCTV-4 中文国际",
     "url": "https://tv.cctv.com/live/cctv4/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-5",
+    "name": "CCTV-5 体育",
     "url": "https://tv.cctv.com/live/cctv5/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-5+",
+    "name": "CCTV-5+ 体育赛事",
     "url": "https://tv.cctv.com/live/cctv5plus/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-6",
+    "name": "CCTV-6 电影",
     "url": "https://tv.cctv.com/live/cctv6/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-7",
+    "name": "CCTV-7 国防军事",
     "url": "https://tv.cctv.com/live/cctv7/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-8",
+    "name": "CCTV-8 电视剧",
     "url": "https://tv.cctv.com/live/cctv8/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-9",
+    "name": "CCTV-9 记录",
     "url": "https://tv.cctv.com/live/cctvjilu/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-10",
+    "name": "CCTV-10 科教",
     "url": "https://tv.cctv.com/live/cctv10/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-11",
+    "name": "CCTV-11 戏曲",
     "url": "https://tv.cctv.com/live/cctv11/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-12",
+    "name": "CCTV-12 社会与法",
     "url": "https://tv.cctv.com/live/cctv12/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-13",
+    "name": "CCTV-13 新闻",
     "url": "https://tv.cctv.com/live/cctv13/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-14",
+    "name": "CCTV-14 少儿",
     "url": "https://tv.cctv.com/live/cctvchild/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-15",
+    "name": "CCTV-15 音乐",
     "url": "https://tv.cctv.com/live/cctv15/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-16",
+    "name": "CCTV-16 奥林匹克",
     "url": "https://tv.cctv.com/live/cctv16/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-17",
+    "name": "CCTV-17 农业农村",
     "url": "https://tv.cctv.com/live/cctv17/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-4 欧洲",
+    "name": "CCTV-4 中文国际（欧洲）",
     "url": "https://tv.cctv.com/live/cctveurope/",
     "groupName": "央视\u0026湖南"
   },
   {
-    "name": "CCTV-4 美洲",
+    "name": "CCTV-4 中文国际（美洲）",
     "url": "https://tv.cctv.com/live/cctvamerica/",
     "groupName": "央视\u0026湖南"
   },
