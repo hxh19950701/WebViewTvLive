@@ -18,6 +18,8 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         internal const val ENTER_FULLSCREEN_DELAY = 2000L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
+        internal const val CHECK_CANCELLATION_INTERVAL = 50L
+        internal const val CHECK_FOCUS_INTERVAL = 500L
         internal const val ENTER_FULLSCREEN_MAX_TRY = 10
     }
 
@@ -42,12 +44,9 @@ open class CommonWebpageAdapter : WebpageAdapter() {
             val x = size.x * xPos
             val y = size.y * yPos
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
-                delay(ENTER_FULLSCREEN_DELAY)
-                checkCancellation(webView, url)
+                delayAndCheckCancellation(webView, url, ENTER_FULLSCREEN_DELAY)
                 screenClick(webView, x, y)
-                checkCancellation(webView, url)
-                delay(DOUBLE_CLICK_INTERVAL)
-                checkCancellation(webView, url)
+                delayAndCheckCancellation(webView, url, DOUBLE_CLICK_INTERVAL)
                 screenClick(webView, x, y)
                 Log.i(TAG, "enterFullscreenByDoubleScreenClick, x=$x, y=$y, times=${++times}")
             }
@@ -62,12 +61,10 @@ open class CommonWebpageAdapter : WebpageAdapter() {
             checkCancellation(webView, url)
             var times = 0
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
-                delay(ENTER_FULLSCREEN_DELAY)
+                delayAndCheckCancellation(webView, url, ENTER_FULLSCREEN_DELAY)
                 while (!webView.isFocused && !webView.isInTouchMode) {
-                    checkCancellation(webView, url)
-                    delay(100)
+                    delayAndCheckCancellation(webView, url, CHECK_FOCUS_INTERVAL)
                 }
-                checkCancellation(webView, url)
                 webView.requestFocus()
                 keyClick(webView, keycode)
                 Log.i(TAG, "enterFullscreenByPressKey, keycode=${KeyEvent.keyCodeToString(keycode)}, times=${++times}")
@@ -75,6 +72,16 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         } catch (e: Exception) {
             e.message?.let { Log.i(TAG, it) }
         }
+    }
+
+    private suspend fun delayAndCheckCancellation(webView: WebpageAdapterWebView, url: String, timeMills: Long) {
+        val start = SystemClock.uptimeMillis()
+        var duration = timeMills
+        do {
+            delay(CHECK_CANCELLATION_INTERVAL)
+            checkCancellation(webView, url)
+            duration = start + timeMills - SystemClock.uptimeMillis()
+        } while (duration > 0)
     }
 
     private fun checkCancellation(webView: WebpageAdapterWebView, url: String) {

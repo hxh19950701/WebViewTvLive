@@ -229,8 +229,8 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     }
 
     private fun onPageLoadFinished() {
-        while (canZoomOut()) zoomOut()
-        evaluateJavascript(WebpageAdapterManager.get(url).javascript()) {}
+        while (canZoomOut()) { zoomOut() }
+        evaluateJavascript(WebpageAdapterManager.get(url).javascript(), null)
         onPageFinished?.invoke(url)
     }
 }
