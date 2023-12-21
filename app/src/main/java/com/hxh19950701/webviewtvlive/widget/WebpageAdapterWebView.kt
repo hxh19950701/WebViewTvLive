@@ -23,6 +23,7 @@ import com.tencent.smtt.export.external.interfaces.SslErrorHandler
 import com.tencent.smtt.export.external.interfaces.WebResourceRequest
 import com.tencent.smtt.export.external.interfaces.WebResourceResponse
 import com.tencent.smtt.sdk.WebChromeClient
+import com.tencent.smtt.sdk.WebSettings
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.coroutines.CoroutineScope
@@ -37,7 +38,6 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     companion object {
         private const val TAG = "WebpageAdapterWebView"
-        private const val URL_CHROME = "chrome://"
         const val URL_BLANK = "chrome://blank"
     }
 
@@ -176,6 +176,8 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
             useWideViewPort = true
             loadWithOverviewMode = true
+            setAppCacheEnabled(true)
+            cacheMode = WebSettings.LOAD_DEFAULT
             //setSupportZoom(true)
         }
         apply {
@@ -202,18 +204,13 @@ class WebpageAdapterWebView @JvmOverloads constructor(
                 blockNetworkImage = true
                 userAgentString = adapter.userAgent()
             }
-            settingsExtension.apply {
-                setPicModel(
-                    if (true) {
-                        IX5WebSettingsExtension.PicModel_NoPic
-                    } else {
-                        IX5WebSettingsExtension.PicModel_NORMAL
-                    }
-                )
+            settingsExtension?.apply {
+                setPicModel(IX5WebSettingsExtension.PicModel_NoPic)
             }
             Log.i(TAG, "Load url $url")
             this.requestedUrl = url
             super.loadUrl(requestedUrl)
+            requestFocus()
         }
     }
 
@@ -224,15 +221,11 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     @Suppress("unused")
     @JavascriptInterface
     fun schemeEnterFullscreen() {
+        if (isInFullscreen()) return
         Log.i(TAG, "schemeEnterFullscreen")
         CoroutineScope(Dispatchers.Main).launch {
             WebpageAdapterManager.get(url).tryEnterFullscreen(this@WebpageAdapterWebView)
         }
-    }
-
-    override fun dispatchKeyEvent(event: KeyEvent?): Boolean {
-        requestFocus()
-        return super.dispatchKeyEvent(event)
     }
 
     private fun onPageLoadFinished() {

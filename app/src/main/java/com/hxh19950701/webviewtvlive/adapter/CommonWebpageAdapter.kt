@@ -49,23 +49,28 @@ open class CommonWebpageAdapter : WebpageAdapter() {
                 delay(DOUBLE_CLICK_INTERVAL)
                 checkCancellation(webView, url)
                 screenClick(webView, x, y)
-                Log.i(TAG, "enterFullscreen, tried ${++times} times")
+                Log.i(TAG, "enterFullscreenByDoubleScreenClick, x=$x, y=$y, times=${++times}")
             }
         } catch (e: Exception) {
             e.message?.let { Log.i(TAG, it) }
         }
     }
 
-    protected suspend fun enterFullscreenByPressKey(webView: WebpageAdapterWebView, code: Int) {
+    protected suspend fun enterFullscreenByPressKey(webView: WebpageAdapterWebView, keycode: Int = KeyEvent.KEYCODE_F) {
         try {
             val url = webView.getRequestedUrl()
             checkCancellation(webView, url)
             var times = 0
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
                 delay(ENTER_FULLSCREEN_DELAY)
+                while (!webView.isFocused && !webView.isInTouchMode) {
+                    checkCancellation(webView, url)
+                    delay(100)
+                }
                 checkCancellation(webView, url)
-                keyClick(webView, code)
-                Log.i(TAG, "enterFullscreen, tried ${++times} times")
+                webView.requestFocus()
+                keyClick(webView, keycode)
+                Log.i(TAG, "enterFullscreenByPressKey, keycode=${KeyEvent.keyCodeToString(keycode)}, times=${++times}")
             }
         } catch (e: Exception) {
             e.message?.let { Log.i(TAG, it) }

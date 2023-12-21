@@ -58,6 +58,9 @@ class MainActivity : AppCompatActivity() {
             playlistView.visibility = if (value == UiMode.CHANNELS) View.VISIBLE else View.GONE
             exitConfirmView.visibility = if (value == UiMode.EXIT_CONFIRM) View.VISIBLE else View.GONE
             settingsView.visibility = if (value == UiMode.SETTINGS) View.VISIBLE else View.GONE
+            if (value == UiMode.STANDARD) {
+                playerView.requestFocus()
+            }
         }
 
     private val backToStandardModeAction = Runnable { uiMode = UiMode.STANDARD }
