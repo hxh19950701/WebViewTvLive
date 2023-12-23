@@ -65,6 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     private val backToStandardModeAction = Runnable { uiMode = UiMode.STANDARD }
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -86,6 +87,9 @@ class MainActivity : AppCompatActivity() {
         playerView.activity = this
         playerView.dismissAllViewCallback = { uiMode = UiMode.STANDARD }
         playerView.setOnClickListener { uiMode = if (uiMode == UiMode.STANDARD) UiMode.CHANNELS else UiMode.STANDARD }
+
+        val visibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = visibility
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
         CoroutineScope(Dispatchers.Main).launch {

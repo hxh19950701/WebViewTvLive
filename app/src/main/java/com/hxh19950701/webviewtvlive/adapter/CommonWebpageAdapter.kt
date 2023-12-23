@@ -15,20 +15,23 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
         internal const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        internal const val ENTER_FULLSCREEN_DELAY = 2000L
+        internal const val ENTER_FULLSCREEN_DELAY = 500L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
         internal const val CHECK_CANCELLATION_INTERVAL = 50L
         internal const val CHECK_FOCUS_INTERVAL = 500L
         internal const val ENTER_FULLSCREEN_MAX_TRY = 10
+        private val JAVASCRIPT_TEMPLATE = application.assets.open("default_3.js").bufferedReader().use(BufferedReader::readText)
     }
 
     override fun userAgent(): String? = PC_USER_AGENT
 
     override fun isAdaptedUrl(url: String) = true
 
+    open fun getFullscreenElementId() = "video"
+
     override fun javascript(): String {
-        return application.assets.open("default.js").bufferedReader().use(BufferedReader::readText)
+        return JAVASCRIPT_TEMPLATE.replace("%selector%", getFullscreenElementId())
     }
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
@@ -62,7 +65,8 @@ open class CommonWebpageAdapter : WebpageAdapter() {
             var times = 0
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
                 delayAndCheckCancellation(webView, url, ENTER_FULLSCREEN_DELAY)
-                while (!webView.isFocused && !webView.isInTouchMode) {
+
+                while (!webView.hasFocus() && !webView.isInTouchMode) {
                     delayAndCheckCancellation(webView, url, CHECK_FOCUS_INTERVAL)
                 }
                 webView.requestFocus()

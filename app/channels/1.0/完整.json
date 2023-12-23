@@ -100,6 +100,36 @@
     "groupName": "央视"
   },
   {
+    "name": "CGTN",
+    "url": "https://www.cgtn.com/tv",
+    "groupName": "央视"
+  },
+  {
+    "name": "CGTN Español",
+    "url": "https://espanol.cgtn.com/en-directo",
+    "groupName": "央视"
+  },
+  {
+    "name": "CGTN Français",
+    "url": "https://francais.cgtn.com/home",
+    "groupName": "央视"
+  },
+  {
+    "name": "CGTN العربية",
+    "url": "https://arabic.cgtn.com/home",
+    "groupName": "央视"
+  },
+  {
+    "name": "CGTN Русский",
+    "url": "https://russian.cgtn.com/channel",
+    "groupName": "央视"
+  },
+  {
+    "name": "CGTN Documentary",
+    "url": "https://www.cgtn.com/channel/documentary",
+    "groupName": "央视"
+  },
+  {
     "name": "湖南经视",
     "url": "https://live.mgtv.com/?channelId\u003d280",
     "groupName": "湖南"
@@ -276,42 +306,42 @@
   },
   {
     "name": "深圳卫视",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7867",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7867",
     "groupName": "广东"
   },
   {
     "name": "深圳都市",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7868",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7868",
     "groupName": "广东"
   },
   {
     "name": "深圳电视剧",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7880",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7880",
     "groupName": "广东"
   },
   {
     "name": "深圳公共",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7874",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7874",
     "groupName": "广东"
   },
   {
     "name": "深圳娱乐",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7872",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7872",
     "groupName": "广东"
   },
   {
     "name": "深圳财经",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7871",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7871",
     "groupName": "广东"
   },
   {
     "name": "深圳国际",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7944",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7944",
     "groupName": "广东"
   },
   {
     "name": "深圳少儿",
-    "url": "https://www.sztv.com.cn/dianshi.shtml?id\u003d7881",
+    "url": "https://www.sztv.com.cn/pindao/index.html?id\u003d7881",
     "groupName": "广东"
   },
   {

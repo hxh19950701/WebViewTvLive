@@ -6,15 +6,15 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.playlist.Channel
 
 class ChannelBarView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     companion object {
-        private const val MIN_SHOW_DURATION = 5000L
+        private const val MIN_SHOW_DURATION = 3000L
     }
 
     private val tvChannelName: TextView
@@ -37,6 +37,7 @@ class ChannelBarView @JvmOverloads constructor(
         removeCallbacks(dismissAction)
         tvChannelName.text = channel.name
         tvChannelUrl.text = channel.url
+        setProgress(0)
         visibility = VISIBLE
         showTime = SystemClock.uptimeMillis()
     }

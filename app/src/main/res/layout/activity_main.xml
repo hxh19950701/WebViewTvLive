@@ -25,7 +25,7 @@
 
 	<com.hxh19950701.webviewtvlive.widget.PlaylistView
 		android:id="@+id/playlist"
-		android:layout_width="300dp"
+		android:layout_width="275dp"
 		android:layout_height="match_parent"
 		android:visibility="gone" />
 

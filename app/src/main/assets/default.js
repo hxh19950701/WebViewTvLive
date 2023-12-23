@@ -40,5 +40,15 @@ if (video) {
     }
 } else {
     console.log("No video tag found.");
-    window.main.schemeEnterFullscreen();
+
+    var frame = document.getElementsByTagName('iframe')[0];
+    if (frame) {
+    	console.log("Frame tag found.");
+    	document.onkeydown = function(e) {
+            console.log('Key down: ' + e.key);
+            if (e.key == 'f') { video.requestFullscreen() }
+        }
+    } else {
+
+    }
 }

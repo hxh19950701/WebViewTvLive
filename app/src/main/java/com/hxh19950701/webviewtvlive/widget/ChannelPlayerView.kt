@@ -2,12 +2,12 @@ package com.hxh19950701.webviewtvlive.widget
 
 import android.app.Activity
 import android.content.Context
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
-import android.view.View
 import android.widget.FrameLayout
 import com.hxh19950701.webviewtvlive.R
 import com.hxh19950701.webviewtvlive.playlist.Channel
@@ -22,6 +22,7 @@ class ChannelPlayerView @JvmOverloads constructor(
     }
 
     private val webView: WebpageAdapterWebView
+    private val waitingView: WaitView
     private val channelBarView: ChannelBarView
     var activity: Activity? = null
     var channel: Channel? = null
@@ -58,23 +59,26 @@ class ChannelPlayerView @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
         webView = findViewById(R.id.webView)
         channelBarView = findViewById(R.id.channelBarView)
+        waitingView = findViewById(R.id.waitingView)
+        waitingView.webView = webView
         webView.apply {
             onPageFinished = { channelBarView.requestDismiss() }
             onProgressChanged = { channelBarView.setProgress(it) }
-            @Suppress("DEPRECATION")
-            onFullscreenStateChanged = {
-                val visibility = if (it) SYSTEM_UI_FLAG_HIDE_NAVIGATION or SYSTEM_UI_FLAG_FULLSCREEN else SYSTEM_UI_FLAG_FULLSCREEN
-                activity?.apply { window?.decorView?.systemUiVisibility = visibility }
-            }
+            onFullscreenStateChanged = {}
+            onWaitingStateChanged = { waitingView.visibility = if (it) VISIBLE else GONE }
         }
     }
 
-    override fun dispatchTouchEvent(ev: MotionEvent): Boolean {
+    override fun requestFocus(direction: Int, previouslyFocusedRect: Rect?): Boolean {
+        return webView.requestFocus(direction, previouslyFocusedRect)
+    }
+
+    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         return if (SettingsManager.isWebViewTouchable()) {
             dismissAllViewCallback?.invoke()
-            super.dispatchTouchEvent(ev)
+            super.dispatchTouchEvent(event)
         } else {
-            gestureDetector.onTouchEvent(ev)
+            gestureDetector.onTouchEvent(event)
         }
     }
 
