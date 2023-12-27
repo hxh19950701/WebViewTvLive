@@ -4,10 +4,12 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.hxh19950701.webviewtvlive.R
+import com.hxh19950701.webviewtvlive.misc.application
 import com.tencent.smtt.sdk.WebView
 
-class WaitView @JvmOverloads constructor(
+class WaitingView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
@@ -18,6 +20,7 @@ class WaitView @JvmOverloads constructor(
     var webView: WebView? = null
 
     private val reloadAction = Runnable {
+        Toast.makeText(application, "为您重新加载频道", Toast.LENGTH_SHORT).show()
         webView?.reload()
     }
 

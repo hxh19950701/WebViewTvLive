@@ -1,7 +1,6 @@
 package com.hxh19950701.webviewtvlive.widget
 
 import android.content.Context
-import android.os.SystemClock
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -14,13 +13,12 @@ class ChannelBarView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     companion object {
-        private const val MIN_SHOW_DURATION = 3000L
+        private const val DISMISS_DELAY = 3000L
     }
 
     private val tvChannelName: TextView
     private val tvChannelUrl: TextView
     private val tvProgress: TextView
-    private var showTime = 0L
 
     private val dismissAction = Runnable { visibility = GONE }
 
@@ -39,18 +37,18 @@ class ChannelBarView @JvmOverloads constructor(
         tvChannelUrl.text = channel.url
         setProgress(0)
         visibility = VISIBLE
-        showTime = SystemClock.uptimeMillis()
     }
 
-    fun requestDismiss() {
-        if (SystemClock.uptimeMillis() - showTime > MIN_SHOW_DURATION) {
-            dismissAction.run()
-        } else {
-            postDelayed(dismissAction, showTime + MIN_SHOW_DURATION - SystemClock.uptimeMillis())
-        }
+    fun dismiss() {
+        removeCallbacks(dismissAction)
+        visibility = GONE
     }
 
     fun setProgress(progress: Int) {
+        removeCallbacks(dismissAction)
         tvProgress.text = "$progress%"
+        if (progress == 100) {
+            postDelayed(dismissAction, DISMISS_DELAY)
+        }
     }
 }

@@ -15,7 +15,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
         internal const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        internal const val ENTER_FULLSCREEN_DELAY = 500L
+        internal const val ENTER_FULLSCREEN_DELAY = 1000L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
         internal const val CHECK_CANCELLATION_INTERVAL = 50L
@@ -31,7 +31,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
     open fun getFullscreenElementId() = "video"
 
     override fun javascript(): String {
-        return JAVASCRIPT_TEMPLATE.replace("%selector%", getFullscreenElementId())
+        return JAVASCRIPT_TEMPLATE.replaceFirst("%selector%", getFullscreenElementId())
     }
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
@@ -40,7 +40,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     protected suspend fun enterFullscreenByDoubleScreenClick(webView: WebpageAdapterWebView, xPos: Float = 0.4F, yPos: Float = 0.6F) {
         try {
-            val url = webView.getRequestedUrl()
+            val url = webView.url
             checkCancellation(webView, url)
             var times = 0
             val size = Point(webView.width, webView.height)
@@ -60,12 +60,11 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     protected suspend fun enterFullscreenByPressKey(webView: WebpageAdapterWebView, keycode: Int = KeyEvent.KEYCODE_F) {
         try {
-            val url = webView.getRequestedUrl()
+            val url = webView.url
             checkCancellation(webView, url)
             var times = 0
             while (times < ENTER_FULLSCREEN_MAX_TRY) {
                 delayAndCheckCancellation(webView, url, ENTER_FULLSCREEN_DELAY)
-
                 while (!webView.hasFocus() && !webView.isInTouchMode) {
                     delayAndCheckCancellation(webView, url, CHECK_FOCUS_INTERVAL)
                 }
@@ -92,7 +91,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         if (webView.isInFullscreen()) {
             throw CancellationException("Already fullscreen, stop.")
         }
-        if (webView.getRequestedUrl() != url) {
+        if (webView.url != url) {
             throw CancellationException("Url changed: $url -> ${webView.url}, stop.")
         }
     }

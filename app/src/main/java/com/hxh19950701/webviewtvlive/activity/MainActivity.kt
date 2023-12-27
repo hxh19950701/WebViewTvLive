@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.hxh19950701.webviewtvlive.R
 import com.hxh19950701.webviewtvlive.misc.preference
+import com.hxh19950701.webviewtvlive.playlist.Channel
 import com.hxh19950701.webviewtvlive.playlist.Playlist.Companion.firstChannel
 import com.hxh19950701.webviewtvlive.playlist.PlaylistManager
 import com.hxh19950701.webviewtvlive.widget.ChannelPlayerView
@@ -49,7 +50,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loadingPlaylistView: TextView
     private lateinit var exitConfirmView: ExitConfirmView
     private lateinit var settingsView: SettingsView
-    private var isDestroyed = false
+    private var lastChannel: Channel? = null
 
     private var uiMode = UiMode.STANDARD
         set(value) {
@@ -119,13 +120,21 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateView(parent, name, context, attrs)
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (lastChannel != null) {
+            playerView.channel = lastChannel
+        }
+    }
+
     override fun onPause() {
         super.onPause()
         uiMode = UiMode.STANDARD
+        lastChannel = playerView.channel
+        playerView.channel = null
     }
 
     override fun onDestroy() {
-        isDestroyed = true
         playerView.channel = null
         super.onDestroy()
     }
@@ -133,6 +142,13 @@ class MainActivity : AppCompatActivity() {
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         uiMode = if (uiMode == UiMode.STANDARD) UiMode.EXIT_CONFIRM else UiMode.STANDARD
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            playerView.requestFocus()
+        }
     }
 
     override fun dispatchGenericMotionEvent(ev: MotionEvent): Boolean {

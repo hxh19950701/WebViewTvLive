@@ -4,13 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
-import android.os.Looper
 import android.util.AttributeSet
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.webkit.JavascriptInterface
 import com.hxh19950701.webviewtvlive.adapter.WebpageAdapterManager
+import com.hxh19950701.webviewtvlive.misc.isMainThread
 import com.tencent.smtt.export.external.extension.interfaces.IX5WebSettingsExtension
 import com.tencent.smtt.export.external.extension.proxy.ProxyWebChromeClientExtension
 import com.tencent.smtt.export.external.extension.proxy.ProxyWebViewClientExtension
@@ -29,7 +29,9 @@ import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.system.measureTimeMillis
 
 @Suppress("unused", "DEPRECATION")
 @SuppressLint("SetJavaScriptEnabled")
@@ -39,23 +41,16 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     companion object {
         private const val TAG = "WebpageAdapterWebView"
-        const val URL_BLANK = "chrome://blank"
-        private const val SHOW_WAITING_VIEW_DELAY = 2000L
+        const val URL_BLANK = "about:blank"
+        private const val SHOW_WAITING_VIEW_DELAY = 3000L
         private const val MAX_ZOOM_OUT_LEVEL = 3
-        private const val MAX_WAITING_MS = 8000L
     }
 
+    private var requestedUrl = ""
     private var isInFullscreen = false
-    private var requestedUrl = URL_BLANK
-    private var isLoading = false
-    private val mainLooper = Looper.getMainLooper()
-    private val stopLoadingAction = Runnable {
-        if (isLoading) {
-            Log.i(TAG, "Loading time is too long, stop loading.")
-            stopLoading()
-        }
-    }
+    private var isPageLoading = false
     private val showWaitingViewAction = Runnable { onWaitingStateChanged?.invoke(true) }
+    private val dismissWaitingViewAction = Runnable { onWaitingStateChanged?.invoke(false) }
 
     var onWaitingStateChanged: ((Boolean) -> Unit)? = null
     var onPageFinished: ((String) -> Unit)? = null
@@ -89,19 +84,16 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         }
 
         override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
-            Log.i(TAG, "onPageStarted, $url")
             super.onPageStarted(view, url, favicon)
+            Log.i(TAG, "onPageStarted, $url")
+            isPageLoading = true
             disablePlayCheck()
-            isLoading = true
         }
 
         override fun onPageFinished(view: WebView, url: String) {
-            Log.i(TAG, "onPageFinished, $url")
             super.onPageFinished(view, url)
-            if (getRequestedUrl() != url) return
-            isLoading = false
-            removeCallbacks(stopLoadingAction)
-            onPageLoadFinished()
+            Log.i(TAG, "onPageFinished, $url")
+            isPageLoading = false
         }
 
         override fun onReceivedHttpError(view: WebView, request: WebResourceRequest, response: WebResourceResponse) {
@@ -119,6 +111,8 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
         private var view: View? = null
         private var callback: IX5WebChromeClient.CustomViewCallback? = null
+        private var lastUrl = ""
+        private var lastProgress = 0
 
         override fun onJsAlert(view: WebView, url: String, message: String?, result: JsResult): Boolean {
             result.cancel()
@@ -126,20 +120,28 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         }
 
         override fun onProgressChanged(view: WebView, progress: Int) {
-            Log.i(TAG, "onProgressChanged, $progress")
             super.onProgressChanged(view, progress)
-            disablePlayCheck()
-            if (getRequestedUrl() != getCurrentUrl()) return
-            onProgressChanged?.invoke(progress)
-            adjustWideViewPort()
-            if (progress == 100 && isLoading) {
-                removeCallbacks(stopLoadingAction)
-                postDelayed(stopLoadingAction, MAX_WAITING_MS)
+            if (view.url != lastUrl || progress > lastProgress) {
+                Log.i(TAG, "$url, progress=$progress")
+                onProgressChanged?.invoke(progress)
+                disablePlayCheck()
+                adjustWideViewPort()
+                if (progress == 100) {
+                    evaluateJavascript(WebpageAdapterManager.get(url).javascript(), null)
+                    onPageFinished?.invoke(url)
+                }
+                lastUrl = view.url
+                lastProgress = progress
             }
         }
 
         override fun onConsoleMessage(msg: ConsoleMessage): Boolean {
-            Log.i(TAG, msg.message())
+            when (msg.messageLevel()) {
+                ConsoleMessage.MessageLevel.DEBUG, null -> Log.d(TAG, msg.message())
+                ConsoleMessage.MessageLevel.LOG, ConsoleMessage.MessageLevel.TIP -> Log.i(TAG, msg.message())
+                ConsoleMessage.MessageLevel.WARNING -> Log.w(TAG, msg.message())
+                ConsoleMessage.MessageLevel.ERROR -> Log.e(TAG, msg.message())
+            }
             return true
         }
 
@@ -160,8 +162,8 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             onFullscreenStateChanged?.invoke(false)
         }
 
-        override fun onPermissionRequest(p0: PermissionRequest?) {
-            super.onPermissionRequest(p0)
+        override fun onPermissionRequest(request: PermissionRequest) {
+            super.onPermissionRequest(request)
         }
     }
 
@@ -169,17 +171,15 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
         override fun jsRequestFullScreen() {
             Log.i(TAG, "jsRequestFullScreen")
-            super.jsRequestFullScreen()
         }
 
-        override fun h5videoRequestFullScreen(p0: String?) {
+        override fun h5videoRequestFullScreen(s: String) {
             Log.i(TAG, "h5videoRequestFullScreen")
-            super.h5videoRequestFullScreen(p0)
         }
 
         override fun onPermissionRequest(origin: String, resources: Long, callback: MediaAccessPermissionsCallback): Boolean {
             Log.i(TAG, "onPermissionRequest, origin=$origin, resources=$resources")
-            callback.invoke(origin, MediaAccessPermissionsCallback.ALLOW_VIDEO_CAPTURE or MediaAccessPermissionsCallback.ALLOW_AUDIO_CAPTURE, true)
+            callback.invoke(origin, 0, true)
             return true
         }
     }
@@ -189,12 +189,10 @@ class WebpageAdapterWebView @JvmOverloads constructor(
             javaScriptEnabled = true
             domStorageEnabled = true
             mediaPlaybackRequiresUserGesture = false
-
             useWideViewPort = true
             loadWithOverviewMode = true
             setAppCacheEnabled(true)
             cacheMode = WebSettings.LOAD_DEFAULT
-            //setSupportZoom(true)
         }
         apply {
             webViewClient = client
@@ -208,40 +206,46 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     @JavascriptInterface
     override fun loadUrl(url: String) {
-        if (Looper.myLooper() != mainLooper) {
-            post { loadUrl(url) }
-        } else {
-            if (isLoading) stopLoading()
-            settings.apply {
-                loadsImagesAutomatically = false
-                blockNetworkImage = true
-                userAgentString = WebpageAdapterManager.get(url).userAgent()
+        requestedUrl = url
+        CoroutineScope(Dispatchers.Main).launch {
+            waitCurrentPageFinish(url)
+            if (requestedUrl == url) {
+                settings.apply {
+                    loadsImagesAutomatically = false
+                    blockNetworkImage = true
+                    userAgentString = WebpageAdapterManager.get(url).userAgent()
+                }
+                settingsExtension?.apply {
+                    setPicModel(IX5WebSettingsExtension.PicModel_NoPic)
+                }
+                disablePlayCheck()
+                Log.i(TAG, "Load url $url")
+                super.loadUrl(url)
+            } else {
+                Log.i(TAG, "New url requested, ignore.")
             }
-            settingsExtension?.apply {
-                setPicModel(IX5WebSettingsExtension.PicModel_NoPic)
-            }
-            Log.i(TAG, "Load url $url")
-            this.requestedUrl = url
-            super.loadUrl(requestedUrl)
         }
     }
 
-    override fun reload() {
-        disablePlayCheck()
-        super.reload()
+    private suspend fun waitCurrentPageFinish(url: String) {
+        if (isPageLoading) {
+            Log.i(TAG, "Wait current page finish.")
+            val cost = measureTimeMillis {
+                stopLoading()
+                while (isPageLoading && requestedUrl == url) {
+                    delay(1L)
+                }
+            }
+            Log.i(TAG, "Done waiting, cost ${cost}ms.")
+        }
     }
-
-    fun getRequestedUrl() = requestedUrl
-
-    fun getCurrentUrl(): String = url
-
-    fun isInFullscreen() = isInFullscreen
 
     override fun stopLoading() {
-        disablePlayCheck()
-        removeCallbacks(stopLoadingAction)
         super.stopLoading()
+        disablePlayCheck()
     }
+
+    fun isInFullscreen() = isInFullscreen
 
     @JavascriptInterface
     fun schemeEnterFullscreen() {
@@ -254,12 +258,8 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     @JavascriptInterface
     fun notifyVideoPlaying() {
-        if (Looper.myLooper() == mainLooper) {
-            disablePlayCheck()
-            enablePlayCheck()
-        } else {
-            post { notifyVideoPlaying() }
-        }
+        disablePlayCheck()
+        enablePlayCheck()
     }
 
     @JavascriptInterface
@@ -267,17 +267,10 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         postDelayed(showWaitingViewAction, SHOW_WAITING_VIEW_DELAY)
     }
 
-    private fun disablePlayCheck() {
-        onWaitingStateChanged?.invoke(false)
+    @JavascriptInterface
+    fun disablePlayCheck() {
         removeCallbacks(showWaitingViewAction)
-    }
-
-    private fun onPageLoadFinished() {
-        disablePlayCheck()
-        if (getRequestedUrl() != getCurrentUrl()) return
-        adjustWideViewPort()
-        evaluateJavascript(WebpageAdapterManager.get(url).javascript(), null)
-        onPageFinished?.invoke(url)
+        dismissWaitingViewAction.let { if (isMainThread()) it.run() else post(it) }
     }
 
     private fun adjustWideViewPort() {

@@ -22,7 +22,7 @@ class ChannelPlayerView @JvmOverloads constructor(
     }
 
     private val webView: WebpageAdapterWebView
-    private val waitingView: WaitView
+    private val waitingView: WaitingView
     private val channelBarView: ChannelBarView
     var activity: Activity? = null
     var channel: Channel? = null
@@ -31,7 +31,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             field = value
             if (value == null) {
                 webView.loadUrl(WebpageAdapterWebView.URL_BLANK)
-                channelBarView.requestDismiss()
+                channelBarView.dismiss()
             } else {
                 webView.loadUrl(value.url)
                 channelBarView.setCurrentChannelAndShow(value)
@@ -62,7 +62,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         waitingView = findViewById(R.id.waitingView)
         waitingView.webView = webView
         webView.apply {
-            onPageFinished = { channelBarView.requestDismiss() }
+            onPageFinished = {}
             onProgressChanged = { channelBarView.setProgress(it) }
             onFullscreenStateChanged = {}
             onWaitingStateChanged = { waitingView.visibility = if (it) VISIBLE else GONE }
