@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.hxh19950701.webviewtvlive"
+    namespace = "com.vasthread.webviewtv"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.hxh19950701.webviewtvlive"
+        applicationId = "com.vasthread.webviewtv"
         minSdk = 21
-        targetSdk = 31
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -37,9 +37,11 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("com.tencent.tbs:tbssdk:44286")
+    implementation("com.tencent.bugly:crashreport:latest.release")
     implementation("com.github.JessYanCoding:AndroidAutoSize:v1.2.1")
     implementation("com.google.code.gson:gson:2.10.1")
     implementation("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation("org.apache.commons:commons-lang3:3.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

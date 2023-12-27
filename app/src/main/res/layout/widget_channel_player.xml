@@ -4,19 +4,25 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<com.hxh19950701.webviewtvlive.widget.WebpageAdapterWebView
+	<com.vasthread.webviewtv.widget.WebpageAdapterWebView
 		android:id="@+id/webView"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 
-	<com.hxh19950701.webviewtvlive.widget.WaitingView
+	<FrameLayout
+		android:id="@+id/fullscreenContainer"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_gravity="center" />
+
+	<com.vasthread.webviewtv.widget.WaitingView
 		android:id="@+id/waitingView"
 		android:layout_width="100dp"
 		android:layout_height="100dp"
 		android:layout_gravity="center"
 		android:visibility="gone" />
 
-	<com.hxh19950701.webviewtvlive.widget.ChannelBarView
+	<com.vasthread.webviewtv.widget.ChannelBarView
 		android:id="@+id/channelBarView"
 		android:layout_width="500dp"
 		android:layout_height="wrap_content"

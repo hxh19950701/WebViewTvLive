@@ -1,41 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/mainLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".activity.MainActivity">
 
-	<com.hxh19950701.webviewtvlive.widget.ChannelPlayerView
+	<com.vasthread.webviewtv.widget.ChannelPlayerView
 		android:id="@+id/player"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 
-	<TextView
-		android:id="@+id/loadingPlaylist"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="left|bottom"
-		android:paddingLeft="5dp"
-		android:paddingBottom="5dp"
-		android:text="正在加载频道列表..."
-		android:textSize="18sp" />
-
-	<com.hxh19950701.webviewtvlive.widget.PlaylistView
+	<com.vasthread.webviewtv.widget.PlaylistView
 		android:id="@+id/playlist"
 		android:layout_width="275dp"
 		android:layout_height="match_parent"
 		android:visibility="gone" />
 
-	<com.hxh19950701.webviewtvlive.widget.ExitConfirmView
+	<com.vasthread.webviewtv.widget.ExitConfirmView
 		android:id="@+id/exitConfirm"
 		android:layout_width="200dp"
 		android:layout_height="match_parent"
 		android:visibility="gone" />
 
-	<com.hxh19950701.webviewtvlive.widget.SettingsView
+	<com.vasthread.webviewtv.widget.SettingsView
 		android:id="@+id/settings"
 		android:layout_width="400dp"
 		android:layout_height="wrap_content"
