@@ -100,33 +100,43 @@
     "groupName": "央视\u0026湖南"
   },
   {
+    "name": "CCTV-4K 超高清",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600002264",
+    "groupName": "央视\u0026湖南"
+  },
+  {
     "name": "CGTN",
-    "url": "https://www.cgtn.com/tv",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600014550",
     "groupName": "央视\u0026湖南"
   },
   {
     "name": "CGTN Español",
-    "url": "https://espanol.cgtn.com/en-directo",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600084744",
     "groupName": "央视\u0026湖南"
   },
   {
     "name": "CGTN Français",
-    "url": "https://francais.cgtn.com/home",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600084704",
     "groupName": "央视\u0026湖南"
   },
   {
     "name": "CGTN العربية",
-    "url": "https://arabic.cgtn.com/home",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600084782",
     "groupName": "央视\u0026湖南"
   },
   {
     "name": "CGTN Русский",
-    "url": "https://russian.cgtn.com/channel",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600084758",
     "groupName": "央视\u0026湖南"
   },
   {
     "name": "CGTN Documentary",
-    "url": "https://www.cgtn.com/channel/documentary",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600084781",
+    "groupName": "央视\u0026湖南"
+  },
+  {
+    "name": "湖南卫视",
+    "url": "https://www.yangshipin.cn/#/tv/home?pid\u003d600002475",
     "groupName": "央视\u0026湖南"
   },
   {

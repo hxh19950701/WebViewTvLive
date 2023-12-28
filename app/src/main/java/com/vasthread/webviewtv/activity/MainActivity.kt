@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         private enum class UiMode { STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS }
 
-        private val OPERATION_TIMEOUT = 5000L
+        private const val OPERATION_TIMEOUT = 5000L
         private val OPERATION_KEYS = arrayOf(
             KeyEvent.KEYCODE_DPAD_UP,
             KeyEvent.KEYCODE_DPAD_DOWN,
@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupListener() {
         playlistView.onChannelSelectCallback = {
-            preference.edit().putString(LAST_CHANNEL, it.name).apply()
+            preference.edit().putString(LAST_CHANNEL, "${it.groupName}, ${it.name}").apply()
             playerView.channel = it
             playlistView.post { uiMode = UiMode.STANDARD }
         }
@@ -100,8 +100,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initLastChannel() {
-        val lastChannelName = preference.getString(LAST_CHANNEL, null)
-        lastChannel = playlistView.playlist!!.getAllChannels().firstOrNull { it.name == lastChannelName }
+        try {
+            val s = preference.getString(LAST_CHANNEL, "")!!
+            val pair = s.split(", ").let { Pair(it[0], it[1]) }
+            lastChannel = playlistView.playlist!!.getAllChannels().firstOrNull { it.groupName == pair.first && it.name == pair.second }
+        } catch (_: Exception) {
+        }
         if (lastChannel == null) {
             lastChannel = playlistView.playlist.firstChannel()
         }
