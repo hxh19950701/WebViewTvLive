@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.os.SystemClock
 import android.util.AttributeSet
 import android.util.Log
 import android.view.Gravity
@@ -48,11 +49,12 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         private const val SHOW_WAITING_VIEW_DELAY = 3000L
         private const val MAX_ZOOM_OUT_LEVEL = 3
         private const val CHECK_PAGE_LOADING_INTERVAL = 50L
+        private const val BLANK_PAGE_WAIT = 800L
     }
 
     private var requestedUrl = ""
     private var isInFullscreen = false
-    private var isPageLoading = false
+    private val loadingInfo = PageLoadingInfo("", false)
     private val showWaitingViewAction = Runnable { onWaitingStateChanged?.invoke(true) }
     private val dismissWaitingViewAction = Runnable { onWaitingStateChanged?.invoke(false) }
 
@@ -91,14 +93,14 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
             super.onPageStarted(view, url, favicon)
             Log.i(TAG, "onPageStarted, $url")
-            isPageLoading = true
+            loadingInfo.set(url, true)
             disablePlayCheck()
         }
 
         override fun onPageFinished(view: WebView, url: String) {
             super.onPageFinished(view, url)
             Log.i(TAG, "onPageFinished, $url")
-            isPageLoading = false
+            loadingInfo.set(url, false)
         }
 
         override fun onReceivedHttpError(view: WebView, request: WebResourceRequest, response: WebResourceResponse) {
@@ -130,8 +132,9 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
         override fun onProgressChanged(view: WebView, progress: Int) {
             super.onProgressChanged(view, progress)
+            Log.i(TAG, "$url, progress=$progress")
+            if (url == URL_BLANK) return
             if (view.url != lastUrl || progress > lastProgress) {
-                Log.i(TAG, "$url, progress=$progress")
                 onProgressChanged?.invoke(progress)
                 disablePlayCheck()
                 adjustWideViewPort()
@@ -229,7 +232,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     override fun loadUrl(url: String) {
         requestedUrl = url
         CoroutineScope(Dispatchers.Main).launch {
-            waitCurrentPageFinish(url)
+            resetPage(url)
             if (requestedUrl == url) {
                 settings.apply {
                     loadsImagesAutomatically = false
@@ -240,6 +243,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
                     setPicModel(IX5WebSettingsExtension.PicModel_NoPic)
                 }
                 disablePlayCheck()
+                chromeClient.markNewPage()
                 Log.i(TAG, "Load url $url")
                 super.loadUrl(url)
             } else {
@@ -248,17 +252,29 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         }
     }
 
-    private suspend fun waitCurrentPageFinish(url: String) {
-        if (isPageLoading) {
-            Log.i(TAG, "Wait current page finish.")
-            val cost = measureTimeMillis {
-                stopLoading()
-                while (isPageLoading && requestedUrl == url) {
+    private suspend fun resetPage(destUrl: String) {
+        Log.i(TAG, "Resetting page...")
+        val cost = measureTimeMillis {
+            super.loadUrl(URL_BLANK)
+            while (loadingInfo.url != URL_BLANK && !loadingInfo.isPageLoading) {
+                if (destUrl != requestedUrl) {
+                    Log.i(TAG, "Requested url changed, cancel.")
+                    break
+                }
+                delay(CHECK_PAGE_LOADING_INTERVAL)
+            }
+            if (destUrl == requestedUrl) {
+                val endTime = SystemClock.uptimeMillis() + BLANK_PAGE_WAIT
+                while (SystemClock.uptimeMillis() < endTime) {
+                    if (destUrl != requestedUrl) {
+                        Log.i(TAG, "Requested url changed, cancel.")
+                        break
+                    }
                     delay(CHECK_PAGE_LOADING_INTERVAL)
                 }
             }
-            Log.i(TAG, "Done waiting, cost ${cost}ms.")
         }
+        Log.i(TAG, "Done Resetting, cost ${cost}ms.")
     }
 
     override fun reload() {
@@ -304,6 +320,13 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         while (canZoomOut() && level < 3) {
             zoomOut()
             ++level
+        }
+    }
+
+    private class PageLoadingInfo(var url: String, var isPageLoading: Boolean) {
+        fun set(url: String, isPageLoading: Boolean) {
+            this.url = url
+            this.isPageLoading = isPageLoading
         }
     }
 }

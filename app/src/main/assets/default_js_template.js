@@ -17,6 +17,7 @@ function wvt_setupVideo(video) {
 	window.wvt_lastNotifyVideoPlaying = 0;
     video.autoplay = true;
     video.defaultMuted = false;
+    video.style['object-fit'] = 'fill';
     if (!video.paused) {
     	console.log("Video is playing, enter fullscreen.");
     	window.main.schemeEnterFullscreen();
