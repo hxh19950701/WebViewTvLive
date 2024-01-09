@@ -2,6 +2,7 @@ package com.vasthread.webviewtv.widget
 
 import android.content.Context
 import android.graphics.Color
+import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.LayoutInflater
@@ -21,6 +22,11 @@ import com.vasthread.webviewtv.playlist.Playlist.Companion.firstChannel
 class PlaylistView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
+
+    companion object {
+        private val statePressed = intArrayOf(android.R.attr.state_pressed)
+        private val stateEmpty = intArrayOf()
+    }
 
     private val btnPageUp: Button
     private val btnPageDown: Button
@@ -79,8 +85,13 @@ class PlaylistView @JvmOverloads constructor(
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         val keyCode = event.keyCode
         if (keyCode == KeyEvent.KEYCODE_DPAD_LEFT || keyCode == KeyEvent.KEYCODE_DPAD_RIGHT) {
+            val isLeft = keyCode == KeyEvent.KEYCODE_DPAD_LEFT
+            val background = (if (isLeft) btnPageUp else btnPageDown).background as StateListDrawable
             if (event.action == KeyEvent.ACTION_DOWN) {
-                turnPage(keyCode == KeyEvent.KEYCODE_DPAD_RIGHT)
+                background.setState(statePressed)
+                turnPage(!isLeft)
+            } else {
+                background.setState(stateEmpty)
             }
             return true
         }

@@ -62,13 +62,11 @@ class MainActivity : AppCompatActivity() {
 
     private val backToStandardModeAction = Runnable { uiMode = UiMode.STANDARD }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupUi()
         setupListener()
-        playlistView.playlist = PlaylistManager.loadPlaylist()
-        initLastChannel()
+        initChannels()
     }
 
     @Suppress("DEPRECATION")
@@ -82,7 +80,7 @@ class MainActivity : AppCompatActivity() {
 
         val visibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
         window.decorView.systemUiVisibility = visibility
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
     }
 
     private fun setupListener() {
@@ -99,11 +97,13 @@ class MainActivity : AppCompatActivity() {
         PlaylistManager.onPlaylistChange = { runOnUiThread { playlistView.playlist = it } }
     }
 
-    private fun initLastChannel() {
+    private fun initChannels() {
+        playlistView.playlist = PlaylistManager.loadPlaylist()
         try {
             val s = preference.getString(LAST_CHANNEL, "")!!
             val pair = s.split(", ").let { Pair(it[0], it[1]) }
-            lastChannel = playlistView.playlist!!.getAllChannels().firstOrNull { it.groupName == pair.first && it.name == pair.second }
+            lastChannel = playlistView.playlist!!.getAllChannels()
+                .firstOrNull { it.groupName == pair.first && it.name == pair.second }
         } catch (_: Exception) {
         }
         if (lastChannel == null) {
@@ -148,9 +148,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun dispatchGenericMotionEvent(ev: MotionEvent): Boolean {
+    override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean {
         repostBackToStandardModeAction()
-        return super.dispatchGenericMotionEvent(ev)
+        return super.dispatchGenericMotionEvent(event)
     }
 
     override fun dispatchPopulateAccessibilityEvent(event: AccessibilityEvent): Boolean {
@@ -158,14 +158,14 @@ class MainActivity : AppCompatActivity() {
         return super.dispatchPopulateAccessibilityEvent(event)
     }
 
-    override fun dispatchTrackballEvent(ev: MotionEvent): Boolean {
+    override fun dispatchTrackballEvent(event: MotionEvent): Boolean {
         repostBackToStandardModeAction()
-        return super.dispatchTrackballEvent(ev)
+        return super.dispatchTrackballEvent(event)
     }
 
-    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
+    override fun dispatchTouchEvent(event: MotionEvent): Boolean {
         repostBackToStandardModeAction()
-        return super.dispatchTouchEvent(ev)
+        return super.dispatchTouchEvent(event)
     }
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {

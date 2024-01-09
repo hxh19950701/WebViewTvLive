@@ -490,13 +490,28 @@
     "groupName": "海外"
   },
   {
-    "name": "民視",
-    "url": "https://www.4gtv.tv/channel/4gtv-4gtv002?set\u003d4\u0026ch\u003d3",
+    "name": "民視新聞台",
+    "url": "https://www.4gtv.tv/channel/litv-ftv13?set\u003d4\u0026ch\u003d31",
     "groupName": "海外"
   },
   {
-    "name": "大愛電視",
-    "url": "https://www.4gtv.tv/channel/4gtv-live007?set\u003d4\u0026ch\u003d209",
+    "name": "民視綜藝台",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv004?set\u003d4\u0026ch\u003d16",
+    "groupName": "海外"
+  },
+  {
+    "name": "民視旅遊台",
+    "url": "https://www.4gtv.tv/channel/litv-ftv07?set\u003d4\u0026ch\u003d61",
+    "groupName": "海外"
+  },
+  {
+    "name": "民視影劇台",
+    "url": "https://www.4gtv.tv/channel/litv-ftv09?set\u003d4\u0026ch\u003d24",
+    "groupName": "海外"
+  },
+  {
+    "name": "民視",
+    "url": "https://www.4gtv.tv/channel/4gtv-4gtv002?set\u003d4\u0026ch\u003d3",
     "groupName": "海外"
   },
   {
@@ -515,13 +530,23 @@
     "groupName": "海外"
   },
   {
-    "name": "三立綜合台",
-    "url": "https://www.4gtv.tv/channel/4gtv-live207?set\u003d4\u0026ch\u003d169",
+    "name": "華視新聞",
+    "url": "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273",
+    "groupName": "海外"
+  },
+  {
+    "name": "大愛電視",
+    "url": "https://www.4gtv.tv/channel/4gtv-live007?set\u003d4\u0026ch\u003d209",
     "groupName": "海外"
   },
   {
     "name": "ARIRANG阿里郎頻道",
     "url": "https://www.4gtv.tv/channel/4gtv-4gtv079?set\u003d4\u0026ch\u003d189",
+    "groupName": "海外"
+  },
+  {
+    "name": "原住民族電視台",
+    "url": "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273",
     "groupName": "海外"
   },
   {
