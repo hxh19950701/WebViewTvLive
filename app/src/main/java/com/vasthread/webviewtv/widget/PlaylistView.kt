@@ -1,7 +1,6 @@
 package com.vasthread.webviewtv.widget
 
 import android.content.Context
-import android.graphics.Color
 import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
 import android.view.KeyEvent
@@ -24,8 +23,8 @@ class PlaylistView @JvmOverloads constructor(
 ) : LinearLayout(context, attrs, defStyleAttr) {
 
     companion object {
-        private val statePressed = intArrayOf(android.R.attr.state_pressed)
-        private val stateEmpty = intArrayOf()
+        private val STATE_PRESSED = intArrayOf(android.R.attr.state_pressed)
+        private val STATE_EMPTY = intArrayOf()
     }
 
     private val btnPageUp: Button
@@ -88,10 +87,10 @@ class PlaylistView @JvmOverloads constructor(
             val isLeft = keyCode == KeyEvent.KEYCODE_DPAD_LEFT
             val background = (if (isLeft) btnPageUp else btnPageDown).background as StateListDrawable
             if (event.action == KeyEvent.ACTION_DOWN) {
-                background.setState(statePressed)
+                background.setState(STATE_PRESSED)
                 turnPage(!isLeft)
             } else {
-                background.setState(stateEmpty)
+                background.setState(STATE_EMPTY)
             }
             return true
         }
@@ -183,11 +182,13 @@ class PlaylistView @JvmOverloads constructor(
 
         fun bind(number: Int, channel: Channel) {
             this.channel = channel
-            val color = Color.parseColor(if (channel == currentChannel) "#D4762E" else "#EEEEEE")
+
             tvNumber.text = String.format("%02d", number)
-            tvNumber.setTextColor(color)
             tvTitle.text = channel.name
-            tvTitle.setTextColor(color)
+
+            val isSelected = channel == currentChannel
+            tvNumber.isSelected = isSelected
+            tvTitle.isSelected = isSelected
         }
 
         override fun onClick(v: View) {

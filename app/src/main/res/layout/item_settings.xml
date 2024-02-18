@@ -4,9 +4,9 @@
 	android:layout_width="match_parent"
 	android:layout_height="35dp"
 	android:background="@drawable/bg_item"
+	android:focusable="true"
 	android:orientation="horizontal"
 	android:paddingLeft="10dp"
-	android:focusable="true"
 	android:paddingRight="10dp">
 
 	<TextView
@@ -27,9 +27,9 @@
 			android:id="@+id/btnLeft"
 			android:layout_width="50dp"
 			android:layout_height="match_parent"
-			android:gravity="center"
 			android:background="@drawable/bg_item"
-			android:text="◀"/>
+			android:gravity="center"
+			android:text="◀" />
 
 		<TextView
 			android:id="@+id/tvItem"
@@ -43,8 +43,8 @@
 			android:id="@+id/btnRight"
 			android:layout_width="50dp"
 			android:layout_height="match_parent"
-			android:gravity="center"
 			android:background="@drawable/bg_item"
+			android:gravity="center"
 			android:text="▶" />
 	</LinearLayout>
 

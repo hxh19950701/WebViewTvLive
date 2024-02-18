@@ -19,7 +19,7 @@ import com.vasthread.webviewtv.playlist.PlaylistManager
 import com.vasthread.webviewtv.settings.SettingItem
 import com.vasthread.webviewtv.settings.SettingsManager
 
-class SettingsView @JvmOverloads constructor(
+class AppSettingsView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
@@ -44,7 +44,7 @@ class SettingsView @JvmOverloads constructor(
             "操作 WebView",
             arrayOf("关", "开"),
             if (SettingsManager.isWebViewTouchable()) 1 else 0,
-            onItemSelect = {SettingsManager.setWebViewTouchable(it != 0)}
+            onItemSelect = { SettingsManager.setWebViewTouchable(it != 0) }
         )
     )
 

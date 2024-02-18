@@ -7,6 +7,7 @@ import com.tencent.smtt.export.external.TbsCoreSettings
 import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 import com.vasthread.webviewtv.misc.setApplication
+import me.jessyan.autosize.AutoSizeConfig
 
 
 class LiveApplication : Application() {
@@ -18,8 +19,13 @@ class LiveApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         setApplication(this)
+        initAutoSize()
         initCrashReport()
         initX5()
+    }
+
+    private fun initAutoSize() {
+        AutoSizeConfig.getInstance().setExcludeFontScale(true)
     }
 
     private fun initX5() {

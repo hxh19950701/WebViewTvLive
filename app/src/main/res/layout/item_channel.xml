@@ -13,6 +13,7 @@
 		android:id="@+id/tvNumber"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
+		android:textColor="@color/color_text"
 		android:textSize="15sp" />
 
 	<TextView
@@ -20,7 +21,8 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_marginLeft="12dp"
-		android:textSize="17sp"
-		android:singleLine="true"/>
+		android:singleLine="true"
+		android:textColor="@color/color_text"
+		android:textSize="17sp" />
 
 </LinearLayout>

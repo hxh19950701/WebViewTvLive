@@ -15,10 +15,11 @@ import com.vasthread.webviewtv.misc.preference
 import com.vasthread.webviewtv.playlist.Channel
 import com.vasthread.webviewtv.playlist.Playlist.Companion.firstChannel
 import com.vasthread.webviewtv.playlist.PlaylistManager
+import com.vasthread.webviewtv.widget.AppSettingsView
 import com.vasthread.webviewtv.widget.ChannelPlayerView
+import com.vasthread.webviewtv.widget.ChannelSettingsView
 import com.vasthread.webviewtv.widget.ExitConfirmView
 import com.vasthread.webviewtv.widget.PlaylistView
-import com.vasthread.webviewtv.widget.SettingsView
 import me.jessyan.autosize.AutoSize
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val LAST_CHANNEL = "last_channel"
 
-        private enum class UiMode { STANDARD, CHANNELS, EXIT_CONFIRM, SETTINGS }
+        private enum class UiMode { STANDARD, CHANNELS, EXIT_CONFIRM, APP_SETTINGS, CHANNEL_SETTINGS }
 
         private const val OPERATION_TIMEOUT = 5000L
         private val OPERATION_KEYS = arrayOf(
@@ -45,7 +46,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainLayout: FrameLayout
     private lateinit var playlistView: PlaylistView
     private lateinit var exitConfirmView: ExitConfirmView
-    private lateinit var settingsView: SettingsView
+    private lateinit var channelSettingsView: ChannelSettingsView
+    private lateinit var appSettingsView: AppSettingsView
     private var lastChannel: Channel? = null
 
     private var uiMode = UiMode.STANDARD
@@ -54,7 +56,8 @@ class MainActivity : AppCompatActivity() {
             field = value
             playlistView.visibility = if (value == UiMode.CHANNELS) View.VISIBLE else View.GONE
             exitConfirmView.visibility = if (value == UiMode.EXIT_CONFIRM) View.VISIBLE else View.GONE
-            settingsView.visibility = if (value == UiMode.SETTINGS) View.VISIBLE else View.GONE
+            channelSettingsView.visibility = if (value == UiMode.CHANNEL_SETTINGS) View.VISIBLE else View.GONE
+            appSettingsView.visibility = if (value == UiMode.APP_SETTINGS) View.VISIBLE else View.GONE
             if (value == UiMode.STANDARD) {
                 playerView.requestFocus()
             }
@@ -76,10 +79,13 @@ class MainActivity : AppCompatActivity() {
         playerView = findViewById(R.id.player)
         playlistView = findViewById(R.id.playlist)
         exitConfirmView = findViewById(R.id.exitConfirm)
-        settingsView = findViewById(R.id.settings)
+        channelSettingsView = findViewById(R.id.channelSettings)
+        appSettingsView = findViewById(R.id.appSettings)
 
-        val visibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_FULLSCREEN
-        window.decorView.systemUiVisibility = visibility
+        val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        window.decorView.systemUiVisibility = uiOptions
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
     }
 
@@ -89,11 +95,22 @@ class MainActivity : AppCompatActivity() {
             playerView.channel = it
             playlistView.post { uiMode = UiMode.STANDARD }
         }
+        channelSettingsView.onAspectRatioSelected = {
+            playerView.setVideoRatio(it)
+            uiMode = UiMode.STANDARD
+        }
+        channelSettingsView.onGetVideoSize = { playerView.getVideoSize() }
         exitConfirmView.onUserSelection = {
-            if (it == ExitConfirmView.Selection.EXIT) finish() else uiMode = UiMode.SETTINGS
+            if (it == ExitConfirmView.Selection.EXIT) finish() else uiMode = UiMode.APP_SETTINGS
         }
         playerView.dismissAllViewCallback = { uiMode = UiMode.STANDARD }
-        playerView.setOnClickListener { uiMode = if (uiMode == UiMode.STANDARD) UiMode.CHANNELS else UiMode.STANDARD }
+        playerView.clickCallback = {
+            uiMode = if (uiMode == UiMode.STANDARD)
+                if (it) UiMode.CHANNELS else UiMode.CHANNEL_SETTINGS
+            else
+                UiMode.STANDARD
+        }
+        playerView.onVideoRatioChanged = { channelSettingsView.setSelectedAspectRatio(it) }
         PlaylistManager.onPlaylistChange = { runOnUiThread { playlistView.playlist = it } }
     }
 
@@ -180,13 +197,15 @@ class MainActivity : AppCompatActivity() {
         when (uiMode) {
             UiMode.CHANNELS -> if (playlistView.dispatchKeyEvent(event)) return true
             UiMode.EXIT_CONFIRM -> if (exitConfirmView.dispatchKeyEvent(event)) return true
-            UiMode.SETTINGS -> if (settingsView.dispatchKeyEvent(event)) return true
+            UiMode.CHANNEL_SETTINGS -> if (channelSettingsView.dispatchKeyEvent(event)) return true
+            UiMode.APP_SETTINGS -> if (appSettingsView.dispatchKeyEvent(event)) return true
             else -> {
                 if (event.action == KeyEvent.ACTION_UP) {
                     when (keyCode) {
                         KeyEvent.KEYCODE_DPAD_UP -> playlistView.previousChannel()
                         KeyEvent.KEYCODE_DPAD_DOWN -> playlistView.nextChannel()
-                        KeyEvent.KEYCODE_MENU, KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_DPAD_CENTER -> uiMode = UiMode.CHANNELS
+                        KeyEvent.KEYCODE_ENTER, KeyEvent.KEYCODE_DPAD_CENTER -> uiMode = UiMode.CHANNELS
+                        KeyEvent.KEYCODE_MENU -> uiMode = UiMode.CHANNEL_SETTINGS
                     }
                 }
                 return true

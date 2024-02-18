@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.Color
+import android.graphics.Point
 import android.os.SystemClock
 import android.util.AttributeSet
 import android.util.Log
@@ -37,6 +38,8 @@ import kotlinx.coroutines.launch
 import org.apache.commons.lang3.math.Fraction
 import kotlin.system.measureTimeMillis
 
+typealias LP = FrameLayout.LayoutParams
+
 @Suppress("unused", "DEPRECATION")
 @SuppressLint("SetJavaScriptEnabled")
 class WebpageAdapterWebView @JvmOverloads constructor(
@@ -50,9 +53,12 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         private const val MAX_ZOOM_OUT_LEVEL = 3
         private const val CHECK_PAGE_LOADING_INTERVAL = 50L
         private const val BLANK_PAGE_WAIT = 800L
+        val RATIO_16_9 = Fraction.getFraction(16, 9)!!
+        val RATIO_4_3 = Fraction.getFraction(4, 3)!!
     }
 
     private var requestedUrl = ""
+    private val videoSize = Point()
     private var isInFullscreen = false
     private val loadingInfo = PageLoadingInfo("", false)
     private val showWaitingViewAction = Runnable { onWaitingStateChanged?.invoke(true) }
@@ -63,6 +69,7 @@ class WebpageAdapterWebView @JvmOverloads constructor(
     var onPageFinished: ((String) -> Unit)? = null
     var onProgressChanged: ((Int) -> Unit)? = null
     var onFullscreenStateChanged: ((Boolean) -> Unit)? = null
+    var onVideoRatioChanged: ((Fraction) -> Unit)? = null
 
     private val client = object : WebViewClient() {
 
@@ -120,6 +127,15 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         private var callback: IX5WebChromeClient.CustomViewCallback? = null
         private var lastUrl = ""
         private var lastProgress = 0
+        var videoRatio = RATIO_16_9
+            set(value) {
+                if (field == value) return
+                field = value
+                onVideoRatioChanged?.invoke(value)
+                if (isInFullscreen) {
+                    view?.layoutParams = generateLayoutParams()
+                }
+            }
 
         fun markNewPage() {
             lastUrl = ""
@@ -133,7 +149,10 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         override fun onProgressChanged(view: WebView, progress: Int) {
             super.onProgressChanged(view, progress)
             Log.i(TAG, "$url, progress=$progress")
-            if (url == URL_BLANK) return
+            if (url == URL_BLANK) {
+                disablePlayCheck()
+                return
+            }
             if (view.url != lastUrl || progress > lastProgress) {
                 onProgressChanged?.invoke(progress)
                 disablePlayCheck()
@@ -159,12 +178,11 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
         @Suppress("RemoveRedundantQualifierName")
         fun generateLayoutParams(): FrameLayout.LayoutParams {
-            val videoRatio = Fraction.getFraction(16, 9)
             val screenRadio = Fraction.getFraction(fullscreenContainer.width, fullscreenContainer.height)
             val compare = screenRadio.compareTo(videoRatio)
-            return if (compare == 0) FrameLayout.LayoutParams(screenRadio.numerator, screenRadio.denominator, Gravity.CENTER)
-            else if (compare > 0) FrameLayout.LayoutParams(screenRadio.denominator * videoRatio.numerator / videoRatio.denominator, screenRadio.denominator, Gravity.CENTER)
-            else FrameLayout.LayoutParams(screenRadio.numerator, screenRadio.numerator * videoRatio.denominator / videoRatio.numerator, Gravity.CENTER)
+            return if (compare == 0) LP(screenRadio.numerator, screenRadio.denominator, Gravity.CENTER)
+            else if (compare > 0) LP(screenRadio.denominator * videoRatio.numerator / videoRatio.denominator, screenRadio.denominator, Gravity.CENTER)
+            else LP(screenRadio.numerator, screenRadio.numerator * videoRatio.denominator / videoRatio.numerator, Gravity.CENTER)
         }
 
         override fun onShowCustomView(view: View, callback: IX5WebChromeClient.CustomViewCallback) {
@@ -233,11 +251,15 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         requestedUrl = url
         CoroutineScope(Dispatchers.Main).launch {
             resetPage(url)
+            setVideoSize(0, 0)
             if (requestedUrl == url) {
                 settings.apply {
                     loadsImagesAutomatically = false
                     blockNetworkImage = true
                     userAgentString = WebpageAdapterManager.get(url).userAgent()
+                }
+                chromeClient.apply {
+                    videoRatio = RATIO_16_9
                 }
                 settingsExtension?.apply {
                     setPicModel(IX5WebSettingsExtension.PicModel_NoPic)
@@ -289,6 +311,12 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     fun isInFullscreen() = isInFullscreen
 
+    fun setVideoRatio(ratio: Fraction) {
+        chromeClient.videoRatio = ratio
+    }
+
+    fun getVideoRatio() = chromeClient.videoRatio
+
     @JavascriptInterface
     fun schemeEnterFullscreen() {
         if (isInFullscreen()) return
@@ -314,6 +342,13 @@ class WebpageAdapterWebView @JvmOverloads constructor(
         removeCallbacks(showWaitingViewAction)
         dismissWaitingViewAction.let { if (isMainThread()) it.run() else post(it) }
     }
+
+    @JavascriptInterface
+    fun setVideoSize(width: Int, height: Int) {
+        videoSize.set(width, height)
+    }
+
+    fun getVideoSize() = videoSize
 
     private fun adjustWideViewPort() {
         var level = 0

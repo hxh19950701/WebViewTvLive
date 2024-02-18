@@ -10,6 +10,10 @@ function wvt_onTimeUpdate(video) {
     }
 }
 
+function wvt_reportVideoSize(video) {
+	window.main.setVideoSize(video.videoWidth, video.videoHeight);
+}
+
 function wvt_setupVideo(video) {
 	if (video.wvt_setup) { return; }
 	if (document.fullscreenElement) { document.exitFullscreen(); }
@@ -21,6 +25,7 @@ function wvt_setupVideo(video) {
     if (!video.paused) {
     	console.log("Video is playing, enter fullscreen.");
     	window.main.schemeEnterFullscreen();
+    	wvt_reportVideoSize(video);
     }
     video.addEventListener('play', function() {
     	console.log("Video state: PLAY.");
@@ -31,7 +36,10 @@ function wvt_setupVideo(video) {
     video.addEventListener('pause', function() { console.log("Video state: PAUSE."); });
     video.addEventListener('timeupdate', function() { wvt_onTimeUpdate(video); });
     video.addEventListener('error', function(e) { console.log("Video state: ERROR."); });
-    //video.addEventListener('canplay', function(e) { console.log("Video state: CANPLAY."); });
+    video.addEventListener('canplay', function(e) {
+		console.log("Video state: CANPLAY.");
+		wvt_reportVideoSize(video);
+	});
     //video.addEventListener('canplaythrough', function(e) { console.log("Video state: CANPLAYTHROUGH."); });
     //video.addEventListener('durationchange', function(e) { console.log("Video state: DURATIONCHANGE."); });
 	video.wvt_setup = true;

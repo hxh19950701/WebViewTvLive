@@ -36,7 +36,9 @@ class ChannelPlayerView @JvmOverloads constructor(
                 channelBarView.setCurrentChannelAndShow(value)
             }
         }
+    var clickCallback: ((Boolean) -> Unit)? = null
     var dismissAllViewCallback: (() -> Unit)? = null
+    var onVideoRatioChanged: ((Boolean) -> Unit)? = null
 
     private val gestureDetector = GestureDetector(context, object : GestureDetector.OnGestureListener {
 
@@ -44,7 +46,10 @@ class ChannelPlayerView @JvmOverloads constructor(
 
         override fun onShowPress(e: MotionEvent) = Unit
 
-        override fun onSingleTapUp(e: MotionEvent) = performClick()
+        override fun onSingleTapUp(e: MotionEvent): Boolean {
+            clickCallback?.invoke(e.x < width * 0.75)
+            return true
+        }
 
         override fun onScroll(e1: MotionEvent?, e2: MotionEvent, distanceX: Float, distanceY: Float) = false
 
@@ -66,6 +71,7 @@ class ChannelPlayerView @JvmOverloads constructor(
             onProgressChanged = { channelBarView.setProgress(it) }
             onFullscreenStateChanged = {}
             onWaitingStateChanged = { waitingView.visibility = if (it) VISIBLE else GONE }
+            onVideoRatioChanged = { this@ChannelPlayerView.onVideoRatioChanged?.invoke(it == WebpageAdapterWebView.RATIO_16_9) }
         }
     }
 
@@ -89,4 +95,10 @@ class ChannelPlayerView @JvmOverloads constructor(
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         return false
     }
+
+    fun setVideoRatio(is_16_9: Boolean) {
+        webView.setVideoRatio(if (is_16_9) WebpageAdapterWebView.RATIO_16_9 else WebpageAdapterWebView.RATIO_4_3)
+    }
+
+    fun getVideoSize() = webView.getVideoSize()
 }

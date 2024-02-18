@@ -24,8 +24,15 @@
 		android:layout_height="match_parent"
 		android:visibility="gone" />
 
-	<com.vasthread.webviewtv.widget.SettingsView
-		android:id="@+id/settings"
+	<com.vasthread.webviewtv.widget.ChannelSettingsView
+		android:id="@+id/channelSettings"
+		android:layout_width="150dp"
+		android:layout_height="match_parent"
+		android:layout_gravity="end"
+		android:visibility="gone" />
+
+	<com.vasthread.webviewtv.widget.AppSettingsView
+		android:id="@+id/appSettings"
 		android:layout_width="400dp"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
