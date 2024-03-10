@@ -1,5 +1,6 @@
 package com.vasthread.webviewtv.widget
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Build
 import android.util.AttributeSet
@@ -11,6 +12,7 @@ import android.widget.TextView
 import com.tencent.smtt.sdk.QbSdk
 import com.vasthread.webviewtv.R
 
+@SuppressLint("SetTextI18n")
 class ExitConfirmView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
@@ -20,6 +22,7 @@ class ExitConfirmView @JvmOverloads constructor(
     var onUserSelection: ((Selection) -> Unit)? = null
 
     init {
+        isClickable = true
         gravity = Gravity.CENTER
         orientation = VERTICAL
         setBackgroundResource(R.drawable.bg)

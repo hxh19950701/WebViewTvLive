@@ -23,6 +23,7 @@ class ChannelBarView @JvmOverloads constructor(
     private val dismissAction = Runnable { visibility = GONE }
 
     init {
+        isClickable = true
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_channel_bar, this)
         tvChannelName = findViewById(R.id.tvChannelName)

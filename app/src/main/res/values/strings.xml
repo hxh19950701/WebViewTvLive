@@ -1,3 +1,13 @@
 <resources>
 	<string name="app_name">WebView 电视</string>
+	
+	<string name="toast_reload_channel">为您重新加载频道</string>
+	<string name="unknown">未知</string>
+	<string name="channel_list">频道列表</string>
+	<string name="refresh_channel_list">刷新频道列表</string>
+	<string name="tbs_debug">Tbs 调试界面</string>
+	<string name="web_view_touchable">操作 WebView</string>
+
+	<string name="on">开</string>
+	<string name="off">关</string>
 </resources>

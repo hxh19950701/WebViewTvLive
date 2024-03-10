@@ -23,6 +23,7 @@ class ChannelSettingsView @JvmOverloads constructor(
     var onGetVideoSize: (() -> Point)? = null
 
     init {
+        isClickable = true
         orientation = VERTICAL
         setBackgroundResource(R.drawable.bg)
         gravity = Gravity.CENTER

@@ -20,11 +20,12 @@ class WaitingView @JvmOverloads constructor(
     var webView: WebView? = null
 
     private val reloadAction = Runnable {
-        Toast.makeText(application, "为您重新加载频道", Toast.LENGTH_SHORT).show()
+        Toast.makeText(application, R.string.toast_reload_channel, Toast.LENGTH_SHORT).show()
         webView?.reload()
     }
 
     init {
+        isClickable = true
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_waiting, this)
     }

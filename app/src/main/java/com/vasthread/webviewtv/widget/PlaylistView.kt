@@ -1,5 +1,6 @@
 package com.vasthread.webviewtv.widget
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
@@ -64,6 +65,7 @@ class PlaylistView @JvmOverloads constructor(
     var onChannelSelectCallback: ((Channel) -> Unit)? = null
 
     init {
+        isClickable = true
         orientation = VERTICAL
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_playlist, this)
@@ -119,9 +121,10 @@ class PlaylistView @JvmOverloads constructor(
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun setCurrentGroup(group: ChannelGroup) {
         rvChannels.adapter = ChannelAdapter(group)
-        tvGroupName.text = group.name + "(${group.channels.size})"
+        tvGroupName.text = "${group.name}(${group.channels.size})"
     }
 
     private fun focusCurrentChannel() {
@@ -139,6 +142,7 @@ class PlaylistView @JvmOverloads constructor(
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
         super.onVisibilityChanged(changedView, visibility)
         if (visibility == VISIBLE && playlist != null && currentChannel != null) {

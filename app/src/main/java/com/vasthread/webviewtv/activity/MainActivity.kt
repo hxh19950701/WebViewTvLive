@@ -166,27 +166,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean {
-        repostBackToStandardModeAction()
+        if (event.action == MotionEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
         return super.dispatchGenericMotionEvent(event)
     }
 
     override fun dispatchPopulateAccessibilityEvent(event: AccessibilityEvent): Boolean {
-        repostBackToStandardModeAction()
+            repostBackToStandardModeAction()
         return super.dispatchPopulateAccessibilityEvent(event)
     }
 
     override fun dispatchTrackballEvent(event: MotionEvent): Boolean {
-        repostBackToStandardModeAction()
+        if (event.action == MotionEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
         return super.dispatchTrackballEvent(event)
     }
 
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-        repostBackToStandardModeAction()
+        if (event.action == MotionEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
         return super.dispatchTouchEvent(event)
     }
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-        repostBackToStandardModeAction()
+        if (event.action == KeyEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
         val keyCode = event.keyCode
         if (!OPERATION_KEYS.contains(keyCode)) {
             return false

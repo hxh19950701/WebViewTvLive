@@ -27,28 +27,29 @@ class AppSettingsView @JvmOverloads constructor(
 
     private val settings = arrayOf(
         SettingItem(
-            "频道列表",
+            R.string.channel_list,
             SettingsManager.getPlaylistNames(),
             SettingsManager.getSelectedPlaylistPosition(),
             onItemSelect = SettingsManager::setSelectedPlaylistPosition
         ),
         SettingItem(
-            "刷新频道列表",
+            R.string.refresh_channel_list,
             onClick = { PlaylistManager.setLastUpdate(0, true) }
         ),
         SettingItem(
-            "Tbs 调试界面",
+            R.string.tbs_debug,
             onClick = { context.startActivity(Intent(context, TbsDebugActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
         ),
         SettingItem(
-            "操作 WebView",
-            arrayOf("关", "开"),
+            R.string.web_view_touchable,
+            arrayOf(context.getString(R.string.off), context.getString(R.string.on)),
             if (SettingsManager.isWebViewTouchable()) 1 else 0,
             onItemSelect = { SettingsManager.setWebViewTouchable(it != 0) }
         )
     )
 
     init {
+        isClickable = true
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_settings, this)
         rvSettings = findViewById(R.id.rvSettings)
@@ -104,7 +105,7 @@ class AppSettingsView @JvmOverloads constructor(
 
         fun bind(setting: SettingItem) {
             this.setting = setting
-            tvTitle.text = setting.title
+            tvTitle.text = rootView.context.getString(setting.titleRes)
             if (setting.items.isNullOrEmpty()) {
                 llItem.visibility = GONE
             } else {
