@@ -15,12 +15,12 @@ fun MutableCollection<Channel>.extractGroup(groupName: String): Array<Channel> {
     return filter { it.groupName == groupName }.toTypedArray()
 }
 
-fun savePlaylist(title: String, channels: Collection<Channel>) {
+fun savePlaylist(title: String, channels: Collection<Channel>, path: String = "channels/$VERSION_NAME/") {
     val json = gson.toJson(channels)
-    val file = File("channels/$VERSION_NAME/$title.json")
+    val file = File(path, "$title.json")
     val parentFile = file.parentFile
     if (parentFile != null && !parentFile.exists()) {
-        parentFile.mkdir()
+        parentFile.mkdirs()
     }
     file.writeText(json)
 }

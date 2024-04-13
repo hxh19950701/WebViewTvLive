@@ -1,5 +1,6 @@
 package com.vasthread.webviewtv.misc
 
+import android.net.TrafficStats
 import android.os.Looper
 
 private val mainLooper = Looper.getMainLooper()
@@ -13,3 +14,8 @@ fun adjustValue(value: Int, size: Int, next: Boolean): Int {
 }
 
 fun isMainThread() = Looper.myLooper() == mainLooper
+
+fun getTrafficBytes(): Long {
+    val uid = application.applicationInfo.uid
+    return TrafficStats.getUidRxBytes(uid) + TrafficStats.getUidTxBytes(uid)
+}

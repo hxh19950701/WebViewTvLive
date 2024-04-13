@@ -33,12 +33,23 @@ class AppSettingsView @JvmOverloads constructor(
             onItemSelect = SettingsManager::setSelectedPlaylistPosition
         ),
         SettingItem(
+            R.string.max_loading_time,
+            context.resources.getStringArray(R.array.loading_time_text),
+            context.resources.getIntArray(R.array.loading_time_value).indexOf(SettingsManager.getMaxLoadingTime()),
+            onItemSelect = {
+                SettingsManager.setMaxLoadingTime(context.resources.getIntArray(R.array.loading_time_value)[it])
+            }
+        ),
+        SettingItem(
             R.string.refresh_channel_list,
             onClick = { PlaylistManager.setLastUpdate(0, true) }
         ),
         SettingItem(
             R.string.tbs_debug,
-            onClick = { context.startActivity(Intent(context, TbsDebugActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+            onClick = {
+                context.startActivity(Intent(context, TbsDebugActivity::class.java)
+                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+            }
         ),
         SettingItem(
             R.string.web_view_touchable,
@@ -56,8 +67,8 @@ class AppSettingsView @JvmOverloads constructor(
         rvSettings.adapter = SettingsAdapter()
     }
 
-    override fun onVisibilityChanged(changedView: View, visibility: Int) {
-        super.onVisibilityChanged(changedView, visibility)
+    override fun setVisibility(visibility: Int) {
+        super.setVisibility(visibility)
         if (visibility == VISIBLE) {
             post { rvSettings.getChildAt(0)?.requestFocus() }
         }

@@ -1,6 +1,7 @@
 package com.vasthread.webviewtv.activity
 
 import android.content.Context
+import android.content.res.Configuration
 import android.os.Bundle
 import android.util.AttributeSet
 import android.view.KeyEvent
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var exitConfirmView: ExitConfirmView
     private lateinit var channelSettingsView: ChannelSettingsView
     private lateinit var appSettingsView: AppSettingsView
+
     private var lastChannel: Channel? = null
 
     private var uiMode = UiMode.STANDARD
@@ -104,9 +106,9 @@ class MainActivity : AppCompatActivity() {
             if (it == ExitConfirmView.Selection.EXIT) finish() else uiMode = UiMode.APP_SETTINGS
         }
         playerView.dismissAllViewCallback = { uiMode = UiMode.STANDARD }
-        playerView.clickCallback = {
+        playerView.clickCallback = { x, _ ->
             uiMode = if (uiMode == UiMode.STANDARD)
-                if (it) UiMode.CHANNELS else UiMode.CHANNEL_SETTINGS
+                if (x < playerView.width - channelSettingsView.layoutParams.width) UiMode.CHANNELS else UiMode.CHANNEL_SETTINGS
             else
                 UiMode.STANDARD
         }
@@ -135,7 +137,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (lastChannel != null) {
+        if (lastChannel != null && playerView.channel == null) {
             playlistView.currentChannel = lastChannel
         }
     }
@@ -173,7 +175,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchPopulateAccessibilityEvent(event: AccessibilityEvent): Boolean {
-            repostBackToStandardModeAction()
+        repostBackToStandardModeAction()
         return super.dispatchPopulateAccessibilityEvent(event)
     }
 
@@ -226,4 +228,5 @@ class MainActivity : AppCompatActivity() {
         playerView.removeCallbacks(backToStandardModeAction)
         playerView.postDelayed(backToStandardModeAction, OPERATION_TIMEOUT)
     }
+
 }

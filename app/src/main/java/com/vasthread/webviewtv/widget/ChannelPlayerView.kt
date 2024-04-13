@@ -1,6 +1,7 @@
 package com.vasthread.webviewtv.widget
 
 import android.content.Context
+import android.graphics.Color
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.GestureDetector
@@ -36,7 +37,7 @@ class ChannelPlayerView @JvmOverloads constructor(
                 channelBarView.setCurrentChannelAndShow(value)
             }
         }
-    var clickCallback: ((Boolean) -> Unit)? = null
+    var clickCallback: ((Float, Float) -> Unit)? = null
     var dismissAllViewCallback: (() -> Unit)? = null
     var onVideoRatioChanged: ((Boolean) -> Unit)? = null
 
@@ -47,7 +48,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         override fun onShowPress(e: MotionEvent) = Unit
 
         override fun onSingleTapUp(e: MotionEvent): Boolean {
-            clickCallback?.invoke(e.x < width * 0.75)
+            clickCallback?.invoke(e.x, e.y)
             return true
         }
 
@@ -61,6 +62,7 @@ class ChannelPlayerView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
+        setBackgroundColor(Color.BLACK)
         webView = findViewById(R.id.webView)
         channelBarView = findViewById(R.id.channelBarView)
         waitingView = findViewById(R.id.waitingView)

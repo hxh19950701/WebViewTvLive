@@ -15,7 +15,7 @@
 			android:layout_marginVertical="10dp"
 			android:layout_marginStart="10dp"
 			android:singleLine="true"
-			android:text="画面比例"
+			android:text="@string/aspect_ratio"
 			android:textColor="@color/color_text"
 			android:textSize="17sp" />
 
@@ -49,7 +49,7 @@
 			android:layout_marginVertical="10dp"
 			android:layout_marginStart="10dp"
 			android:singleLine="true"
-			android:text="画面尺寸"
+			android:text="@string/video_size"
 			android:textColor="@color/color_text"
 			android:textSize="17sp" />
 
@@ -61,6 +61,47 @@
 			android:checked="true"
 			android:gravity="center"
 			android:text="0x0"
+			android:textColor="@color/color_text"
+			android:textSize="15sp" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="10dp"
+			android:layout_marginStart="10dp"
+			android:singleLine="true"
+			android:text="@string/current_time"
+			android:textColor="@color/color_text"
+			android:textSize="17sp" />
+
+		<TextView
+			android:id="@+id/tvCurrentTime"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:checked="true"
+			android:gravity="center"
+			android:textColor="@color/color_text"
+			android:textSize="15sp" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginVertical="10dp"
+			android:layout_marginStart="10dp"
+			android:singleLine="true"
+			android:text="@string/current_network_speed"
+			android:textColor="@color/color_text"
+			android:textSize="17sp" />
+
+		<TextView
+			android:id="@+id/tvCurrentNetworkSpeed"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:checked="true"
+			android:gravity="center"
+			android:text="-- KB/s"
 			android:textColor="@color/color_text"
 			android:textSize="15sp" />
 	</LinearLayout>

@@ -8,14 +8,11 @@ import android.widget.Toast
 import com.tencent.smtt.sdk.WebView
 import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.application
+import com.vasthread.webviewtv.settings.SettingsManager
 
 class WaitingView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
-
-    companion object {
-        private const val RELOAD_DELAY = 10000L
-    }
 
     var webView: WebView? = null
 
@@ -34,7 +31,7 @@ class WaitingView @JvmOverloads constructor(
         super.setVisibility(visibility)
         removeCallbacks(reloadAction)
         if (visibility == VISIBLE) {
-            postDelayed(reloadAction, RELOAD_DELAY)
+            postDelayed(reloadAction, SettingsManager.getMaxLoadingTime() * 1000L)
         }
     }
 

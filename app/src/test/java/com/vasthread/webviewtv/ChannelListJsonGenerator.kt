@@ -7,8 +7,15 @@ class ChannelListJsonGenerator {
 
     @Test
     fun makeAll() {
+        makeDefault();
         makeFull()
         makeCCTVAndHunanTV()
+    }
+
+    private fun makeDefault() {
+        val channels = mutableListOf<Channel>()
+            .addChannels("默认", fullChannels.extractGroup("央视")[0])
+        savePlaylist("default_playlist", channels, "src/main/assets")
     }
 
     @Test

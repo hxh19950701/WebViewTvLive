@@ -6,6 +6,7 @@ import com.vasthread.webviewtv.playlist.PlaylistManager
 object SettingsManager {
 
     private const val KEY_WEB_VIEW_TOUCHABLE = "web_view_touchable"
+    private const val KEY_MAX_LOADING_TIME = "max_loading_time"
 
     fun getPlaylistNames(): Array<String> {
         val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
@@ -38,5 +39,13 @@ object SettingsManager {
 
     fun isWebViewTouchable(): Boolean {
         return preference.getBoolean(KEY_WEB_VIEW_TOUCHABLE, false)
+    }
+
+    fun setMaxLoadingTime(second: Int) {
+        preference.edit().putInt(KEY_MAX_LOADING_TIME, second).apply()
+    }
+
+    fun getMaxLoadingTime(): Int {
+        return preference.getInt(KEY_MAX_LOADING_TIME, 15)
     }
 }
