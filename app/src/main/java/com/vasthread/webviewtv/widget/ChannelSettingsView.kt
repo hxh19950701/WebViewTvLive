@@ -14,6 +14,7 @@ import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.getTrafficBytes
 import java.text.SimpleDateFormat
 import java.util.Locale
+import kotlin.system.measureTimeMillis
 
 @Suppress("PrivatePropertyName", "LocalVariableName")
 class ChannelSettingsView @JvmOverloads constructor(
@@ -55,22 +56,36 @@ class ChannelSettingsView @JvmOverloads constructor(
         rbAspectRatio_4_3.setOnClickListener { onAspectRatioSelected?.invoke(false) }
 
         updateAction = Runnable {
-            tvCurrentTime.text = sdf.format(System.currentTimeMillis())
-            val trafficBytes = getTrafficBytes()
-            if (lastTrafficBytes != 0L) {
-                val duration = (SystemClock.uptimeMillis() - lastTrafficBytesUpdateTime) / 1000f
-                val speed = (trafficBytes - lastTrafficBytes) / 1024 / duration
-                tvCurrentNetworkSpeed.text = "%.1f KB/s".format(speed)
+            val time = measureTimeMillis {
+                updateNetworkSpeed()
+                tvCurrentTime.text = sdf.format(System.currentTimeMillis())
+                onGetVideoSize?.invoke()?.let {
+                    tvVideoSize.text = if (it.x == 0 || it.y == 0) context.getString(R.string.unknown) else "${it.x}x${it.y}"
+                }
             }
-            lastTrafficBytes = trafficBytes
-            lastTrafficBytesUpdateTime = SystemClock.uptimeMillis()
-            onGetVideoSize?.invoke()?.let {
-                tvVideoSize.text = if (it.x == 0 || it.y == 0) context.getString(R.string.unknown) else "${it.x}x${it.y}"
-            }
-            postDelayed(updateAction, UPDATE_PERIOD)
+            postDelayed(updateAction, UPDATE_PERIOD - time)
         }
-
         setSelectedAspectRatio(true)
+    }
+
+    private fun updateNetworkSpeed() {
+        val trafficBytes = getTrafficBytes()
+        if (lastTrafficBytes != 0L) {
+            val duration = (SystemClock.uptimeMillis() - lastTrafficBytesUpdateTime) / 1000f
+            var speed = (trafficBytes - lastTrafficBytes) / duration / 1024
+            if (speed >= 1000F) {
+                speed /= 1024
+                var speedString = "%.1f".format(speed)
+                if (speedString.endsWith(".0")) {
+                    speedString = speedString.substring(0, speedString.length - 2)
+                }
+                tvCurrentNetworkSpeed.text = "$speedString MB/s"
+            } else {
+                tvCurrentNetworkSpeed.text = "%d KB/s".format(speed.toInt())
+            }
+        }
+        lastTrafficBytes = trafficBytes
+        lastTrafficBytesUpdateTime = SystemClock.uptimeMillis()
     }
 
     fun setSelectedAspectRatio(is_16_9: Boolean) {
