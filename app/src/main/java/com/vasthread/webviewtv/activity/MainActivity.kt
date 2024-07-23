@@ -7,10 +7,12 @@ import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup.MarginLayoutParams
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.setPadding
 import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.preference
 import com.vasthread.webviewtv.playlist.Channel
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var playerView: ChannelPlayerView
     private lateinit var mainLayout: FrameLayout
+    private lateinit var uiLayout: FrameLayout
     private lateinit var playlistView: PlaylistView
     private lateinit var exitConfirmView: ExitConfirmView
     private lateinit var channelSettingsView: ChannelSettingsView
@@ -78,6 +81,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupUi() {
         setContentView(R.layout.activity_main)
         mainLayout = findViewById(R.id.mainLayout)
+        uiLayout = findViewById(R.id.uiLayout)
         playerView = findViewById(R.id.player)
         playlistView = findViewById(R.id.playlist)
         exitConfirmView = findViewById(R.id.exitConfirm)
@@ -85,8 +89,10 @@ class MainActivity : AppCompatActivity() {
         appSettingsView = findViewById(R.id.appSettings)
 
         val uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
                 View.SYSTEM_UI_FLAG_FULLSCREEN or
-                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
         window.decorView.systemUiVisibility = uiOptions
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM)
     }
@@ -107,8 +113,9 @@ class MainActivity : AppCompatActivity() {
         }
         playerView.dismissAllViewCallback = { uiMode = UiMode.STANDARD }
         playerView.clickCallback = { x, _ ->
+            val channelSettingsWidth = channelSettingsView.layoutParams.width + uiLayout.paddingRight
             uiMode = if (uiMode == UiMode.STANDARD)
-                if (x < playerView.width - channelSettingsView.layoutParams.width) UiMode.CHANNELS else UiMode.CHANNEL_SETTINGS
+                if (x < playerView.width - channelSettingsWidth) UiMode.CHANNELS else UiMode.CHANNEL_SETTINGS
             else
                 UiMode.STANDARD
         }
