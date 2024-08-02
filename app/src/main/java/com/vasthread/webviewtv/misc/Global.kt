@@ -2,7 +2,7 @@ package com.vasthread.webviewtv.misc
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.preference.PreferenceManager
+import androidx.preference.PreferenceManager
 
 private var _application: Context? = null
 val application: Context

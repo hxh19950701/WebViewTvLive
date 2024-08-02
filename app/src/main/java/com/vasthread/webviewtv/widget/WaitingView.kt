@@ -14,11 +14,17 @@ class WaitingView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
-    var webView: WebView? = null
+    var playerView: ChannelPlayerView? = null
 
     private val reloadAction = Runnable {
         Toast.makeText(application, R.string.toast_reload_channel, Toast.LENGTH_SHORT).show()
-        webView?.reload()
+        playerView?.apply {
+            val channelName = channel!!.name
+            var index = SettingsManager.getChannelLastSourceIndex(channelName) + 1
+            if (index >= channel!!.urls.size) index = 0
+            SettingsManager.setChannelLastSourceIndex(channelName, index)
+            refreshChannel()
+        }
     }
 
     init {

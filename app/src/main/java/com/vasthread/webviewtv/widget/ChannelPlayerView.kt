@@ -33,6 +33,7 @@ class ChannelPlayerView @JvmOverloads constructor(
                 webView.loadUrl(WebpageAdapterWebView.URL_BLANK)
                 channelBarView.dismiss()
             } else {
+                println(channel!!.name)
                 webView.loadUrl(value.url)
                 channelBarView.setCurrentChannelAndShow(value)
             }
@@ -66,7 +67,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         webView = findViewById(R.id.webView)
         channelBarView = findViewById(R.id.channelBarView)
         waitingView = findViewById(R.id.waitingView)
-        waitingView.webView = webView
+        waitingView.playerView = this
         webView.apply {
             fullscreenContainer = this@ChannelPlayerView.findViewById(R.id.fullscreenContainer)
             onPageFinished = {}
@@ -96,6 +97,10 @@ class ChannelPlayerView @JvmOverloads constructor(
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
         return false
+    }
+
+    fun refreshChannel() {
+        webView.loadUrl(channel!!.url)
     }
 
     fun setVideoRatio(is_16_9: Boolean) {

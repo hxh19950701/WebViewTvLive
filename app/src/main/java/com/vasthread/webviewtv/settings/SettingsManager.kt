@@ -48,4 +48,14 @@ object SettingsManager {
     fun getMaxLoadingTime(): Int {
         return preference.getInt(KEY_MAX_LOADING_TIME, 15)
     }
+
+    private fun lastSourceIndexKey(channelName: String) = "source_index[$channelName]"
+
+    fun setChannelLastSourceIndex(channelName: String, index: Int) {
+        preference.edit().putInt(lastSourceIndexKey(channelName), index).apply()
+    }
+
+    fun getChannelLastSourceIndex(channelName: String): Int {
+        return preference.getInt(lastSourceIndexKey(channelName), 0)
+    }
 }

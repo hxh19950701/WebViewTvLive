@@ -1,7 +1,10 @@
 [
   {
     "name": "CCTV-1 综合",
-    "url": "https://www.yangshipin.cn/tv/home?pid\u003d600001859",
-    "groupName": "默认"
+    "groupName": "默认",
+    "urls": [
+      "https://tv.cctv.com/live/cctv1/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001859"
+    ]
   }
 ]

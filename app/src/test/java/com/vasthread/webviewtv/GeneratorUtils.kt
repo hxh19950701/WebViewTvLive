@@ -4,10 +4,10 @@ import com.google.gson.GsonBuilder
 import com.vasthread.webviewtv.playlist.Channel
 import java.io.File
 
-const val VERSION_NAME = "1.0"
+const val VERSION_NAME = "2.0"
 
 fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channel): MutableCollection<Channel> {
-    channels.forEach { add(Channel(it.name, it.url, name)) }
+    channels.forEach { add(Channel(it.name, name, it.urls)) }
     return this
 }
 

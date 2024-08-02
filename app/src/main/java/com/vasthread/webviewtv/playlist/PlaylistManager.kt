@@ -29,8 +29,8 @@ object PlaylistManager {
     private val jsonTypeToken = object : TypeToken<List<Channel>>() {}
     private val playlistFile = File(application.filesDir, "playlist.json")
     private val builtInPlaylists = listOf(
-        Pair("中央&湖南", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/1.0/%E5%A4%AE%E8%A7%86%26%E6%B9%96%E5%8D%97.json"),
-        Pair("完整", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/1.0/%E5%AE%8C%E6%95%B4.json"),
+        Pair("中央&湖南", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/2.0/%E5%A4%AE%E8%A7%86%26%E6%B9%96%E5%8D%97.json"),
+        Pair("完整", "https://raw.githubusercontent.com/hxh19950701/WebViewTvLive/main/app/channels/2.0/%E5%AE%8C%E6%95%B4.json"),
     )
 
     var onPlaylistChange: ((Playlist) -> Unit)? = null
@@ -107,7 +107,7 @@ object PlaylistManager {
     fun loadPlaylist(): Playlist {
         return try {
             val json = playlistFile.readText()
-            createPlaylistFromJson(json)
+            createPlaylistFromJson(json).apply { println(this) }
         } catch (e: Exception) {
             Log.w(TAG, "Cannot load playlist, reason: ${e.message}")
             setLastUpdate(0L)
