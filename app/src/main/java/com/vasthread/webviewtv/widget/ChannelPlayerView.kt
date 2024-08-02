@@ -33,7 +33,6 @@ class ChannelPlayerView @JvmOverloads constructor(
                 webView.loadUrl(WebpageAdapterWebView.URL_BLANK)
                 channelBarView.dismiss()
             } else {
-                println(channel!!.name)
                 webView.loadUrl(value.url)
                 channelBarView.setCurrentChannelAndShow(value)
             }

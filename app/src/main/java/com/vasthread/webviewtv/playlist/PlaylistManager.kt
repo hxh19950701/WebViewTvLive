@@ -107,7 +107,7 @@ object PlaylistManager {
     fun loadPlaylist(): Playlist {
         return try {
             val json = playlistFile.readText()
-            createPlaylistFromJson(json).apply { println(this) }
+            createPlaylistFromJson(json)
         } catch (e: Exception) {
             Log.w(TAG, "Cannot load playlist, reason: ${e.message}")
             setLastUpdate(0L)

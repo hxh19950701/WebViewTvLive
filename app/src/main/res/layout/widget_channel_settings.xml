@@ -1,109 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="10dp"
+    android:background="@drawable/bg">
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginVertical="10dp"
-			android:layout_marginStart="10dp"
-			android:singleLine="true"
-			android:text="@string/aspect_ratio"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/video_source"
+            android:textColor="@color/color_text"
+            android:textSize="18sp" />
 
-		<Button
-			android:id="@+id/rbAspectRatio_16_9"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:background="@drawable/bg_item"
-			android:checked="true"
-			android:gravity="center"
-			android:text="16:9"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-		<Button
-			android:id="@+id/rbAspectRatio_4_3"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:background="@drawable/bg_item"
-			android:checked="true"
-			android:gravity="center"
-			android:text="4:3"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+            <Button
+                android:id="@+id/btnSource1"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_item"
+                android:checked="true"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/color_text"
+                android:textSize="18sp" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginVertical="10dp"
-			android:layout_marginStart="10dp"
-			android:singleLine="true"
-			android:text="@string/video_size"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+            <Button
+                android:id="@+id/btnSource2"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_item"
+                android:checked="true"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/color_text"
+                android:textSize="18sp" />
+        </LinearLayout>
 
-		<TextView
-			android:id="@+id/tvVideoSize"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:checked="true"
-			android:gravity="center"
-			android:text="0x0"
-			android:textColor="@color/color_text"
-			android:textSize="15sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/aspect_ratio"
+            android:textColor="@color/color_text"
+            android:textSize="18sp" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginVertical="10dp"
-			android:layout_marginStart="10dp"
-			android:singleLine="true"
-			android:text="@string/current_time"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+        <Button
+            android:id="@+id/rbAspectRatio_16_9"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_item"
+            android:checked="true"
+            android:gravity="center"
+            android:text="16:9"
+            android:textColor="@color/color_text"
+            android:textSize="18sp" />
 
-		<TextView
-			android:id="@+id/tvCurrentTime"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:checked="true"
-			android:gravity="center"
-			android:textColor="@color/color_text"
-			android:textSize="15sp" />
+        <Button
+            android:id="@+id/rbAspectRatio_4_3"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_item"
+            android:checked="true"
+            android:gravity="center"
+            android:text="4:3"
+            android:textColor="@color/color_text"
+            android:textSize="18sp" />
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginVertical="10dp"
-			android:layout_marginStart="10dp"
-			android:singleLine="true"
-			android:text="@string/current_network_speed"
-			android:textColor="@color/color_text"
-			android:textSize="17sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="@string/video_size"
+            android:textColor="@color/color_text"
+            android:textSize="17sp" />
 
-		<TextView
-			android:id="@+id/tvCurrentNetworkSpeed"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:checked="true"
-			android:gravity="center"
-			android:text="-- KB/s"
-			android:textColor="@color/color_text"
-			android:textSize="15sp" />
-	</LinearLayout>
+        <TextView
+            android:id="@+id/tvVideoSize"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:checked="true"
+            android:gravity="center"
+            android:text="0x0"
+            android:textColor="@color/color_text"
+            android:textSize="15sp" />
 
-</merge>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:textColor="@color/color_text"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tvCurrentNetworkSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:gravity="end"
+            android:text="-- KB/s"
+            android:textColor="@color/color_text"
+            android:textSize="15sp" />
+    </LinearLayout>
+</LinearLayout>

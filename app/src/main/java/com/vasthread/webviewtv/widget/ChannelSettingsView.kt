@@ -8,6 +8,7 @@ import android.view.Gravity
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.widget.Button
+import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.vasthread.webviewtv.R
@@ -19,12 +20,14 @@ import kotlin.system.measureTimeMillis
 @Suppress("PrivatePropertyName", "LocalVariableName")
 class ChannelSettingsView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : LinearLayout(context, attrs, defStyleAttr) {
+) : FrameLayout(context, attrs, defStyleAttr) {
 
     companion object {
         private const val UPDATE_PERIOD = 1000L
     }
 
+    private val btnSource1: Button
+    private val btnSource2: Button
     private val rbAspectRatio_16_9: Button
     private val rbAspectRatio_4_3: Button
     private val tvVideoSize: TextView
@@ -41,11 +44,10 @@ class ChannelSettingsView @JvmOverloads constructor(
 
     init {
         isClickable = true
-        orientation = HORIZONTAL
-        setBackgroundResource(R.drawable.bg)
-        gravity = Gravity.CENTER
         LayoutInflater.from(context).inflate(R.layout.widget_channel_settings, this)
 
+        btnSource1 = findViewById(R.id.btnSource1)
+        btnSource2 = findViewById(R.id.btnSource2)
         rbAspectRatio_16_9 = findViewById(R.id.rbAspectRatio_16_9)
         rbAspectRatio_4_3 = findViewById(R.id.rbAspectRatio_4_3)
         tvVideoSize = findViewById(R.id.tvVideoSize)
