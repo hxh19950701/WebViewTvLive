@@ -4,13 +4,12 @@ import android.content.Context
 import android.graphics.Point
 import android.os.SystemClock
 import android.util.AttributeSet
-import android.view.Gravity
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.isVisible
 import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.getTrafficBytes
 import java.text.SimpleDateFormat
@@ -34,6 +33,7 @@ class ChannelSettingsView @JvmOverloads constructor(
     private val tvCurrentTime: TextView
     private val tvCurrentNetworkSpeed: TextView
 
+    var onChannelSourceSelected: ((Int) -> Unit)? = null
     var onAspectRatioSelected: ((Boolean) -> Unit)? = null
     var onGetVideoSize: (() -> Point)? = null
 
@@ -54,6 +54,8 @@ class ChannelSettingsView @JvmOverloads constructor(
         tvCurrentTime = findViewById(R.id.tvCurrentTime)
         tvCurrentNetworkSpeed = findViewById(R.id.tvCurrentNetworkSpeed)
 
+        btnSource1?.setOnClickListener { onChannelSourceSelected?.invoke(0) }
+        btnSource2?.setOnClickListener { onChannelSourceSelected?.invoke(1) }
         rbAspectRatio_16_9.setOnClickListener { onAspectRatioSelected?.invoke(true) }
         rbAspectRatio_4_3.setOnClickListener { onAspectRatioSelected?.invoke(false) }
 
@@ -62,7 +64,8 @@ class ChannelSettingsView @JvmOverloads constructor(
                 updateNetworkSpeed()
                 tvCurrentTime.text = sdf.format(System.currentTimeMillis())
                 onGetVideoSize?.invoke()?.let {
-                    tvVideoSize.text = if (it.x == 0 || it.y == 0) context.getString(R.string.unknown) else "${it.x}x${it.y}"
+                    tvVideoSize.text =
+                        if (it.x == 0 || it.y == 0) context.getString(R.string.unknown) else "${it.x}x${it.y}"
                 }
             }
             postDelayed(updateAction, UPDATE_PERIOD - time)
@@ -93,6 +96,12 @@ class ChannelSettingsView @JvmOverloads constructor(
     fun setSelectedAspectRatio(is_16_9: Boolean) {
         rbAspectRatio_16_9.isSelected = is_16_9
         rbAspectRatio_4_3.isSelected = !is_16_9
+    }
+
+    fun setSelectedChannelSource(sourceIndex: Int, sourceSize: Int) {
+        btnSource1.isSelected = sourceIndex == 0
+        btnSource2.isSelected = sourceIndex == 1
+        btnSource2.isVisible = sourceSize >= 2
     }
 
     override fun setVisibility(visibility: Int) {

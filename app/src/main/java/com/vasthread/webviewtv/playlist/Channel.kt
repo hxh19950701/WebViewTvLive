@@ -11,7 +11,7 @@ class Channel @JvmOverloads constructor(
     val url: String
         get() {
             var index = SettingsManager.getChannelLastSourceIndex(name)
-            if (index >= urls.size) index = 0
+            if (index >= urls.size || index < 0) index = 0
             return urls[index]
         }
 

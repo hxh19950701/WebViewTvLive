@@ -32,7 +32,7 @@
 
 		<com.vasthread.webviewtv.widget.ChannelSettingsView
 			android:id="@+id/channelSettings"
-			android:layout_width="150dp"
+			android:layout_width="160dp"
 			android:layout_height="match_parent"
 			android:layout_gravity="end"
 			android:visibility="gone" />

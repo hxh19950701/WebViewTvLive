@@ -71,11 +71,7 @@ object PlaylistManager {
                     if (!response.isSuccessful) throw Exception("Response code ${response.code}")
 
                     val remote = response.body!!.string()
-                    val local = try {
-                        playlistFile.readText()
-                    } catch (_: Exception) {
-                        null
-                    }
+                    val local = try { playlistFile.readText() } catch (_: Exception) { null }
                     if (remote != local) {
                         playlistFile.writeText(remote)
                         onPlaylistChange?.invoke(createPlaylistFromJson(remote))

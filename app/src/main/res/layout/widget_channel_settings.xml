@@ -30,7 +30,7 @@
             <Button
                 android:id="@+id/btnSource1"
                 android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_item"
                 android:checked="true"
@@ -42,7 +42,7 @@
             <Button
                 android:id="@+id/btnSource2"
                 android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_item"
                 android:checked="true"
@@ -63,7 +63,7 @@
         <Button
             android:id="@+id/rbAspectRatio_16_9"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/bg_item"
             android:checked="true"
@@ -75,7 +75,7 @@
         <Button
             android:id="@+id/rbAspectRatio_4_3"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/bg_item"
             android:checked="true"

@@ -15,7 +15,8 @@ fun adjustValue(value: Int, size: Int, next: Boolean): Int {
 
 fun isMainThread() = Looper.myLooper() == mainLooper
 
+private val myUid = application.applicationInfo.uid
+
 fun getTrafficBytes(): Long {
-    val uid = application.applicationInfo.uid
-    return TrafficStats.getUidRxBytes(uid) + TrafficStats.getUidTxBytes(uid)
+    return TrafficStats.getUidRxBytes(myUid) + TrafficStats.getUidTxBytes(myUid)
 }

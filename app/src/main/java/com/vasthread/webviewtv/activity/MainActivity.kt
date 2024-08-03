@@ -12,12 +12,12 @@ import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.setPadding
 import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.preference
 import com.vasthread.webviewtv.playlist.Channel
 import com.vasthread.webviewtv.playlist.Playlist.Companion.firstChannel
 import com.vasthread.webviewtv.playlist.PlaylistManager
+import com.vasthread.webviewtv.settings.SettingsManager
 import com.vasthread.webviewtv.widget.AppSettingsView
 import com.vasthread.webviewtv.widget.ChannelPlayerView
 import com.vasthread.webviewtv.widget.ChannelSettingsView
@@ -101,10 +101,22 @@ class MainActivity : AppCompatActivity() {
         playlistView.onChannelSelectCallback = {
             preference.edit().putString(LAST_CHANNEL, "${it.groupName}, ${it.name}").apply()
             playerView.channel = it
+            channelSettingsView.setSelectedChannelSource(
+                SettingsManager.getChannelLastSourceIndex(it.name), it.urls.size)
             playlistView.post { uiMode = UiMode.STANDARD }
         }
         channelSettingsView.onAspectRatioSelected = {
             playerView.setVideoRatio(it)
+            uiMode = UiMode.STANDARD
+        }
+        channelSettingsView.onChannelSourceSelected = {
+            val channel = playerView.channel!!
+            val currentSource = SettingsManager.getChannelLastSourceIndex(channel.name)
+            if (currentSource != it) {
+                SettingsManager.setChannelLastSourceIndex(channel.name, it)
+                playerView.refreshChannel()
+                channelSettingsView.setSelectedChannelSource(it, channel.urls.size)
+            }
             uiMode = UiMode.STANDARD
         }
         channelSettingsView.onGetVideoSize = { playerView.getVideoSize() }
