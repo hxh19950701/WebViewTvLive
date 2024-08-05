@@ -39,6 +39,7 @@ class ChannelPlayerView @JvmOverloads constructor(
         }
     var clickCallback: ((Float, Float) -> Unit)? = null
     var dismissAllViewCallback: (() -> Unit)? = null
+    var onChannelReload: ((Channel) -> Unit)? = null
     var onVideoRatioChanged: ((Boolean) -> Unit)? = null
 
     private val gestureDetector = GestureDetector(context, object : GestureDetector.OnGestureListener {

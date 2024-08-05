@@ -15,6 +15,7 @@
         android:gravity="center">
 
         <TextView
+            android:id="@+id/tvSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
@@ -23,6 +24,7 @@
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/llSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center">

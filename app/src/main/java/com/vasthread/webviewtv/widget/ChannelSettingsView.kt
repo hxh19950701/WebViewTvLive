@@ -8,6 +8,7 @@ import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.view.isVisible
 import com.vasthread.webviewtv.R
@@ -25,6 +26,8 @@ class ChannelSettingsView @JvmOverloads constructor(
         private const val UPDATE_PERIOD = 1000L
     }
 
+    private val tvSource: TextView
+    private val llSource: LinearLayout
     private val btnSource1: Button
     private val btnSource2: Button
     private val rbAspectRatio_16_9: Button
@@ -46,6 +49,8 @@ class ChannelSettingsView @JvmOverloads constructor(
         isClickable = true
         LayoutInflater.from(context).inflate(R.layout.widget_channel_settings, this)
 
+        tvSource = findViewById(R.id.tvSource)
+        llSource = findViewById(R.id.llSource)
         btnSource1 = findViewById(R.id.btnSource1)
         btnSource2 = findViewById(R.id.btnSource2)
         rbAspectRatio_16_9 = findViewById(R.id.rbAspectRatio_16_9)
@@ -102,6 +107,8 @@ class ChannelSettingsView @JvmOverloads constructor(
         btnSource1.isSelected = sourceIndex == 0
         btnSource2.isSelected = sourceIndex == 1
         btnSource2.isVisible = sourceSize >= 2
+        tvSource.isVisible = sourceSize >= 2
+        llSource.isVisible = sourceSize >= 2
     }
 
     override fun setVisibility(visibility: Int) {

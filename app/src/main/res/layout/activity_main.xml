@@ -12,11 +12,10 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent" />
 
-	<FrameLayout
+	<com.vasthread.webviewtv.widget.UiLayout
 		android:id="@+id/uiLayout"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+		android:layout_height="match_parent">
 
 		<com.vasthread.webviewtv.widget.PlaylistView
 			android:id="@+id/playlist"
@@ -43,6 +42,6 @@
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
 			android:visibility="gone" />
-	</FrameLayout>
+	</com.vasthread.webviewtv.widget.UiLayout>
 
 </FrameLayout>
