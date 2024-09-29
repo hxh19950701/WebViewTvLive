@@ -141,12 +141,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun initChannels() {
         playlistView.playlist = PlaylistManager.loadPlaylist()
-        try {
+        runCatching {
             val s = preference.getString(LAST_CHANNEL, "")!!
             val pair = s.split(", ").let { Pair(it[0], it[1]) }
             lastChannel = playlistView.playlist!!.getAllChannels()
                 .firstOrNull { it.groupName == pair.first && it.name == pair.second }
-        } catch (_: Exception) {
         }
         if (lastChannel == null) {
             lastChannel = playlistView.playlist.firstChannel()

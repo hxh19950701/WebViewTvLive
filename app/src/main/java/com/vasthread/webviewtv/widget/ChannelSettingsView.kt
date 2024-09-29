@@ -70,7 +70,8 @@ class ChannelSettingsView @JvmOverloads constructor(
                 tvCurrentTime.text = sdf.format(System.currentTimeMillis())
                 onGetVideoSize?.invoke()?.let {
                     tvVideoSize.text =
-                        if (it.x == 0 || it.y == 0) context.getString(R.string.unknown) else "${it.x}x${it.y}"
+                        if (it.x == 0 || it.y == 0) context.getString(R.string.unknown)
+                        else "${it.x}x${it.y}"
                 }
             }
             postDelayed(updateAction, UPDATE_PERIOD - time)
