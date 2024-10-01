@@ -7,7 +7,7 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/hxh19950701/WebViewTvLive/total)
 
 </div>
-    <p>使用 腾讯X5 WebView 开发的电视直播软件</p>
+    <p>使用 腾讯X5 WebView 开发的电视直播App</p>
 </div>
     <p>原理：目前很多电视台都会在自己的网站上有直播，软件会加载直播网页，找到video标签自动全屏。</p>
 
@@ -23,6 +23,13 @@
 - [x] 自动更新频道列表
 - [x] 多直播源
 - [x] 应用自定义设置
+
+
+## FAQ
+**Q: 在电视机/盒子上无法自动全屏？**
+<br/>
+A: 一般是设备 WebView的问题，待X5内核下载完成，重启 App 即可。
+
 
 ## 打赏作者
 如果 App 对您有帮助，欢迎打赏作者！
