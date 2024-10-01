@@ -22,7 +22,7 @@ object PlaylistManager {
     private const val CACHE_EXPIRATION_MS = 24 * 60 * 60 * 1000L
     private const val KEY_PLAYLIST_URL = "playlist_url"
     private const val KEY_LAST_UPDATE = "last_update"
-    private const val UPDATE_RETRY_DELAY = 60 * 1000L
+    private const val UPDATE_RETRY_DELAY = 10 * 1000L
 
     private val client = OkHttpClient.Builder().connectTimeout(5, TimeUnit.SECONDS).readTimeout(5, TimeUnit.SECONDS).build()
     private val gson = GsonBuilder().setPrettyPrinting().create()!!
@@ -34,7 +34,12 @@ object PlaylistManager {
     )
 
     var onPlaylistChange: ((Playlist) -> Unit)? = null
+    var onUpdatePlaylistJobStateChange: ((Boolean) -> Unit)? = null
     private var updatePlaylistJob: Job? = null
+    private var isUpdating = false
+        set(value) {
+            onUpdatePlaylistJobStateChange?.invoke(value)
+        }
 
     fun getBuiltInPlaylists() = builtInPlaylists
 
@@ -62,6 +67,7 @@ object PlaylistManager {
         updatePlaylistJob = CoroutineScope(Dispatchers.IO).launch {
             var times = 0
             val needUpdate = { System.currentTimeMillis() - preference.getLong(KEY_LAST_UPDATE, 0L) > CACHE_EXPIRATION_MS }
+            isUpdating = true
             while (needUpdate()) {
                 ++times
                 Log.i(TAG, "Updating playlist... times=${times}")
@@ -87,6 +93,7 @@ object PlaylistManager {
                     delay(UPDATE_RETRY_DELAY)
                 }
             }
+            isUpdating = false
         }
     }
 

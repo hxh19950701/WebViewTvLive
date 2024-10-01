@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.LinearLayout
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.vasthread.webviewtv.R
@@ -32,6 +33,7 @@ class PlaylistView @JvmOverloads constructor(
     private val btnPageDown: Button
     private val tvGroupName: TextView
     private val rvChannels: RecyclerView
+    private val pbUpdating: ProgressBar
 
     var playlist: Playlist? = null
         set(value) {
@@ -56,6 +58,13 @@ class PlaylistView @JvmOverloads constructor(
             onChannelSelectCallback?.invoke(value!!)
         }
 
+    var updating = false
+        set(value) {
+            println("updating $value")
+            field = value
+            pbUpdating.visibility = if (value) VISIBLE else GONE
+        }
+
     private var currentPage: Int = 0
         set(value) {
             field = value
@@ -74,6 +83,7 @@ class PlaylistView @JvmOverloads constructor(
         btnPageDown = findViewById(R.id.btnPageDown)
         tvGroupName = findViewById(R.id.tvGroupName)
         rvChannels = findViewById(R.id.rvChannels)
+        pbUpdating = findViewById(R.id.pbUpdating)
 
         btnPageUp.setOnClickListener { turnPage(false) }
         btnPageDown.setOnClickListener { turnPage(true) }

@@ -51,6 +51,13 @@
 		android:layout_height="1px"
 		android:background="#55EEEEEE" />
 
+	<ProgressBar
+		android:id="@+id/pbUpdating"
+		android:layout_width="match_parent"
+		android:layout_height="4dp"
+		android:indeterminate="true"
+		style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/rvChannels"
 		android:layout_width="match_parent"

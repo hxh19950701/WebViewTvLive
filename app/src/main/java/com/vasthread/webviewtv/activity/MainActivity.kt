@@ -1,13 +1,11 @@
 package com.vasthread.webviewtv.activity
 
 import android.content.Context
-import android.content.res.Configuration
 import android.os.Bundle
 import android.util.AttributeSet
 import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup.MarginLayoutParams
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
 import android.widget.FrameLayout
@@ -137,6 +135,9 @@ class MainActivity : AppCompatActivity() {
                 SettingsManager.getChannelLastSourceIndex(it.name), it.urls.size)
         }
         PlaylistManager.onPlaylistChange = { runOnUiThread { playlistView.playlist = it } }
+        PlaylistManager.onUpdatePlaylistJobStateChange = {
+            runOnUiThread { playlistView.updating = it}
+        }
     }
 
     private fun initChannels() {
