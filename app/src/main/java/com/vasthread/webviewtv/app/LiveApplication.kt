@@ -1,6 +1,9 @@
 package com.vasthread.webviewtv.app
 
 import android.app.Application
+import android.content.Context
+import android.os.Build
+import android.provider.Settings
 import android.util.Log
 import com.tencent.bugly.crashreport.CrashReport
 import com.tencent.smtt.export.external.TbsCoreSettings
@@ -8,7 +11,6 @@ import com.tencent.smtt.sdk.QbSdk
 import com.tencent.smtt.sdk.QbSdk.PreInitCallback
 import com.vasthread.webviewtv.misc.setApplication
 import me.jessyan.autosize.AutoSizeConfig
-
 
 class LiveApplication : Application() {
 
@@ -47,5 +49,7 @@ class LiveApplication : Application() {
 
     private fun initCrashReport() {
         CrashReport.initCrashReport(this, "5115c8a378", false)
+        CrashReport.setDeviceId(this, Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID))
+        CrashReport.setDeviceModel(this, "${Build.MANUFACTURER}/${Build.MODEL}/${Build.PRODUCT}")
     }
 }
