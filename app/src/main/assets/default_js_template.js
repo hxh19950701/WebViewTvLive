@@ -3,8 +3,8 @@ var selector = '%selector%'; //类名（需要加.）|| id（需要加 #）||标
 function wvt_onTimeUpdate(video) {
 	var now = Date.now();
     if (now - window.wvt_lastNotifyVideoPlaying >= 1000) {
-    	//video.muted = false;
-        //video.volume = 1;
+        if (video.muted) video.muted = false;
+    	if (video.volume != 1) video.volume = 1;
         window.main.notifyVideoPlaying();
         window.wvt_lastNotifyVideoPlaying = now;
     }
@@ -29,8 +29,6 @@ function wvt_setupVideo(video) {
     }
     video.addEventListener('play', function() {
     	console.log("Video state: PLAY.");
-    	video.muted = false;
-        video.volume = 1;
 		window.main.schemeEnterFullscreen();
     	window.main.notifyVideoPlaying();
     	window.wvt_lastNotifyVideoPlaying = Date.now();
