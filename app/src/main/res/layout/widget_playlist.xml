@@ -46,17 +46,23 @@
 			android:visibility="gone" />
 	</LinearLayout>
 
-	<TextView
-		android:layout_width="match_parent"
-		android:layout_height="1px"
-		android:background="#55EEEEEE" />
+	<FrameLayout android:layout_height="4dp"
+		android:layout_width="match_parent">
 
-	<ProgressBar
-		android:id="@+id/pbUpdating"
-		android:layout_width="match_parent"
-		android:layout_height="4dp"
-		android:indeterminate="true"
-		style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+		<TextView
+			android:layout_width="match_parent"
+			android:layout_height="1px"
+			android:layout_gravity="center"
+			android:background="#55EEEEEE" />
+
+		<ProgressBar
+			android:id="@+id/pbUpdating"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:indeterminate="true"
+			style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
+	</FrameLayout>
 
 	<androidx.recyclerview.widget.RecyclerView
 		android:id="@+id/rvChannels"

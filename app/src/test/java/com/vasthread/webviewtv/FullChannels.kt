@@ -50,7 +50,6 @@ val fullChannels = mutableListOf<Channel>()
         Channel("茶频道", "", listOf("https://live.mgtv.com/?channelId=578")),
         Channel("长沙新闻综合", "", listOf("https://live.mgtv.com/?channelId=269")),
         Channel("长沙政法", "", listOf("https://live.mgtv.com/?channelId=254")),
-        Channel("长沙女性", "", listOf("https://live.mgtv.com/?channelId=230")),
     )
     .addChannels(
         "广东",
@@ -77,8 +76,6 @@ val fullChannels = mutableListOf<Channel>()
         Channel("深圳卫视", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7867")),
         Channel("深圳都市", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7868")),
         Channel("深圳电视剧", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7880")),
-//        Channel("深圳公共", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7874")),
-//        Channel("深圳娱乐", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7872")),
         Channel("深圳财经", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7871")),
         Channel("深圳国际", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7944")),
         Channel("深圳少儿", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7881")),
@@ -109,10 +106,15 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("无线新闻", "", listOf("https://news.tvb.com/tc/live/83")),
+        Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv")),
+        Channel("澳視葡文", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=2&type=tv")),
+        Channel("澳門資訊", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=5&type=tv")),
+        Channel("澳門體育", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=6&type=tv")),
+        Channel("澳門綜藝", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=7&type=tv")),
+        Channel("澳門MACAU", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=8&type=tv")),
         Channel("新唐人亚太台", "", listOf("https://www.ntdtv.com.tw/")),
         Channel("新唐人美东台", "", listOf("https://www.ntdtv.com/")),
-        Channel("东森新闻", "", listOf("https://news.ebc.net.tw/live")),
+        Channel("东森新闻", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-news-tv/?embed=1", "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
         Channel("民視第一台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1")),
         Channel("民視台灣台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2")),
         Channel("民視新聞台", "", listOf("https://www.4gtv.tv/channel/litv-ftv13?set=4&ch=31")),
@@ -127,10 +129,6 @@ val fullChannels = mutableListOf<Channel>()
         Channel("大愛電視", "", listOf("https://www.4gtv.tv/channel/4gtv-live007?set=4&ch=209")),
         Channel("ARIRANG阿里郎頻道", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv079?set=4&ch=189")),
         Channel("原住民族電視台", "", listOf("https://www.4gtv.tv/channel/4gtv-live014?set=4&ch=273")),
-        Channel("DW ENGLISH", "", listOf("https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=1")),
-        Channel("DW DEUTSCH+", "", listOf("https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=4")),
-        Channel("DW ESPAÑOL", "", listOf("https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=3")),
-        Channel("عربية DW", "", listOf("https://www.dw.com/zh/%E6%AD%A3%E5%9C%A8%E7%9B%B4%E6%92%AD/s-100849?channel=2")),
         Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
         Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
     )
