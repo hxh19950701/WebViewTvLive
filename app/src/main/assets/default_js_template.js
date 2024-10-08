@@ -1,4 +1,6 @@
-var selector = '%selector%'; //类名（需要加.）|| id（需要加 #）||标签名
+//类名（需要加.）|| id（需要加 #）||标签名
+var selector = '%selector%';
+var enterFullscreenButton = '%enter_fullscreen_button%'
 
 function wvt_onTimeUpdate(video) {
 	var now = Date.now();
@@ -23,7 +25,7 @@ function wvt_setupVideo(video) {
     video.defaultMuted = false;
     video.style['object-fit'] = 'fill';
     if (!video.paused) {
-    	console.log("Video is playing, enter fullscreen.");
+    	console.log("Video is playing, enter fullscreen now.");
     	window.main.schemeEnterFullscreen();
     	wvt_reportVideoSize(video);
     }
@@ -45,6 +47,10 @@ function wvt_setupVideo(video) {
 	video.wvt_setup = true;
 }
 
+function wvt_setupNonVideo(element) {
+    window.main.schemeEnterFullscreen();
+}
+
 function wvt_loop(counter) {
 	if (window.wvt_video) {
 		if (!document.documentElement.contains(window.wvt_video)) {
@@ -59,19 +65,33 @@ function wvt_loop(counter) {
 		var element = document.querySelector(selector);
 		if (element) {
 			console.log("Loop " + counter + ", element [" + selector + "] found, tag name is " + element.tagName + ".");
-			if (element.tagName == 'VIDEO') { wvt_setupVideo(element) }
 			window.wvt_video = element;
+			if (element.tagName == 'VIDEO') {
+			    wvt_setupVideo(element);
+			} else {
+			    wvt_setupNonVideo(element);
+			}
 		} else {
 			console.error("Loop " + counter + ", element [" + selector + "] not found.");
 		}
 	}
-	setTimeout(() => { wvt_loop(counter + 1) }, document.fullscreenElement ? 5000 : 500);
+	setTimeout(() => { wvt_loop(counter + 1) }, document.fullscreenElement ? 5000 : 1000);
 }
 
 function wvt_fullscreenVideo() {
 	if (document.fullscreenElement == null) {
 		if (window.wvt_video && document.documentElement.contains(window.wvt_video)) {
-			window.wvt_video.requestFullscreen(); 
+		    var element = null;
+		    try {
+		        element = document.querySelector(enterFullscreenButton);
+		    } catch (e) {
+		        console.error("use video.requestFullscreen(), element [" + enterFullscreenButton + "] not found.");
+		    }
+		    if (element != null) {
+		        element.click();
+		    } else {
+		        window.wvt_video.requestFullscreen();
+		    }
 		} else {
 			console.error("wvt_video is null."); 
 		}

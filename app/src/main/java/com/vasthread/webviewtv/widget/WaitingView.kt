@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import android.widget.Toast
-import com.tencent.smtt.sdk.WebView
 import com.vasthread.webviewtv.R
 import com.vasthread.webviewtv.misc.application
 import com.vasthread.webviewtv.settings.SettingsManager
@@ -18,12 +17,12 @@ class WaitingView @JvmOverloads constructor(
 
     private val reloadAction = Runnable {
         Toast.makeText(application, R.string.toast_reload_channel, Toast.LENGTH_SHORT).show()
-        playerView?.apply {
-            val channelName = channel!!.name
+        if (playerView?.channel != null) {
+            val channelName = playerView!!.channel!!.name
             var index = SettingsManager.getChannelLastSourceIndex(channelName) + 1
-            if (index >= channel!!.urls.size) index = 0
+            if (index >= playerView!!.channel!!.urls.size) index = 0
             SettingsManager.setChannelLastSourceIndex(channelName, index)
-            refreshChannel()
+            playerView!!.refreshChannel()
         }
     }
 

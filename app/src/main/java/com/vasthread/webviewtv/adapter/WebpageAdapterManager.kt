@@ -6,7 +6,7 @@ object WebpageAdapterManager {
 
     private const val TAG = "WebpageAdapterManager"
 
-    private val supportedWebpageAdapters = mutableListOf(
+    private val supportedWebpageAdapters = listOf(
         TbsDebugWebpageAdapter(),
         ChromeUrlWebpageAdapter(),
         MgtvWebpageAdapter(),
@@ -20,6 +20,7 @@ object WebpageAdapterManager {
         YoutubeWebpageAdapter(),
         FgtvWebpageAdapter(),
         TvbWebpageAdapter(),
+        TdmWebpageAdapter(),
         CommonWebpageAdapter(),
     )
 

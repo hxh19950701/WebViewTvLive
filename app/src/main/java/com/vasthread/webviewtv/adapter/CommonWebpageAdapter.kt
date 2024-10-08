@@ -14,7 +14,7 @@ import java.io.BufferedReader
 open class CommonWebpageAdapter : WebpageAdapter() {
 
     companion object {
-        internal const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        internal const val PC_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
         internal const val ENTER_FULLSCREEN_DELAY = 1000L
         internal const val CLICK_DURATION = 50L
         internal const val DOUBLE_CLICK_INTERVAL = 50L
@@ -30,8 +30,12 @@ open class CommonWebpageAdapter : WebpageAdapter() {
 
     open fun getFullscreenElementId() = "video"
 
+    open fun getEnterFullscreenButtonElementId() = "%enter_fullscreen_button%"
+
     override fun javascript(): String {
-        return JAVASCRIPT_TEMPLATE.replaceFirst("%selector%", getFullscreenElementId())
+        return JAVASCRIPT_TEMPLATE
+            .replaceFirst("%selector%", getFullscreenElementId())
+            .replaceFirst("%enter_fullscreen_button%", getEnterFullscreenButtonElementId())
     }
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
