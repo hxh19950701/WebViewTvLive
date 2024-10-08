@@ -29,4 +29,6 @@ abstract class WebpageAdapter {
 
     abstract suspend fun enterFullscreen(webView: WebpageAdapterWebView)
 
+    open fun isPlayingCheckEnabled() = true
+
 }
