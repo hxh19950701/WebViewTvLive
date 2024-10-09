@@ -2,7 +2,7 @@ package com.vasthread.webviewtv.playlist
 
 import com.vasthread.webviewtv.settings.SettingsManager
 
-class Channel @JvmOverloads constructor(
+data class Channel @JvmOverloads constructor(
     var name: String = "",
     var groupName: String = "",
     var urls: List<String> = emptyList(),

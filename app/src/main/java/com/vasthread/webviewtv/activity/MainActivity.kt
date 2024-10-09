@@ -191,9 +191,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchGenericMotionEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_UP) {
-            repostBackToStandardModeAction()
-        }
+        onMotionEvent(event)
         return super.dispatchGenericMotionEvent(event)
     }
 
@@ -203,23 +201,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun dispatchTrackballEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_UP) {
-            repostBackToStandardModeAction()
-        }
+        onMotionEvent(event)
         return super.dispatchTrackballEvent(event)
     }
 
     override fun dispatchTouchEvent(event: MotionEvent): Boolean {
-        if (event.action == MotionEvent.ACTION_UP) {
-            repostBackToStandardModeAction()
-        }
+        onMotionEvent(event)
         return super.dispatchTouchEvent(event)
     }
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-        if (event.action == KeyEvent.ACTION_UP) {
-            repostBackToStandardModeAction()
-        }
+        onKeyEvent(event)
         val keyCode = event.keyCode
         if (!OPERATION_KEYS.contains(keyCode)) {
             return false
@@ -245,6 +237,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
         return super.dispatchKeyEvent(event)
+    }
+
+    private fun onKeyEvent(event: KeyEvent) {
+        if (event.eventTime - event.downTime >= 1000L || event.action == KeyEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
+    }
+
+    private fun onMotionEvent(event: MotionEvent) {
+        if (event.eventTime - event.downTime >= 1000L || event.action == KeyEvent.ACTION_UP) {
+            repostBackToStandardModeAction()
+        }
     }
 
     private fun repostBackToStandardModeAction() {

@@ -62,6 +62,7 @@ class ChannelPlayerView @JvmOverloads constructor(
     })
 
     init {
+        defaultFocusHighlightEnabled = false
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
         setBackgroundColor(Color.BLACK)
         webView = findViewById(R.id.webView)
