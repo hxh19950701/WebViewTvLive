@@ -2,11 +2,13 @@ package com.vasthread.webviewtv.settings
 
 import com.vasthread.webviewtv.misc.preference
 import com.vasthread.webviewtv.playlist.PlaylistManager
+import java.util.UUID
 
 object SettingsManager {
 
     private const val KEY_WEB_VIEW_TOUCHABLE = "web_view_touchable"
     private const val KEY_MAX_LOADING_TIME = "max_loading_time"
+    private const val KEY_UUID = "uuid"
 
     fun getPlaylistNames(): Array<String> {
         val builtInPlaylists = PlaylistManager.getBuiltInPlaylists()
@@ -57,5 +59,14 @@ object SettingsManager {
 
     fun getChannelLastSourceIndex(channelName: String): Int {
         return preference.getInt(lastSourceIndexKey(channelName), 0)
+    }
+
+    fun getUserId(): String {
+        var uuid = preference.getString(KEY_UUID, null)
+        if (uuid.isNullOrBlank()) {
+            uuid = UUID.randomUUID().toString()
+            preference.edit().putString(KEY_UUID, uuid).apply()
+        }
+        return uuid
     }
 }
