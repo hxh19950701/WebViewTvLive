@@ -75,6 +75,7 @@ class PlaylistView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         orientation = VERTICAL
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_playlist, this)

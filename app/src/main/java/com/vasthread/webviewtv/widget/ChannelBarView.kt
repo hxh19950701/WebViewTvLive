@@ -24,6 +24,7 @@ class ChannelBarView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_channel_bar, this)
         tvChannelName = findViewById(R.id.tvChannelName)

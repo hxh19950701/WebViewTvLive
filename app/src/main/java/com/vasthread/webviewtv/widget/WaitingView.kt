@@ -28,6 +28,7 @@ class WaitingView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_waiting, this)
     }

@@ -23,6 +23,7 @@ class ExitConfirmView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         gravity = Gravity.CENTER
         orientation = VERTICAL
         setBackgroundResource(R.drawable.bg)

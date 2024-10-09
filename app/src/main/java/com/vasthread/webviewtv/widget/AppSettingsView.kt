@@ -61,6 +61,7 @@ class AppSettingsView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         setBackgroundResource(R.drawable.bg)
         LayoutInflater.from(context).inflate(R.layout.widget_settings, this)
         rvSettings = findViewById(R.id.rvSettings)

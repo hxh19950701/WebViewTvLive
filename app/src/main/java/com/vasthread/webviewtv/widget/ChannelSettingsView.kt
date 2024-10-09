@@ -47,6 +47,7 @@ class ChannelSettingsView @JvmOverloads constructor(
 
     init {
         isClickable = true
+        isFocusable = false
         LayoutInflater.from(context).inflate(R.layout.widget_channel_settings, this)
 
         tvSource = findViewById(R.id.tvSource)
