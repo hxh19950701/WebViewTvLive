@@ -49,7 +49,6 @@ class LiveApplication : Application() {
     private fun initCrashReport() {
         CrashReport.initCrashReport(this, "5115c8a378", false)
         CrashReport.setDeviceId(this, SettingsManager.getUserId())
-        println(SettingsManager.getUserId())
         CrashReport.setDeviceModel(this, "${Build.MANUFACTURER}/${Build.MODEL}/${Build.PRODUCT}")
     }
 }
