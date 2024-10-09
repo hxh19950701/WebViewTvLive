@@ -489,6 +489,55 @@
     ]
   },
   {
+    "name": "东方卫视",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan"
+    ]
+  },
+  {
+    "name": "新闻综合",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d2"
+    ]
+  },
+  {
+    "name": "外语频道",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d3"
+    ]
+  },
+  {
+    "name": "都市频道",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d4"
+    ]
+  },
+  {
+    "name": "第一财经",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d5"
+    ]
+  },
+  {
+    "name": "纪实人文",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d6"
+    ]
+  },
+  {
+    "name": "哈哈炫动",
+    "groupName": "上海",
+    "urls": [
+      "https://live.kankanews.com/huikan?id\u003d9"
+    ]
+  },
+  {
     "name": "北京卫视",
     "groupName": "卫视",
     "urls": [

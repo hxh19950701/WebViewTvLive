@@ -81,6 +81,16 @@ val fullChannels = mutableListOf<Channel>()
         Channel("深圳少儿", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7881")),
     )
     .addChannels(
+        "上海",
+        Channel("东方卫视", "", listOf("https://live.kankanews.com/huikan")),
+        Channel("新闻综合", "", listOf("https://live.kankanews.com/huikan?id=2")),
+        Channel("外语频道", "", listOf("https://live.kankanews.com/huikan?id=3")),
+        Channel("都市频道", "", listOf("https://live.kankanews.com/huikan?id=4")),
+        Channel("第一财经", "", listOf("https://live.kankanews.com/huikan?id=5")),
+        Channel("纪实人文", "", listOf("https://live.kankanews.com/huikan?id=6")),
+        Channel("哈哈炫动", "", listOf("https://live.kankanews.com/huikan?id=9")),
+    )
+    .addChannels(
         "卫视",
         Channel("北京卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002309")),
         Channel("江苏卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002521")),
