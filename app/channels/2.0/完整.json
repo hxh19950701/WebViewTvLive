@@ -685,6 +685,27 @@
     ]
   },
   {
+    "name": "翡翠台",
+    "groupName": "海外",
+    "urls": [
+      "https://enx.gdplayertv.to/live-tv/tvb-jade/?embed\u003d1"
+    ]
+  },
+  {
+    "name": "无线新聞",
+    "groupName": "海外",
+    "urls": [
+      "https://enx.gdplayertv.to/live-tv/tvb-news/?embed\u003d1"
+    ]
+  },
+  {
+    "name": "明珠台",
+    "groupName": "海外",
+    "urls": [
+      "https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed\u003d1"
+    ]
+  },
+  {
     "name": "澳視澳門",
     "groupName": "海外",
     "urls": [

@@ -116,6 +116,9 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
+        Channel("翡翠台", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
+        Channel("无线新聞", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-news/?embed=1")),
+        Channel("明珠台", "", listOf("https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1")),
         Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv")),
         Channel("澳視葡文", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=2&type=tv")),
         Channel("澳門資訊", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=5&type=tv")),
