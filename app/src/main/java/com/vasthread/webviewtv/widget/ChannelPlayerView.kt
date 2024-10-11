@@ -3,6 +3,7 @@ package com.vasthread.webviewtv.widget
 import android.content.Context
 import android.graphics.Color
 import android.graphics.Rect
+import android.os.Build
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.KeyEvent
@@ -62,7 +63,9 @@ class ChannelPlayerView @JvmOverloads constructor(
     })
 
     init {
-        defaultFocusHighlightEnabled = false
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            defaultFocusHighlightEnabled = false
+        }
         LayoutInflater.from(context).inflate(R.layout.widget_channel_player, this)
         setBackgroundColor(Color.BLACK)
         webView = findViewById(R.id.webView)
