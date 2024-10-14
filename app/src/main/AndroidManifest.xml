@@ -39,8 +39,8 @@
 
 		<activity
 			android:name=".activity.TbsDebugActivity"
-			android:screenOrientation="portrait"
-			android:theme="@style/AppTheme" />
+			android:screenOrientation="sensorLandscape"
+			android:theme="@style/FullscreenTheme" />
 
 		<service
 			android:name="com.tencent.smtt.export.external.DexClassLoaderProviderService"

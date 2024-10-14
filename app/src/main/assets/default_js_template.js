@@ -1,14 +1,17 @@
 //类名（需要加.）|| id（需要加 #）||标签名
 var selector = '%selector%';
 var enterFullscreenButton = '%enter_fullscreen_button%'
+var playingCheckEnabled = %playing_check_enabled%
 
 function wvt_onTimeUpdate(video) {
 	var now = Date.now();
     if (now - window.wvt_lastNotifyVideoPlaying >= 1000) {
         if (video.muted) video.muted = false;
     	if (video.volume != 1) video.volume = 1;
-        window.main.notifyVideoPlaying();
-        window.wvt_lastNotifyVideoPlaying = now;
+    	if (playingCheckEnabled) {
+            window.main.notifyVideoPlaying();
+            window.wvt_lastNotifyVideoPlaying = now;
+        }
     }
 }
 
@@ -19,7 +22,7 @@ function wvt_reportVideoSize(video) {
 function wvt_setupVideo(video) {
 	if (video.wvt_setup) { return; }
 	if (document.fullscreenElement) { document.exitFullscreen(); }
-	window.main.enablePlayCheck();
+	if (playingCheckEnabled) { window.main.enablePlayCheck(); }
 	window.wvt_lastNotifyVideoPlaying = 0;
     video.autoplay = true;
     video.defaultMuted = false;
@@ -32,8 +35,10 @@ function wvt_setupVideo(video) {
     video.addEventListener('play', function() {
     	console.log("Video state: PLAY.");
 		window.main.schemeEnterFullscreen();
-    	window.main.notifyVideoPlaying();
-    	window.wvt_lastNotifyVideoPlaying = Date.now();
+		if (playingCheckEnabled) {
+            window.main.notifyVideoPlaying();
+            window.wvt_lastNotifyVideoPlaying = Date.now();
+    	}
     });
     video.addEventListener('pause', function() { console.log("Video state: PAUSE."); });
     video.addEventListener('timeupdate', function() { wvt_onTimeUpdate(video); });
@@ -114,6 +119,8 @@ function wvt_main() {
 
 if (!window.wvt_javascriptInjected) {
 	console.log("WebViewTv javascript injected successfully.");
+	console.log("selector=[" + selector + "], enterFullscreenButton=[" + enterFullscreenButton
+	 + "], playingCheckEnabled=[" + playingCheckEnabled + "].");
 	window.wvt_javascriptInjected = true
 	wvt_main();
 } else {

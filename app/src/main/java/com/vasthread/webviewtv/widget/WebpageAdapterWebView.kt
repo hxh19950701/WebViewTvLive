@@ -334,17 +334,13 @@ class WebpageAdapterWebView @JvmOverloads constructor(
 
     @JavascriptInterface
     fun enablePlayCheck() {
-        if (WebpageAdapterManager.get(url).isPlayingCheckEnabled()) {
-            postDelayed(showWaitingViewAction, SHOW_WAITING_VIEW_DELAY)
-        }
+        postDelayed(showWaitingViewAction, SHOW_WAITING_VIEW_DELAY)
     }
 
     @JavascriptInterface
     fun disablePlayCheck() {
-        if (WebpageAdapterManager.get(url).isPlayingCheckEnabled()) {
-            removeCallbacks(showWaitingViewAction)
-            dismissWaitingViewAction.let { if (isMainThread()) it.run() else post(it) }
-        }
+        removeCallbacks(showWaitingViewAction)
+        post(dismissWaitingViewAction)
     }
 
     @JavascriptInterface

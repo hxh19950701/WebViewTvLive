@@ -36,6 +36,7 @@ open class CommonWebpageAdapter : WebpageAdapter() {
         return JAVASCRIPT_TEMPLATE
             .replaceFirst("%selector%", getFullscreenElementId())
             .replaceFirst("%enter_fullscreen_button%", getEnterFullscreenButtonElementId())
+            .replaceFirst("%playing_check_enabled%", isPlayingCheckEnabled().toString())
     }
 
     override suspend fun enterFullscreen(webView: WebpageAdapterWebView) {
