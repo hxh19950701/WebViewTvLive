@@ -538,6 +538,27 @@
     ]
   },
   {
+    "name": "延边卫视",
+    "groupName": "吉林",
+    "urls": [
+      "https://www.yb983.com/cys/index.html"
+    ]
+  },
+  {
+    "name": "延边朝鲜语综合频道",
+    "groupName": "吉林",
+    "urls": [
+      "https://www.yb983.com/ybtv1/index.html"
+    ]
+  },
+  {
+    "name": "延边汉语综合频道",
+    "groupName": "吉林",
+    "urls": [
+      "https://www.yb983.com/ybtv2/index.html"
+    ]
+  },
+  {
     "name": "北京卫视",
     "groupName": "卫视",
     "urls": [
@@ -685,6 +706,20 @@
     ]
   },
   {
+    "name": "延边卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yb983.com/cys/index.html"
+    ]
+  },
+  {
+    "name": "新疆卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
+    ]
+  },
+  {
     "name": "翡翠台",
     "groupName": "海外",
     "urls": [
@@ -692,7 +727,7 @@
     ]
   },
   {
-    "name": "无线新聞",
+    "name": "無線新聞",
     "groupName": "海外",
     "urls": [
       "https://enx.gdplayertv.to/live-tv/tvb-news/?embed\u003d1"
@@ -762,11 +797,25 @@
     ]
   },
   {
-    "name": "东森新闻",
+    "name": "東森新聞",
     "groupName": "海外",
     "urls": [
       "https://enx.gdplayertv.to/live-tv/ebc-news-tv/?embed\u003d1",
       "https://www.4gtv.tv/channel/4gtv-4gtv152?set\u003d4\u0026ch\u003d292"
+    ]
+  },
+  {
+    "name": "東森綜合",
+    "groupName": "海外",
+    "urls": [
+      "https://enx.gdplayertv.to/live-tv/ebc-variety-tv/?embed\u003d1"
+    ]
+  },
+  {
+    "name": "東森電影",
+    "groupName": "海外",
+    "urls": [
+      "https://idx.gdplayertv.to/live-tv/ebc-movies-tv/?embed\u003d1"
     ]
   },
   {

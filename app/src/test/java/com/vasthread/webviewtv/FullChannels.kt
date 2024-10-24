@@ -91,6 +91,13 @@ val fullChannels = mutableListOf<Channel>()
         Channel("哈哈炫动", "", listOf("https://live.kankanews.com/huikan?id=9")),
     )
     .addChannels(
+        "吉林",
+        //Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
+        Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
+        Channel("延边朝鲜语综合频道", "", listOf("https://www.yb983.com/ybtv1/index.html")),
+        Channel("延边汉语综合频道", "", listOf("https://www.yb983.com/ybtv2/index.html")),
+    )
+    .addChannels(
         "卫视",
         Channel("北京卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002309")),
         Channel("江苏卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002521")),
@@ -113,11 +120,14 @@ val fullChannels = mutableListOf<Channel>()
         Channel("安徽卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002532")),
         Channel("河北卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002493")),
         Channel("山东卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002513")),
+        //Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
+        Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
+        Channel("新疆卫视", "", listOf("https://www.xjtvs.com.cn/column/tv/434?channelId=1")),
     )
     .addChannels(
         "海外",
         Channel("翡翠台", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
-        Channel("无线新聞", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-news/?embed=1")),
+        Channel("無線新聞", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-news/?embed=1")),
         Channel("明珠台", "", listOf("https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1")),
         Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv")),
         Channel("澳視葡文", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=2&type=tv")),
@@ -127,7 +137,9 @@ val fullChannels = mutableListOf<Channel>()
         Channel("澳門MACAU", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=8&type=tv")),
         Channel("新唐人亚太台", "", listOf("https://www.ntdtv.com.tw/")),
         Channel("新唐人美东台", "", listOf("https://www.ntdtv.com/")),
-        Channel("东森新闻", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-news-tv/?embed=1", "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
+        Channel("東森新聞", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-news-tv/?embed=1", "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
+        Channel("東森綜合", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-variety-tv/?embed=1")),
+        Channel("東森電影", "", listOf("https://idx.gdplayertv.to/live-tv/ebc-movies-tv/?embed=1")),
         Channel("民視第一台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1")),
         Channel("民視台灣台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2")),
         Channel("民視新聞台", "", listOf("https://www.4gtv.tv/channel/litv-ftv13?set=4&ch=31")),
