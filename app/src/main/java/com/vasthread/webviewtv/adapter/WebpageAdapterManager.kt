@@ -21,6 +21,7 @@ object WebpageAdapterManager {
         FgtvWebpageAdapter(),
         TvbWebpageAdapter(),
         TdmWebpageAdapter(),
+        JlnWebpageAdapter(),
         YangshipinWebpageAdapter(),
         CommonWebpageAdapter(),
     )
