@@ -126,8 +126,8 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("翡翠台", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
-        Channel("無線新聞", "", listOf("https://enx.gdplayertv.to/live-tv/tvb-news/?embed=1")),
+        Channel("翡翠台", "", listOf("https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
+        Channel("無線新聞", "", listOf("https://enz.gdplayertv.to/live-tv/tvb-news/?embed=1")),
         Channel("明珠台", "", listOf("https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1")),
         Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv")),
         Channel("澳視葡文", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=2&type=tv")),
@@ -137,8 +137,8 @@ val fullChannels = mutableListOf<Channel>()
         Channel("澳門MACAU", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=8&type=tv")),
         Channel("新唐人亚太台", "", listOf("https://www.ntdtv.com.tw/")),
         Channel("新唐人美东台", "", listOf("https://www.ntdtv.com/")),
-        Channel("東森新聞", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-news-tv/?embed=1", "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
-        Channel("東森綜合", "", listOf("https://enx.gdplayertv.to/live-tv/ebc-variety-tv/?embed=1")),
+        Channel("東森新聞", "", listOf("https://enz.gdplayertv.to/live-tv/ebc-news-tv/?embed=1", "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
+        Channel("東森綜合", "", listOf("https://enz.gdplayertv.to/live-tv/ebc-variety-tv/?embed=1")),
         Channel("東森電影", "", listOf("https://idx.gdplayertv.to/live-tv/ebc-movies-tv/?embed=1")),
         Channel("民視第一台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1")),
         Channel("民視台灣台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2")),
