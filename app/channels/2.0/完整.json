@@ -160,6 +160,28 @@
     ]
   },
   {
+    "name": "CETV-1 综合教育",
+    "groupName": "央视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
+    ]
+  },
+  {
+    "name": "CETV-2 空中课堂",
+    "groupName": "央视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html"
+    ]
+  },
+  {
+    "name": "CETV-4 职业教育",
+    "groupName": "央视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
+      "https://edu.cctv.com/cetv/"
+    ]
+  },
+  {
     "name": "CGTN",
     "groupName": "央视",
     "urls": [
@@ -199,6 +221,167 @@
     "groupName": "央视",
     "urls": [
       "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
+    ]
+  },
+  {
+    "name": "北京卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002309"
+    ]
+  },
+  {
+    "name": "江苏卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002521"
+    ]
+  },
+  {
+    "name": "东方卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002483"
+    ]
+  },
+  {
+    "name": "浙江卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002520"
+    ]
+  },
+  {
+    "name": "湖南卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002475"
+    ]
+  },
+  {
+    "name": "湖北卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002508"
+    ]
+  },
+  {
+    "name": "广东卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002485"
+    ]
+  },
+  {
+    "name": "广西卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002509"
+    ]
+  },
+  {
+    "name": "黑龙江卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002498"
+    ]
+  },
+  {
+    "name": "海南卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002506"
+    ]
+  },
+  {
+    "name": "重庆卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002531"
+    ]
+  },
+  {
+    "name": "深圳卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002481"
+    ]
+  },
+  {
+    "name": "四川卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002516"
+    ]
+  },
+  {
+    "name": "河南卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002525"
+    ]
+  },
+  {
+    "name": "东南卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002484"
+    ]
+  },
+  {
+    "name": "贵州卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002490"
+    ]
+  },
+  {
+    "name": "江西卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002503"
+    ]
+  },
+  {
+    "name": "辽宁卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002505"
+    ]
+  },
+  {
+    "name": "安徽卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002532"
+    ]
+  },
+  {
+    "name": "河北卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002493"
+    ]
+  },
+  {
+    "name": "山东卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002513"
+    ]
+  },
+  {
+    "name": "延边卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.yb983.com/cys/index.html"
+    ]
+  },
+  {
+    "name": "新疆卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
     ]
   },
   {
@@ -559,227 +742,224 @@
     ]
   },
   {
-    "name": "北京卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002309"
-    ]
-  },
-  {
-    "name": "江苏卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002521"
-    ]
-  },
-  {
-    "name": "东方卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002483"
-    ]
-  },
-  {
-    "name": "浙江卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002520"
-    ]
-  },
-  {
-    "name": "湖南卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002475"
-    ]
-  },
-  {
-    "name": "湖北卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002508"
-    ]
-  },
-  {
-    "name": "广东卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002485"
-    ]
-  },
-  {
-    "name": "广西卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002509"
-    ]
-  },
-  {
-    "name": "黑龙江卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002498"
-    ]
-  },
-  {
-    "name": "海南卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002506"
-    ]
-  },
-  {
-    "name": "重庆卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002531"
-    ]
-  },
-  {
-    "name": "深圳卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002481"
-    ]
-  },
-  {
-    "name": "四川卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002516"
-    ]
-  },
-  {
-    "name": "河南卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002525"
-    ]
-  },
-  {
-    "name": "东南卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002484"
-    ]
-  },
-  {
-    "name": "贵州卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002490"
-    ]
-  },
-  {
-    "name": "江西卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002503"
-    ]
-  },
-  {
-    "name": "辽宁卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002505"
-    ]
-  },
-  {
-    "name": "安徽卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002532"
-    ]
-  },
-  {
-    "name": "河北卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002493"
-    ]
-  },
-  {
-    "name": "山东卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002513"
-    ]
-  },
-  {
-    "name": "延边卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.yb983.com/cys/index.html"
-    ]
-  },
-  {
-    "name": "新疆卫视",
-    "groupName": "卫视",
-    "urls": [
-      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
-    ]
-  },
-  {
     "name": "翡翠台",
-    "groupName": "海外",
+    "groupName": "香港",
     "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ",
       "https://enz.gdplayertv.to/live-tv/tvb-jade/?embed\u003d1"
     ]
   },
   {
     "name": "無線新聞",
-    "groupName": "海外",
+    "groupName": "香港",
     "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d5e2avMI8JXyPe9rVuDSxwiCvsqAqCrPBqPsUSWrXDKN2L9rIzA",
       "https://enz.gdplayertv.to/live-tv/tvb-news/?embed\u003d1"
     ]
   },
   {
     "name": "明珠台",
-    "groupName": "海外",
+    "groupName": "香港",
     "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d910drXCXuvox1KxMaCzEhMltq5JK1qSQy9zm-nkstsFwqLSw7i4",
       "https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed\u003d1"
     ]
   },
   {
     "name": "澳視澳門",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d1\u0026type\u003dtv"
     ]
   },
   {
     "name": "澳視葡文",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d2\u0026type\u003dtv"
     ]
   },
   {
     "name": "澳門資訊",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d5\u0026type\u003dtv"
     ]
   },
   {
     "name": "澳門體育",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d6\u0026type\u003dtv"
     ]
   },
   {
     "name": "澳門綜藝",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d7\u0026type\u003dtv"
     ]
   },
   {
     "name": "澳門MACAU",
-    "groupName": "海外",
+    "groupName": "澳門",
     "urls": [
       "https://www.tdm.com.mo/zh-hant/live?Channel\u003d8\u0026type\u003dtv"
+    ]
+  },
+  {
+    "name": "東森新聞",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003dd7c9cqojVv8HhOKJ21KwZvsYwApfnEiecpCVhysKZsYsWnGGTw",
+      "https://www.4gtv.tv/channel/4gtv-4gtv152?set\u003d4\u0026ch\u003d292"
+    ]
+  },
+  {
+    "name": "東森財經",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d5440lDG41CDeziB7SsRoChqYyIiSs14oznWXOe6Pw3W09l32yA"
+    ]
+  },
+  {
+    "name": "東森綜合",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003df352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA"
+    ]
+  },
+  {
+    "name": "東森電影",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003dfaffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg"
+    ]
+  },
+  {
+    "name": "東森戲劇",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d0ba9U596e_liclHp-sRJyA497-B-o2Ff0ws_6SUz1Yv4ZDBsiQ"
+    ]
+  },
+  {
+    "name": "東森洋片",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003db731J0NuKSooz1MrvfF8lT9CFViu_ykbNOdGI7OkFYK7BbBy3A"
+    ]
+  },
+  {
+    "name": "東森幼幼",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d8d89ITGSf0YWWa2GH1gY2jel3z4ciyTwW2dZKbQq43ZUD73YCg"
+    ]
+  },
+  {
+    "name": "年代新聞",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.tiantianzhibo.net/player/index?id\u003d0c771kC3czYydY-9dMP-8087HfO99F_8NiDCWRdINHu9FLGGSQ"
+    ]
+  },
+  {
+    "name": "民視第一台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv003?set\u003d4\u0026ch\u003d1"
+    ]
+  },
+  {
+    "name": "民視台灣台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv001?set\u003d4\u0026ch\u003d2"
+    ]
+  },
+  {
+    "name": "民視新聞台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/litv-ftv13?set\u003d4\u0026ch\u003d31"
+    ]
+  },
+  {
+    "name": "民視綜藝台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv004?set\u003d4\u0026ch\u003d16"
+    ]
+  },
+  {
+    "name": "民視旅遊台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/litv-ftv07?set\u003d4\u0026ch\u003d61"
+    ]
+  },
+  {
+    "name": "民視影劇台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/litv-ftv09?set\u003d4\u0026ch\u003d24"
+    ]
+  },
+  {
+    "name": "民視",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv002?set\u003d4\u0026ch\u003d3"
+    ]
+  },
+  {
+    "name": "中視",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv040?set\u003d4\u0026ch\u003d4"
+    ]
+  },
+  {
+    "name": "中視經典台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv080?set\u003d4\u0026ch\u003d124"
+    ]
+  },
+  {
+    "name": "華視",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv041?set\u003d4\u0026ch\u003d6"
+    ]
+  },
+  {
+    "name": "華視新聞",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273"
+    ]
+  },
+  {
+    "name": "大愛電視",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-live007?set\u003d4\u0026ch\u003d209"
+    ]
+  },
+  {
+    "name": "ARIRANG阿里郎頻道",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-4gtv079?set\u003d4\u0026ch\u003d189"
+    ]
+  },
+  {
+    "name": "原住民族電視台",
+    "groupName": "台灣",
+    "urls": [
+      "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273"
     ]
   },
   {
@@ -794,126 +974,6 @@
     "groupName": "海外",
     "urls": [
       "https://www.ntdtv.com/"
-    ]
-  },
-  {
-    "name": "東森新聞",
-    "groupName": "海外",
-    "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003dd7c9cqojVv8HhOKJ21KwZvsYwApfnEiecpCVhysKZsYsWnGGTw",
-      "https://www.4gtv.tv/channel/4gtv-4gtv152?set\u003d4\u0026ch\u003d292"
-    ]
-  },
-  {
-    "name": "東森綜合",
-    "groupName": "海外",
-    "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003df352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA"
-    ]
-  },
-  {
-    "name": "東森電影",
-    "groupName": "海外",
-    "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003dfaffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg"
-    ]
-  },
-  {
-    "name": "民視第一台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv003?set\u003d4\u0026ch\u003d1"
-    ]
-  },
-  {
-    "name": "民視台灣台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv001?set\u003d4\u0026ch\u003d2"
-    ]
-  },
-  {
-    "name": "民視新聞台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/litv-ftv13?set\u003d4\u0026ch\u003d31"
-    ]
-  },
-  {
-    "name": "民視綜藝台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv004?set\u003d4\u0026ch\u003d16"
-    ]
-  },
-  {
-    "name": "民視旅遊台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/litv-ftv07?set\u003d4\u0026ch\u003d61"
-    ]
-  },
-  {
-    "name": "民視影劇台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/litv-ftv09?set\u003d4\u0026ch\u003d24"
-    ]
-  },
-  {
-    "name": "民視",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv002?set\u003d4\u0026ch\u003d3"
-    ]
-  },
-  {
-    "name": "中視",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv040?set\u003d4\u0026ch\u003d4"
-    ]
-  },
-  {
-    "name": "中視經典台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv080?set\u003d4\u0026ch\u003d124"
-    ]
-  },
-  {
-    "name": "華視",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv041?set\u003d4\u0026ch\u003d6"
-    ]
-  },
-  {
-    "name": "華視新聞",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273"
-    ]
-  },
-  {
-    "name": "大愛電視",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-live007?set\u003d4\u0026ch\u003d209"
-    ]
-  },
-  {
-    "name": "ARIRANG阿里郎頻道",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-4gtv079?set\u003d4\u0026ch\u003d189"
-    ]
-  },
-  {
-    "name": "原住民族電視台",
-    "groupName": "海外",
-    "urls": [
-      "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273"
     ]
   },
   {

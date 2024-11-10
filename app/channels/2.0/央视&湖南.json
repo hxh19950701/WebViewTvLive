@@ -160,6 +160,28 @@
     ]
   },
   {
+    "name": "CETV-1 综合教育",
+    "groupName": "央视\u0026湖南",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
+    ]
+  },
+  {
+    "name": "CETV-2 空中课堂",
+    "groupName": "央视\u0026湖南",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html"
+    ]
+  },
+  {
+    "name": "CETV-4 职业教育",
+    "groupName": "央视\u0026湖南",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
+      "https://edu.cctv.com/cetv/"
+    ]
+  },
+  {
     "name": "CGTN",
     "groupName": "央视\u0026湖南",
     "urls": [
