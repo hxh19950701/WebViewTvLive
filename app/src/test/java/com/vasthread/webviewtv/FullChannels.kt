@@ -132,6 +132,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("翡翠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ","https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
         Channel("無線新聞", "", listOf("https://www.tiantianzhibo.net/player/index?id=5e2avMI8JXyPe9rVuDSxwiCvsqAqCrPBqPsUSWrXDKN2L9rIzA","https://enz.gdplayertv.to/live-tv/tvb-news/?embed=1")),
         Channel("明珠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=910drXCXuvox1KxMaCzEhMltq5JK1qSQy9zm-nkstsFwqLSw7i4","https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1")),
+        Channel("鳳凰衛視資訊台", "", listOf("https://www.fengshows.com/live")),
     )
     .addChannels(
         "澳門",
