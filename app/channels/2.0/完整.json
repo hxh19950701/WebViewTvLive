@@ -773,6 +773,14 @@
     ]
   },
   {
+    "name": "香港衛視",
+    "groupName": "香港",
+    "urls": [
+      "http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8",
+      "http://www.hkstv.tv/index/live.html"
+    ]
+  },
+  {
     "name": "澳視澳門",
     "groupName": "澳門",
     "urls": [
