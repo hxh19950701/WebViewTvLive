@@ -385,6 +385,20 @@
     ]
   },
   {
+    "name": "大湾区卫视",
+    "groupName": "卫视",
+    "urls": [
+      "https://m.gdtv.cn/tvChannelDetail/51"
+    ]
+  },
+  {
+    "name": "大湾区卫视（海外版）",
+    "groupName": "卫视",
+    "urls": [
+      "https://m.gdtv.cn/tvChannelDetail/46"
+    ]
+  },
+  {
     "name": "湖南卫视",
     "groupName": "湖南",
     "urls": [
@@ -672,6 +686,125 @@
     ]
   },
   {
+    "name": "江西卫视",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/"
+    ]
+  },
+  {
+    "name": "江西都市",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv2"
+    ]
+  },
+  {
+    "name": "江西经济生活",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv3"
+    ]
+  },
+  {
+    "name": "江西影视旅游",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv4"
+    ]
+  },
+  {
+    "name": "江西公共农业",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv5"
+    ]
+  },
+  {
+    "name": "江西少儿",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv6"
+    ]
+  },
+  {
+    "name": "江西新闻",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv7"
+    ]
+  },
+  {
+    "name": "江西移动",
+    "groupName": "江西",
+    "urls": [
+      "https://www.jxntv.cn/live/#/jxtv8"
+    ]
+  },
+  {
+    "name": "江苏卫视",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d534"
+    ]
+  },
+  {
+    "name": "江苏城市",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d535"
+    ]
+  },
+  {
+    "name": "江苏综艺",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d556"
+    ]
+  },
+  {
+    "name": "江苏影视",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d542"
+    ]
+  },
+  {
+    "name": "江苏新闻",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d536"
+    ]
+  },
+  {
+    "name": "江苏教育",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d545"
+    ]
+  },
+  {
+    "name": "江苏体育",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d537"
+    ]
+  },
+  {
+    "name": "江苏国际",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d544"
+    ]
+  },
+  {
+    "name": "优漫卡通",
+    "groupName": "江苏",
+    "urls": [
+      "https://live.jstv.com/?channelId\u003d543"
+    ]
+  },
+  {
     "name": "东方卫视",
     "groupName": "上海",
     "urls": [
@@ -784,7 +917,8 @@
     "name": "澳視澳門",
     "groupName": "澳門",
     "urls": [
-      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d1\u0026type\u003dtv"
+      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d1\u0026type\u003dtv",
+      "http://61.244.22.5/ch1/ch1.live/index.m3u8"
     ]
   },
   {
@@ -798,7 +932,8 @@
     "name": "澳門資訊",
     "groupName": "澳門",
     "urls": [
-      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d5\u0026type\u003dtv"
+      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d5\u0026type\u003dtv",
+      "http://61.244.22.5/ch5/info_ch5.live/master.m3u8"
     ]
   },
   {
@@ -819,7 +954,8 @@
     "name": "澳門MACAU",
     "groupName": "澳門",
     "urls": [
-      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d8\u0026type\u003dtv"
+      "https://www.tdm.com.mo/zh-hant/live?Channel\u003d8\u0026type\u003dtv",
+      "http://61.244.22.5/ch3/ch3.live/index.m3u8"
     ]
   },
   {

@@ -62,6 +62,8 @@ val fullChannels = mutableListOf<Channel>()
         //Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
         Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
         Channel("新疆卫视", "", listOf("https://www.xjtvs.com.cn/column/tv/434?channelId=1")),
+        Channel("大湾区卫视", "", listOf("https://m.gdtv.cn/tvChannelDetail/51")),
+        Channel("大湾区卫视（海外版）", "", listOf("https://m.gdtv.cn/tvChannelDetail/46")),
     )
     .addChannels(
         "湖南",
@@ -111,6 +113,29 @@ val fullChannels = mutableListOf<Channel>()
         Channel("深圳少儿", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7881")),
     )
     .addChannels(
+        "江西",
+        Channel("江西卫视", "", listOf("https://www.jxntv.cn/live/#/")),
+        Channel("江西都市", "", listOf("https://www.jxntv.cn/live/#/jxtv2")),
+        Channel("江西经济生活", "", listOf("https://www.jxntv.cn/live/#/jxtv3")),
+        Channel("江西影视旅游", "", listOf("https://www.jxntv.cn/live/#/jxtv4")),
+        Channel("江西公共农业", "", listOf("https://www.jxntv.cn/live/#/jxtv5")),
+        Channel("江西少儿", "", listOf("https://www.jxntv.cn/live/#/jxtv6")),
+        Channel("江西新闻", "", listOf("https://www.jxntv.cn/live/#/jxtv7")),
+        Channel("江西移动", "", listOf("https://www.jxntv.cn/live/#/jxtv8")),
+    )
+    .addChannels(
+        "江苏",
+        Channel("江苏卫视", "", listOf("https://live.jstv.com/?channelId=534")),
+        Channel("江苏城市", "", listOf("https://live.jstv.com/?channelId=535")),
+        Channel("江苏综艺", "", listOf("https://live.jstv.com/?channelId=556")),
+        Channel("江苏影视", "", listOf("https://live.jstv.com/?channelId=542")),
+        Channel("江苏新闻", "", listOf("https://live.jstv.com/?channelId=536")),
+        Channel("江苏教育", "", listOf("https://live.jstv.com/?channelId=545")),
+        Channel("江苏体育", "", listOf("https://live.jstv.com/?channelId=537")),
+        Channel("江苏国际", "", listOf("https://live.jstv.com/?channelId=544")),
+        Channel("优漫卡通", "", listOf("https://live.jstv.com/?channelId=543")),
+    )
+    .addChannels(
         "上海",
         Channel("东方卫视", "", listOf("https://live.kankanews.com/huikan")),
         Channel("新闻综合", "", listOf("https://live.kankanews.com/huikan?id=2")),
@@ -137,12 +162,12 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "澳門",
-        Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv")),
+        Channel("澳視澳門", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=1&type=tv", "http://61.244.22.5/ch1/ch1.live/index.m3u8")),
         Channel("澳視葡文", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=2&type=tv")),
-        Channel("澳門資訊", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=5&type=tv")),
+        Channel("澳門資訊", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=5&type=tv", "http://61.244.22.5/ch5/info_ch5.live/master.m3u8")),
         Channel("澳門體育", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=6&type=tv")),
         Channel("澳門綜藝", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=7&type=tv")),
-        Channel("澳門MACAU", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=8&type=tv")),
+        Channel("澳門MACAU", "", listOf("https://www.tdm.com.mo/zh-hant/live?Channel=8&type=tv", "http://61.244.22.5/ch3/ch3.live/index.m3u8")),
     )
     .addChannels(
         "台灣",
