@@ -2,6 +2,7 @@
     <h1>WebView 电视</h1>
 <div align="center">
 
+![GitHub top language](https://img.shields.io/github/languages/top/hxh19950701/WebViewTvLive)
 ![GitHub repo size](https://img.shields.io/github/repo-size/hxh19950701/WebViewTvLive)
 ![GitHub Repo stars](https://img.shields.io/github/stars/hxh19950701/WebViewTvLive)
 ![GitHub all releases](https://img.shields.io/github/downloads/hxh19950701/WebViewTvLive/total)
