@@ -1,0 +1,401 @@
+[
+  {
+    "name": "CCTV-1 综合",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv1/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001859"
+    ]
+  },
+  {
+    "name": "CCTV-2 财经",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv2/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001800"
+    ]
+  },
+  {
+    "name": "CCTV-3 综艺",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv3/"
+    ]
+  },
+  {
+    "name": "CCTV-4 中文国际",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv4/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001814"
+    ]
+  },
+  {
+    "name": "CCTV-5 体育",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv5/"
+    ]
+  },
+  {
+    "name": "CCTV-5+ 体育赛事",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv5plus/"
+    ]
+  },
+  {
+    "name": "CCTV-6 电影",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv6/"
+    ]
+  },
+  {
+    "name": "CCTV-7 国防军事",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv7/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600004092"
+    ]
+  },
+  {
+    "name": "CCTV-8 电视剧",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv8/"
+    ]
+  },
+  {
+    "name": "CCTV-9 记录",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctvjilu/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600004078"
+    ]
+  },
+  {
+    "name": "CCTV-10 科教",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv10/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001805"
+    ]
+  },
+  {
+    "name": "CCTV-11 戏曲",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv11/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001806"
+    ]
+  },
+  {
+    "name": "CCTV-12 社会与法",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv12/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001807"
+    ]
+  },
+  {
+    "name": "CCTV-13 新闻",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv13/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001811"
+    ]
+  },
+  {
+    "name": "CCTV-14 少儿",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctvchild/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001809"
+    ]
+  },
+  {
+    "name": "CCTV-15 音乐",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv15/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001815"
+    ]
+  },
+  {
+    "name": "CCTV-16 奥林匹克",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv16/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600098637"
+    ]
+  },
+  {
+    "name": "CCTV-17 农业农村",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctv17/",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600001810"
+    ]
+  },
+  {
+    "name": "CCTV-4 中文国际（欧洲）",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctveurope/"
+    ]
+  },
+  {
+    "name": "CCTV-4 中文国际（美洲）",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.cctv.com/live/cctvamerica/"
+    ]
+  },
+  {
+    "name": "CCTV-4K 超高清",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002264"
+    ]
+  },
+  {
+    "name": "CETV-1 综合教育",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
+    ]
+  },
+  {
+    "name": "CETV-2 空中课堂",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html"
+    ]
+  },
+  {
+    "name": "CETV-4 职业教育",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
+      "https://edu.cctv.com/cetv/"
+    ]
+  },
+  {
+    "name": "CGTN",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600014550"
+    ]
+  },
+  {
+    "name": "CGTN Español",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084744"
+    ]
+  },
+  {
+    "name": "CGTN Français",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084704"
+    ]
+  },
+  {
+    "name": "CGTN العربية",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084782"
+    ]
+  },
+  {
+    "name": "CGTN Русский",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084758"
+    ]
+  },
+  {
+    "name": "CGTN Documentary",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
+    ]
+  },
+  {
+    "name": "北京卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002309"
+    ]
+  },
+  {
+    "name": "江苏卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002521"
+    ]
+  },
+  {
+    "name": "东方卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002483"
+    ]
+  },
+  {
+    "name": "浙江卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002520"
+    ]
+  },
+  {
+    "name": "湖南卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002475"
+    ]
+  },
+  {
+    "name": "湖北卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002508"
+    ]
+  },
+  {
+    "name": "广东卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002485"
+    ]
+  },
+  {
+    "name": "广西卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002509"
+    ]
+  },
+  {
+    "name": "黑龙江卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002498"
+    ]
+  },
+  {
+    "name": "海南卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002506"
+    ]
+  },
+  {
+    "name": "重庆卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002531"
+    ]
+  },
+  {
+    "name": "深圳卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002481"
+    ]
+  },
+  {
+    "name": "四川卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002516"
+    ]
+  },
+  {
+    "name": "河南卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002525"
+    ]
+  },
+  {
+    "name": "东南卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002484"
+    ]
+  },
+  {
+    "name": "贵州卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002490"
+    ]
+  },
+  {
+    "name": "江西卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002503"
+    ]
+  },
+  {
+    "name": "辽宁卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002505"
+    ]
+  },
+  {
+    "name": "安徽卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002532"
+    ]
+  },
+  {
+    "name": "河北卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002493"
+    ]
+  },
+  {
+    "name": "山东卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002513"
+    ]
+  },
+  {
+    "name": "延边卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.yb983.com/cys/index.html"
+    ]
+  },
+  {
+    "name": "新疆卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
+    ]
+  },
+  {
+    "name": "大湾区卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://m.gdtv.cn/tvChannelDetail/51"
+    ]
+  },
+  {
+    "name": "大湾区卫视（海外版）",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://m.gdtv.cn/tvChannelDetail/46"
+    ]
+  }
+]

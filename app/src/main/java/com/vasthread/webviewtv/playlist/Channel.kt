@@ -1,9 +1,11 @@
 package com.vasthread.webviewtv.playlist
 
+import com.google.gson.annotations.SerializedName
 import com.vasthread.webviewtv.settings.SettingsManager
 
 data class Channel @JvmOverloads constructor(
     var name: String = "",
+    @SerializedName("group")
     var groupName: String = "",
     var urls: List<String> = emptyList(),
 ) {

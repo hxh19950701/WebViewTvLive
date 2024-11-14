@@ -4,7 +4,7 @@ import com.google.gson.GsonBuilder
 import com.vasthread.webviewtv.playlist.Channel
 import java.io.File
 
-const val VERSION_NAME = "2.0"
+const val VERSION_NAME = "3.0"
 
 fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channel): MutableCollection<Channel> {
     channels.forEach { add(Channel(it.name, name, it.urls)) }
@@ -15,7 +15,7 @@ fun MutableCollection<Channel>.extractGroup(groupName: String): Array<Channel> {
     return filter { it.groupName == groupName }.toTypedArray()
 }
 
-fun savePlaylist(title: String, channels: Collection<Channel>, path: String = "channels/$VERSION_NAME/") {
+fun savePlaylist(title: String, channels: Collection<Channel>, path: String = "../channels/$VERSION_NAME/") {
     val json = gson.toJson(channels)
     val file = File(path, "$title.json")
     val parentFile = file.parentFile

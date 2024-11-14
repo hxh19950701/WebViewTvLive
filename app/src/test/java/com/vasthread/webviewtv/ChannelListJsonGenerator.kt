@@ -10,25 +10,35 @@ class ChannelListJsonGenerator {
         makeDefault();
         makeFull()
         makeCCTVAndHunanTV()
+        makeCCTVAndSatelliteTV()
     }
 
     private fun makeDefault() {
         val channels = mutableListOf<Channel>()
-            .addChannels("默认", fullChannels.extractGroup("央视")[0])
+            .addChannels("央视", *fullChannels.extractGroup("央视"))
         savePlaylist("default_playlist", channels, "src/main/assets")
     }
 
     @Test
     fun makeCCTVAndHunanTV() {
-        val title = "央视&湖南"
+        val title = "cctv_and_hunan_tv_single_list"
         val channels = mutableListOf<Channel>()
-            .addChannels(title, *fullChannels.extractGroup("央视"))
-            .addChannels(title, *fullChannels.extractGroup("湖南"))
+            .addChannels("央视&湖南", *fullChannels.extractGroup("央视"))
+            .addChannels("央视&湖南", *fullChannels.extractGroup("湖南"))
+        savePlaylist(title, channels)
+    }
+
+    @Test
+    fun makeCCTVAndSatelliteTV() {
+        val title = "cctv_and_satellite_tv_single_list"
+        val channels = mutableListOf<Channel>()
+            .addChannels("央视&卫视", *fullChannels.extractGroup("央视"))
+            .addChannels("央视&卫视", *fullChannels.extractGroup("卫视"))
         savePlaylist(title, channels)
     }
 
     @Test
     fun makeFull() {
-        savePlaylist("完整", fullChannels)
+        savePlaylist("full", fullChannels)
     }
 }
