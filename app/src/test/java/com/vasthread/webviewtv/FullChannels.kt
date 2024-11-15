@@ -5,7 +5,7 @@ import com.vasthread.webviewtv.playlist.Channel
 val fullChannels = mutableListOf<Channel>()
     .addChannels(
         "央视",
-        Channel("CCTV-1 综合", "", listOf("https://tv.cctv.com/live/cctv1/", "https://www.yangshipin.cn/tv/home?pid=600001859", "https://idx.gdplayertv.to/live-tv/cctv1/?embed=1")),
+        Channel("CCTV-1 综合", "", listOf("https://tv.cctv.com/live/cctv1/", "https://www.yangshipin.cn/tv/home?pid=600001859")),
         Channel("CCTV-2 财经", "", listOf("https://tv.cctv.com/live/cctv2/", "https://www.yangshipin.cn/tv/home?pid=600001800")),
         Channel("CCTV-3 综艺", "", listOf("https://tv.cctv.com/live/cctv3/")),
         Channel("CCTV-4 中文国际", "", listOf("https://tv.cctv.com/live/cctv4/", "https://www.yangshipin.cn/tv/home?pid=600001814")),
