@@ -11,8 +11,19 @@ fun MutableCollection<Channel>.addChannels(name: String, vararg channels: Channe
     return this
 }
 
-fun MutableCollection<Channel>.extractGroup(groupName: String): Array<Channel> {
-    return filter { it.groupName == groupName }.toTypedArray()
+fun MutableCollection<Channel>.addChannels(name: String, channels: Collection<Channel>): MutableCollection<Channel> {
+    channels.forEach { add(Channel(it.name, name, it.urls)) }
+    return this
+}
+
+fun MutableCollection<Channel>.extractGroup(groupName: String): MutableCollection<Channel> {
+    val collection = mutableListOf<Channel>()
+    return filter { it.groupName == groupName }.toCollection(collection)
+}
+
+fun MutableCollection<Channel>.extractAllGroupsExclude(groupName: String): MutableCollection<Channel> {
+    val collection = mutableListOf<Channel>()
+    return filter { it.groupName != groupName }.toCollection(collection)
 }
 
 fun savePlaylist(title: String, channels: Collection<Channel>, path: String = "../channels/$VERSION_NAME/") {
