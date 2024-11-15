@@ -30,7 +30,7 @@
 - 从 Github 下载 <br>
 https://github.com/hxh19950701/WebViewTvLive/releases <br>
 - 微信 <br>
-若您不方便访问 Github， 也可关注微信公众号“网页电视”，回复任意消息即可获取最新版下载链接。
+若您不方便访问 Github， 也可关注微信公众号“**网页电视**”，回复任意消息即可获取最新版下载链接。
 
 ## 优势
 
