@@ -316,6 +316,13 @@
     ]
   },
   {
+    "name": "康巴卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.kangbatv.com/zb_22587/"
+    ]
+  },
+  {
     "name": "河南卫视",
     "group": "央视\u0026卫视",
     "urls": [
@@ -372,6 +379,13 @@
     ]
   },
   {
+    "name": "山西卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.sxrtv.com/tv/index.shtml"
+    ]
+  },
+  {
     "name": "延边卫视",
     "group": "央视\u0026卫视",
     "urls": [
@@ -414,10 +428,17 @@
     ]
   },
   {
-    "name": "康巴卫视",
+    "name": "云南卫视",
     "group": "央视\u0026卫视",
     "urls": [
-      "https://www.kangbatv.com/zb_22587/"
+      "https://www.yntv.cn/live.html"
+    ]
+  },
+  {
+    "name": "青海卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "http://www.qhbtv.com/new_index/live/folder2646/"
     ]
   }
 ]

@@ -66,6 +66,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("重庆卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002531")),
         Channel("深圳卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002481")),
         Channel("四川卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002516")),
+        Channel("康巴卫视", "", listOf("https://www.kangbatv.com/zb_22587/")),
         Channel("河南卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002525")),
         Channel("东南卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002484")),
         Channel("贵州卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002490")),
@@ -74,6 +75,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("安徽卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002532")),
         Channel("河北卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002493")),
         Channel("山东卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002513")),
+        Channel("山西卫视", "", listOf("https://www.sxrtv.com/tv/index.shtml")),
         //Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
         Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
         Channel("新疆卫视", "", listOf("https://www.xjtvs.com.cn/column/tv/434?channelId=1")),
@@ -81,7 +83,8 @@ val fullChannels = mutableListOf<Channel>()
         Channel("大湾区卫视（海外版）", "", listOf("https://m.gdtv.cn/tvChannelDetail/46")),
         Channel("内蒙古卫视", "", listOf("https://www.nmtv.cn/liveTv")),
         Channel("陕西卫视", "", listOf("http://www.sxtvs.com/sxtvs_sxws/index.html")),
-        Channel("康巴卫视", "", listOf("https://www.kangbatv.com/zb_22587/"))
+        Channel("云南卫视", "", listOf("https://www.yntv.cn/live.html")),
+        Channel("青海卫视", "", listOf("http://www.qhbtv.com/new_index/live/folder2646/")),
     )
     .addChannels(
         "北京",
