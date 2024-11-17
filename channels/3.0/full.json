@@ -589,6 +589,56 @@
     ]
   },
   {
+    "name": "湖北卫视",
+    "group": "湖北卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002508",
+      "https://news.hbtv.com.cn/app/tv/431"
+    ]
+  },
+  {
+    "name": "湖北经视",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/432"
+    ]
+  },
+  {
+    "name": "湖北综合",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/433"
+    ]
+  },
+  {
+    "name": "湖北影视",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/434"
+    ]
+  },
+  {
+    "name": "湖北生活",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/436"
+    ]
+  },
+  {
+    "name": "湖北教育",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/437"
+    ]
+  },
+  {
+    "name": "湖北垄上",
+    "group": "湖北卫视",
+    "urls": [
+      "https://news.hbtv.com.cn/app/tv/438"
+    ]
+  },
+  {
     "name": "广东卫视",
     "group": "广东",
     "urls": [
@@ -768,6 +818,55 @@
     "group": "广东",
     "urls": [
       "https://www.sztv.com.cn/pindao/index.html?id\u003d7881"
+    ]
+  },
+  {
+    "name": "佛山顺德",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fssd.html"
+    ]
+  },
+  {
+    "name": "佛山公共",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fsgg.html"
+    ]
+  },
+  {
+    "name": "佛山影视",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fsys.html"
+    ]
+  },
+  {
+    "name": "佛山高明",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fsgm.html"
+    ]
+  },
+  {
+    "name": "佛山三水",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fsss.html"
+    ]
+  },
+  {
+    "name": "佛山综合",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fszh.html"
+    ]
+  },
+  {
+    "name": "佛山南海",
+    "group": "广东",
+    "urls": [
+      "http://xiubo.net/tv/gd/fsnh.html"
     ]
   },
   {
