@@ -227,7 +227,8 @@
     "name": "北京卫视",
     "group": "央视\u0026卫视",
     "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002309"
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002309",
+      "https://www.brtn.cn/btv/btvsy_index"
     ]
   },
   {
@@ -396,6 +397,27 @@
     "group": "央视\u0026卫视",
     "urls": [
       "https://m.gdtv.cn/tvChannelDetail/46"
+    ]
+  },
+  {
+    "name": "内蒙古卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.nmtv.cn/liveTv"
+    ]
+  },
+  {
+    "name": "陕西卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "http://www.sxtvs.com/sxtvs_sxws/index.html"
+    ]
+  },
+  {
+    "name": "康巴卫视",
+    "group": "央视\u0026卫视",
+    "urls": [
+      "https://www.kangbatv.com/zb_22587/"
     ]
   }
 ]
