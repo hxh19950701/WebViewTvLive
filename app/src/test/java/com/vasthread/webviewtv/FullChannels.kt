@@ -114,7 +114,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("长沙政法", "", listOf("https://live.mgtv.com/?channelId=254")),
     )
     .addChannels(
-        "湖北卫视",
+        "湖北",
         Channel("湖北卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002508",
             "https://news.hbtv.com.cn/app/tv/431")),
         Channel("湖北经视", "", listOf("https://news.hbtv.com.cn/app/tv/432")),

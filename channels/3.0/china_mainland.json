@@ -590,7 +590,7 @@
   },
   {
     "name": "湖北卫视",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://www.yangshipin.cn/tv/home?pid\u003d600002508",
       "https://news.hbtv.com.cn/app/tv/431"
@@ -598,42 +598,42 @@
   },
   {
     "name": "湖北经视",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/432"
     ]
   },
   {
     "name": "湖北综合",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/433"
     ]
   },
   {
     "name": "湖北影视",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/434"
     ]
   },
   {
     "name": "湖北生活",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/436"
     ]
   },
   {
     "name": "湖北教育",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/437"
     ]
   },
   {
     "name": "湖北垄上",
-    "group": "湖北卫视",
+    "group": "湖北",
     "urls": [
       "https://news.hbtv.com.cn/app/tv/438"
     ]
