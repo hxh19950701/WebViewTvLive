@@ -1010,6 +1010,49 @@
     ]
   },
   {
+    "name": "河北卫视",
+    "group": "河北",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002493",
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d0"
+    ]
+  },
+  {
+    "name": "经济生活",
+    "group": "河北",
+    "urls": [
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d1"
+    ]
+  },
+  {
+    "name": "农民频道",
+    "group": "河北",
+    "urls": [
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d2"
+    ]
+  },
+  {
+    "name": "河北都市",
+    "group": "河北",
+    "urls": [
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d3"
+    ]
+  },
+  {
+    "name": "河北影视剧",
+    "group": "河北",
+    "urls": [
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d4"
+    ]
+  },
+  {
+    "name": "少儿科教",
+    "group": "河北",
+    "urls": [
+      "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index\u003d5"
+    ]
+  },
+  {
     "name": "东方卫视",
     "group": "上海",
     "urls": [

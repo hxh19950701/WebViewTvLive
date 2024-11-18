@@ -189,6 +189,16 @@ val fullChannels = mutableListOf<Channel>()
         Channel("优漫卡通", "", listOf("https://live.jstv.com/?channelId=543")),
     )
     .addChannels(
+        "河北",
+        Channel("河北卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002493",
+            "https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=0")),
+        Channel("经济生活", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=1")),
+        Channel("农民频道", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=2")),
+        Channel("河北都市", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=3")),
+        Channel("河北影视剧", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=4")),
+        Channel("少儿科教", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=5")),
+    )
+    .addChannels(
         "上海",
         Channel("东方卫视", "", listOf("https://live.kankanews.com/huikan")),
         Channel("新闻综合", "", listOf("https://live.kankanews.com/huikan?id=2")),
