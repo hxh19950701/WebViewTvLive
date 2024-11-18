@@ -1102,6 +1102,147 @@
     ]
   },
   {
+    "name": "浙江卫视",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/101",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002520"
+    ]
+  },
+  {
+    "name": "浙江钱江",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/102"
+    ]
+  },
+  {
+    "name": "浙江经济生活",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/103"
+    ]
+  },
+  {
+    "name": "浙江教科影视",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/104"
+    ]
+  },
+  {
+    "name": "浙江民生休闲",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/106"
+    ]
+  },
+  {
+    "name": "浙江新闻",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/107"
+    ]
+  },
+  {
+    "name": "浙江少儿",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/108"
+    ]
+  },
+  {
+    "name": "浙江国际",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/110"
+    ]
+  },
+  {
+    "name": "浙江之江纪录",
+    "group": "浙江",
+    "urls": [
+      "https://www.cztv.com/liveTV/112"
+    ]
+  },
+  {
+    "name": "杭州综合",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/hzzh/"
+    ]
+  },
+  {
+    "name": "西湖明珠",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/xhmz/"
+    ]
+  },
+  {
+    "name": "杭州生活",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/hzsh/"
+    ]
+  },
+  {
+    "name": "杭州影视",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/utv/"
+    ]
+  },
+  {
+    "name": "杭州青少体育",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/hzse/"
+    ]
+  },
+  {
+    "name": "杭州文化",
+    "group": "浙江",
+    "urls": [
+      "https://tv.hoolo.tv/whpd/"
+    ]
+  },
+  {
+    "name": "宁波-1",
+    "group": "浙江",
+    "urls": [
+      "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml"
+    ]
+  },
+  {
+    "name": "宁波-2",
+    "group": "浙江",
+    "urls": [
+      "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml"
+    ]
+  },
+  {
+    "name": "宁波-3",
+    "group": "浙江",
+    "urls": [
+      "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml"
+    ]
+  },
+  {
+    "name": "宁波-4",
+    "group": "浙江",
+    "urls": [
+      "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml"
+    ]
+  },
+  {
+    "name": "吉林卫视",
+    "group": "吉林",
+    "urls": [
+      "https://www.jlntv.cn/tv?id\u003d104"
+    ]
+  },
+  {
     "name": "延边卫视",
     "group": "吉林",
     "urls": [
