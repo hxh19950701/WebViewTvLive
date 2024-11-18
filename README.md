@@ -5,6 +5,8 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/hxh19950701/WebViewTvLive)
 ![GitHub repo size](https://img.shields.io/github/repo-size/hxh19950701/WebViewTvLive)
 ![GitHub Repo stars](https://img.shields.io/github/stars/hxh19950701/WebViewTvLive)
+![GitHub Release](https://img.shields.io/github/v/release/hxh19950701/WebViewTvLive)
+
 
 </div>
     <p>使用 腾讯X5 WebView 开发的电视直播App</p>
