@@ -1719,17 +1719,66 @@
     ]
   },
   {
-    "name": "新唐人亚太台",
+    "name": "新唐人美東台",
     "group": "海外",
     "urls": [
-      "https://www.ntdtv.com.tw/"
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_east"
     ]
   },
   {
-    "name": "新唐人美东台",
+    "name": "新唐人美西台",
     "group": "海外",
     "urls": [
-      "https://www.ntdtv.com/"
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_west"
+    ]
+  },
+  {
+    "name": "新唐人歐洲台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_europe"
+    ]
+  },
+  {
+    "name": "新唐人加東台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_ca_east"
+    ]
+  },
+  {
+    "name": "新唐人加西台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_ca_west"
+    ]
+  },
+  {
+    "name": "新唐人舊金山台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_sf"
+    ]
+  },
+  {
+    "name": "新唐人休斯頓台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_tx"
+    ]
+  },
+  {
+    "name": "新唐人亞太台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_asia_tw"
+    ]
+  },
+  {
+    "name": "新唐人中國台",
+    "group": "海外",
+    "urls": [
+      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_china"
     ]
   },
   {

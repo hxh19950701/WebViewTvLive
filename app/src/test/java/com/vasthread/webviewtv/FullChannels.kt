@@ -337,8 +337,16 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("新唐人亚太台", "", listOf("https://www.ntdtv.com.tw/")),
-        Channel("新唐人美东台", "", listOf("https://www.ntdtv.com/")),
+        Channel("新唐人美東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_east")),
+        Channel("新唐人美西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_west")),
+        Channel("新唐人歐洲台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_europe")),
+        Channel("新唐人加東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_east")),
+        Channel("新唐人加西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_west")),
+        Channel("新唐人舊金山台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_sf")),
+        Channel("新唐人休斯頓台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_tx")),
+        Channel("新唐人亞太台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_asia_tw")),
+        Channel("新唐人中國台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_china")),
+
         Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
         Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
     )
