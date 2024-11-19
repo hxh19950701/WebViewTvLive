@@ -1208,31 +1208,129 @@
     ]
   },
   {
-    "name": "宁波-1",
+    "name": "宁波-1 新闻综合",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml"
     ]
   },
   {
-    "name": "宁波-2",
+    "name": "宁波-2 经济生活",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml"
     ]
   },
   {
-    "name": "宁波-3",
+    "name": "宁波-3 都市文体",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml"
     ]
   },
   {
-    "name": "宁波-4",
+    "name": "宁波-4 影视剧",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml"
+    ]
+  },
+  {
+    "name": "安徽卫视",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d0"
+    ]
+  },
+  {
+    "name": "安徽经济生活",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d1"
+    ]
+  },
+  {
+    "name": "安徽综艺体育",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d2"
+    ]
+  },
+  {
+    "name": "安徽影视",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d3"
+    ]
+  },
+  {
+    "name": "安徽公共",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d4"
+    ]
+  },
+  {
+    "name": "安徽农业科教",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d5"
+    ]
+  },
+  {
+    "name": "安徽国际",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d6"
+    ]
+  },
+  {
+    "name": "安徽移动",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahtv.cn/folder9000/folder20193?channelIndex\u003d7"
+    ]
+  },
+  {
+    "name": "淮北新闻综合",
+    "group": "安徽",
+    "urls": [
+      "https://www.hbnews.net/tv/"
+    ]
+  },
+  {
+    "name": "亳州综合",
+    "group": "安徽",
+    "urls": [
+      "https://www.ahbztv.com/televisi0n.html"
+    ]
+  },
+  {
+    "name": "滁州新闻综合",
+    "group": "安徽",
+    "urls": [
+      "http://www.cztv.cc/Live/index?liveid\u003d1"
+    ]
+  },
+  {
+    "name": "滁州公共",
+    "group": "安徽",
+    "urls": [
+      "http://www.cztv.cc/Live/index?liveid\u003d2"
+    ]
+  },
+  {
+    "name": "滁州科教",
+    "group": "安徽",
+    "urls": [
+      "http://www.cztv.cc/Live/index?liveid\u003d3"
+    ]
+  },
+  {
+    "name": "芜湖新闻综合",
+    "group": "安徽",
+    "urls": [
+      "http://www.wuhubtv.com/folder1194/#"
     ]
   },
   {
@@ -1250,14 +1348,14 @@
     ]
   },
   {
-    "name": "延边朝鲜语综合频道",
+    "name": "延边-1 朝鲜语综合",
     "group": "吉林",
     "urls": [
       "https://www.yb983.com/ybtv1/index.html"
     ]
   },
   {
-    "name": "延边汉语综合频道",
+    "name": "延边-2 汉语综合",
     "group": "吉林",
     "urls": [
       "https://www.yb983.com/ybtv2/index.html"

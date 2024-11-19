@@ -226,17 +226,35 @@ val fullChannels = mutableListOf<Channel>()
         Channel("杭州影视", "", listOf("https://tv.hoolo.tv/utv/")),
         Channel("杭州青少体育", "", listOf("https://tv.hoolo.tv/hzse/")),
         Channel("杭州文化", "", listOf("https://tv.hoolo.tv/whpd/")),
-        Channel("宁波-1", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml")),
-        Channel("宁波-2", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml")),
-        Channel("宁波-3", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml")),
-        Channel("宁波-4", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml")),
+        Channel("宁波-1 新闻综合", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml")),
+        Channel("宁波-2 经济生活", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml")),
+        Channel("宁波-3 都市文体", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml")),
+        Channel("宁波-4 影视剧", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml")),
+    )
+    .addChannels(
+        "安徽",
+        Channel("安徽卫视", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=0")),
+        Channel("安徽经济生活", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=1")),
+        Channel("安徽综艺体育", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=2")),
+        Channel("安徽影视", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=3")),
+        Channel("安徽公共", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=4")),
+        Channel("安徽农业科教", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=5")),
+        Channel("安徽国际", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=6")),
+        Channel("安徽移动", "", listOf("https://www.ahtv.cn/folder9000/folder20193?channelIndex=7")),
+
+        Channel("淮北新闻综合", "", listOf("https://www.hbnews.net/tv/")),
+        Channel("亳州综合", "", listOf("https://www.ahbztv.com/televisi0n.html")),
+        Channel("滁州新闻综合", "", listOf("http://www.cztv.cc/Live/index?liveid=1")),
+        Channel("滁州公共", "", listOf("http://www.cztv.cc/Live/index?liveid=2")),
+        Channel("滁州科教", "", listOf("http://www.cztv.cc/Live/index?liveid=3")),
+        Channel("芜湖新闻综合", "", listOf("http://www.wuhubtv.com/folder1194/#")),
     )
     .addChannels(
         "吉林",
         Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
         Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
-        Channel("延边朝鲜语综合频道", "", listOf("https://www.yb983.com/ybtv1/index.html")),
-        Channel("延边汉语综合频道", "", listOf("https://www.yb983.com/ybtv2/index.html")),
+        Channel("延边-1 朝鲜语综合", "", listOf("https://www.yb983.com/ybtv1/index.html")),
+        Channel("延边-2 汉语综合", "", listOf("https://www.yb983.com/ybtv2/index.html")),
     )
     .addChannels(
         "香港",
