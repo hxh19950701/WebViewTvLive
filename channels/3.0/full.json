@@ -185,6 +185,7 @@
     "name": "CGTN",
     "group": "央视",
     "urls": [
+      "https://www.cgtn.com/tv",
       "https://www.yangshipin.cn/tv/home?pid\u003d600014550"
     ]
   },
@@ -192,6 +193,7 @@
     "name": "CGTN Español",
     "group": "央视",
     "urls": [
+      "https://espanol.cgtn.com/en-directo",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084744"
     ]
   },
@@ -199,6 +201,7 @@
     "name": "CGTN Français",
     "group": "央视",
     "urls": [
+      "https://francais.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084704"
     ]
   },
@@ -206,6 +209,7 @@
     "name": "CGTN العربية",
     "group": "央视",
     "urls": [
+      "https://arabic.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084782"
     ]
   },
@@ -213,6 +217,7 @@
     "name": "CGTN Русский",
     "group": "央视",
     "urls": [
+      "https://russian.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084758"
     ]
   },
@@ -220,6 +225,7 @@
     "name": "CGTN Documentary",
     "group": "央视",
     "urls": [
+      "https://www.cgtn.com/channel/documentary",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
     ]
   },
@@ -1334,6 +1340,55 @@
     ]
   },
   {
+    "name": "贵州卫视",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch01"
+    ]
+  },
+  {
+    "name": "贵州公共",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch02"
+    ]
+  },
+  {
+    "name": "贵州影视文艺",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch03"
+    ]
+  },
+  {
+    "name": "贵州大众生活",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch04"
+    ]
+  },
+  {
+    "name": "贵州生态乡村",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch05"
+    ]
+  },
+  {
+    "name": "贵州科教健康",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch06"
+    ]
+  },
+  {
+    "name": "贵州移动",
+    "group": "贵州",
+    "urls": [
+      "https://www.gzstv.com/tv/ch13"
+    ]
+  },
+  {
     "name": "吉林卫视",
     "group": "吉林",
     "urls": [
@@ -1359,6 +1414,69 @@
     "group": "吉林",
     "urls": [
       "https://www.yb983.com/ybtv2/index.html"
+    ]
+  },
+  {
+    "name": "黑龙江卫视",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder418/"
+    ]
+  },
+  {
+    "name": "黑龙江文体",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder423/"
+    ]
+  },
+  {
+    "name": "黑龙江影视",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder425/"
+    ]
+  },
+  {
+    "name": "黑龙江新闻法治",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder424/"
+    ]
+  },
+  {
+    "name": "黑龙江农业科教",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder419/"
+    ]
+  },
+  {
+    "name": "黑龙江少儿",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hljtv.com/live/folder422/"
+    ]
+  },
+  {
+    "name": "哈尔滨新闻综合",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hrbtv.net/folder79/folder81/"
+    ]
+  },
+  {
+    "name": "哈尔滨生活",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hrbtv.net/folder79/folder85/"
+    ]
+  },
+  {
+    "name": "哈尔滨影视",
+    "group": "黑龙江",
+    "urls": [
+      "https://www.hrbtv.net/folder79/folder87/"
     ]
   },
   {

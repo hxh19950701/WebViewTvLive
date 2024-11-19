@@ -43,12 +43,18 @@ val fullChannels = mutableListOf<Channel>()
         Channel("CETV-2 空中课堂", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html")),
         Channel("CETV-4 职业教育", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
             "https://edu.cctv.com/cetv/")),
-        Channel("CGTN", "", listOf("https://www.yangshipin.cn/tv/home?pid=600014550")),
-        Channel("CGTN Español", "", listOf("https://www.yangshipin.cn/tv/home?pid=600084744")),
-        Channel("CGTN Français", "", listOf("https://www.yangshipin.cn/tv/home?pid=600084704")),
-        Channel("CGTN العربية", "", listOf("https://www.yangshipin.cn/tv/home?pid=600084782")),
-        Channel("CGTN Русский", "", listOf("https://www.yangshipin.cn/tv/home?pid=600084758")),
-        Channel("CGTN Documentary", "", listOf("https://www.yangshipin.cn/tv/home?pid=600084781")),
+        Channel("CGTN", "", listOf("https://www.cgtn.com/tv",
+            "https://www.yangshipin.cn/tv/home?pid=600014550",)),
+        Channel("CGTN Español", "", listOf("https://espanol.cgtn.com/en-directo",
+            "https://www.yangshipin.cn/tv/home?pid=600084744")),
+        Channel("CGTN Français", "", listOf("https://francais.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084704")),
+        Channel("CGTN العربية", "", listOf("https://arabic.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084782")),
+        Channel("CGTN Русский", "", listOf("https://russian.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084758")),
+        Channel("CGTN Documentary", "", listOf("https://www.cgtn.com/channel/documentary",
+            "https://www.yangshipin.cn/tv/home?pid=600084781")),
     )
     .addChannels(
         "卫视",
@@ -250,11 +256,33 @@ val fullChannels = mutableListOf<Channel>()
         Channel("芜湖新闻综合", "", listOf("http://www.wuhubtv.com/folder1194/#")),
     )
     .addChannels(
+        "贵州",
+        Channel("贵州卫视", "", listOf("https://www.gzstv.com/tv/ch01")),
+        Channel("贵州公共", "", listOf("https://www.gzstv.com/tv/ch02")),
+        Channel("贵州影视文艺", "", listOf("https://www.gzstv.com/tv/ch03")),
+        Channel("贵州大众生活", "", listOf("https://www.gzstv.com/tv/ch04")),
+        Channel("贵州生态乡村", "", listOf("https://www.gzstv.com/tv/ch05")),
+        Channel("贵州科教健康", "", listOf("https://www.gzstv.com/tv/ch06")),
+        Channel("贵州移动", "", listOf("https://www.gzstv.com/tv/ch13")),
+    )
+    .addChannels(
         "吉林",
         Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
         Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
         Channel("延边-1 朝鲜语综合", "", listOf("https://www.yb983.com/ybtv1/index.html")),
         Channel("延边-2 汉语综合", "", listOf("https://www.yb983.com/ybtv2/index.html")),
+    )
+    .addChannels(
+        "黑龙江",
+        Channel("黑龙江卫视", "", listOf("https://www.hljtv.com/live/folder418/")),
+        Channel("黑龙江文体", "", listOf("https://www.hljtv.com/live/folder423/")),
+        Channel("黑龙江影视", "", listOf("https://www.hljtv.com/live/folder425/")),
+        Channel("黑龙江新闻法治", "", listOf("https://www.hljtv.com/live/folder424/")),
+        Channel("黑龙江农业科教", "", listOf("https://www.hljtv.com/live/folder419/")),
+        Channel("黑龙江少儿", "", listOf("https://www.hljtv.com/live/folder422/")),
+        Channel("哈尔滨新闻综合", "", listOf("https://www.hrbtv.net/folder79/folder81/")),
+        Channel("哈尔滨生活", "", listOf("https://www.hrbtv.net/folder79/folder85/")),
+        Channel("哈尔滨影视", "", listOf("https://www.hrbtv.net/folder79/folder87/")),
     )
     .addChannels(
         "香港",

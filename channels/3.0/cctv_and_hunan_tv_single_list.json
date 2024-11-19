@@ -185,6 +185,7 @@
     "name": "CGTN",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://www.cgtn.com/tv",
       "https://www.yangshipin.cn/tv/home?pid\u003d600014550"
     ]
   },
@@ -192,6 +193,7 @@
     "name": "CGTN Español",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://espanol.cgtn.com/en-directo",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084744"
     ]
   },
@@ -199,6 +201,7 @@
     "name": "CGTN Français",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://francais.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084704"
     ]
   },
@@ -206,6 +209,7 @@
     "name": "CGTN العربية",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://arabic.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084782"
     ]
   },
@@ -213,6 +217,7 @@
     "name": "CGTN Русский",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://russian.cgtn.com/channel",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084758"
     ]
   },
@@ -220,6 +225,7 @@
     "name": "CGTN Documentary",
     "group": "央视\u0026湖南",
     "urls": [
+      "https://www.cgtn.com/channel/documentary",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
     ]
   },
