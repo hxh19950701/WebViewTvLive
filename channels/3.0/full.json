@@ -1575,6 +1575,13 @@
     ]
   },
   {
+    "name": "創世電視",
+    "group": "香港",
+    "urls": [
+      "https://cdn.deepcore.online/ctv_hk/"
+    ]
+  },
+  {
     "name": "澳視澳門",
     "group": "澳門",
     "urls": [
@@ -1785,7 +1792,7 @@
     "name": "NHK World",
     "group": "海外",
     "urls": [
-      "https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html"
+      "https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html?movie\u003dtruel\u0026lang\u003dzh"
     ]
   },
   {

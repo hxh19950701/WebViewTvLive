@@ -309,6 +309,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("鳳凰衛視資訊台", "", listOf("https://www.fengshows.com/live")),
         Channel("香港衛視", "", listOf("http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8",
             "http://www.hkstv.tv/index/live.html")),
+        Channel("創世電視", "", listOf("https://cdn.deepcore.online/ctv_hk/")),
     )
     .addChannels(
         "澳門",
@@ -352,7 +353,7 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
-        Channel("NHK World", "", listOf("https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html")),
+        Channel("NHK World", "", listOf("https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html?movie=truel&lang=zh")),
 
         Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
         Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
