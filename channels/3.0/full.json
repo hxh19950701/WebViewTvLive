@@ -1389,6 +1389,41 @@
     ]
   },
   {
+    "name": "山西卫视",
+    "group": "山西",
+    "urls": [
+      "https://www.sxrtv.com/tv/index.shtml"
+    ]
+  },
+  {
+    "name": "太原新闻综合",
+    "group": "山西",
+    "urls": [
+      "https://www.sxtygdy.com/23/23mbdszb/index.shtml"
+    ]
+  },
+  {
+    "name": "大同新闻综合",
+    "group": "山西",
+    "urls": [
+      "https://www.dtradio.com.cn/local/folder25"
+    ]
+  },
+  {
+    "name": "阳泉新闻综合",
+    "group": "山西",
+    "urls": [
+      "https://www.yqrtv.com/folder74/folder139?id\u003d10"
+    ]
+  },
+  {
+    "name": "阳泉科教",
+    "group": "山西",
+    "urls": [
+      "https://www.yqrtv.com/folder74/folder139?id\u003d11"
+    ]
+  },
+  {
     "name": "吉林卫视",
     "group": "吉林",
     "urls": [
