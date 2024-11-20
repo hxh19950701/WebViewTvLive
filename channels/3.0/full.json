@@ -1214,31 +1214,52 @@
     ]
   },
   {
-    "name": "宁波-1 新闻综合",
+    "name": "宁波新闻综合",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml"
     ]
   },
   {
-    "name": "宁波-2 经济生活",
+    "name": "宁波经济生活",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml"
     ]
   },
   {
-    "name": "宁波-3 都市文体",
+    "name": "宁波都市文体",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml"
     ]
   },
   {
-    "name": "宁波-4 影视剧",
+    "name": "宁波影视剧",
     "group": "浙江",
     "urls": [
       "https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml"
+    ]
+  },
+  {
+    "name": "绍兴新闻综合",
+    "group": "浙江",
+    "urls": [
+      "https://www.shaoxing.com.cn/app/tv/74"
+    ]
+  },
+  {
+    "name": "绍兴文化影视",
+    "group": "浙江",
+    "urls": [
+      "https://www.shaoxing.com.cn/app/tv/75"
+    ]
+  },
+  {
+    "name": "绍兴公共",
+    "group": "浙江",
+    "urls": [
+      "https://www.shaoxing.com.cn/app/tv/78"
     ]
   },
   {
@@ -1438,14 +1459,14 @@
     ]
   },
   {
-    "name": "延边-1 朝鲜语综合",
+    "name": "延边朝鲜语综合",
     "group": "吉林",
     "urls": [
       "https://www.yb983.com/ybtv1/index.html"
     ]
   },
   {
-    "name": "延边-2 汉语综合",
+    "name": "延边汉语综合",
     "group": "吉林",
     "urls": [
       "https://www.yb983.com/ybtv2/index.html"

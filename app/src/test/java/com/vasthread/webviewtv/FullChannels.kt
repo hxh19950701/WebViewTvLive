@@ -226,16 +226,22 @@ val fullChannels = mutableListOf<Channel>()
         Channel("浙江少儿", "", listOf("https://www.cztv.com/liveTV/108")),
         Channel("浙江国际", "", listOf("https://www.cztv.com/liveTV/110")),
         Channel("浙江之江纪录", "", listOf("https://www.cztv.com/liveTV/112")),
+
         Channel("杭州综合", "", listOf("https://tv.hoolo.tv/hzzh/")),
         Channel("西湖明珠", "", listOf("https://tv.hoolo.tv/xhmz/")),
         Channel("杭州生活", "", listOf("https://tv.hoolo.tv/hzsh/")),
         Channel("杭州影视", "", listOf("https://tv.hoolo.tv/utv/")),
         Channel("杭州青少体育", "", listOf("https://tv.hoolo.tv/hzse/")),
         Channel("杭州文化", "", listOf("https://tv.hoolo.tv/whpd/")),
-        Channel("宁波-1 新闻综合", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml")),
-        Channel("宁波-2 经济生活", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml")),
-        Channel("宁波-3 都市文体", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml")),
-        Channel("宁波-4 影视剧", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml")),
+
+        Channel("宁波新闻综合", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV1/index.shtml")),
+        Channel("宁波经济生活", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV2/index.shtml")),
+        Channel("宁波都市文体", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml")),
+        Channel("宁波影视剧", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml")),
+
+        Channel("绍兴新闻综合", "", listOf("https://www.shaoxing.com.cn/app/tv/74")),
+        Channel("绍兴文化影视", "", listOf("https://www.shaoxing.com.cn/app/tv/75")),
+        Channel("绍兴公共", "", listOf("https://www.shaoxing.com.cn/app/tv/78")),
     )
     .addChannels(
         "安徽",
@@ -277,8 +283,8 @@ val fullChannels = mutableListOf<Channel>()
         "吉林",
         Channel("吉林卫视", "", listOf("https://www.jlntv.cn/tv?id=104")),
         Channel("延边卫视", "", listOf("https://www.yb983.com/cys/index.html")),
-        Channel("延边-1 朝鲜语综合", "", listOf("https://www.yb983.com/ybtv1/index.html")),
-        Channel("延边-2 汉语综合", "", listOf("https://www.yb983.com/ybtv2/index.html")),
+        Channel("延边朝鲜语综合", "", listOf("https://www.yb983.com/ybtv1/index.html")),
+        Channel("延边汉语综合", "", listOf("https://www.yb983.com/ybtv2/index.html")),
     )
     .addChannels(
         "黑龙江",
