@@ -346,6 +346,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("華視", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv041?set=4&ch=6")),
         Channel("華視新聞", "", listOf("https://www.4gtv.tv/channel/4gtv-live014?set=4&ch=273")),
         Channel("大愛電視", "", listOf("https://www.4gtv.tv/channel/4gtv-live007?set=4&ch=209")),
+        Channel("番薯電視台", "", listOf("http://www.fanstv.tw/fans.html")),
         Channel("ARIRANG阿里郎頻道", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv079?set=4&ch=189")),
         Channel("原住民族電視台", "", listOf("https://www.4gtv.tv/channel/4gtv-live014?set=4&ch=273")),
     )
