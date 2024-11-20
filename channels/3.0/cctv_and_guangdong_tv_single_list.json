@@ -48,7 +48,8 @@
     "name": "CCTV-6 电影",
     "group": "央视\u0026广东",
     "urls": [
-      "https://tv.cctv.com/live/cctv6/"
+      "https://tv.cctv.com/live/cctv6/",
+      "http://mobilelive-timeshift.ysp.cctv.cn/timeshift/ysp/2013693901/timeshift.m3u8?delay\u003d0"
     ]
   },
   {
