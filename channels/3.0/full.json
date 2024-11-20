@@ -1782,6 +1782,27 @@
     ]
   },
   {
+    "name": "NHK World",
+    "group": "海外",
+    "urls": [
+      "https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html"
+    ]
+  },
+  {
+    "name": "VOA English TV",
+    "group": "海外",
+    "urls": [
+      "https://www.voanews.com/live/video/116"
+    ]
+  },
+  {
+    "name": "VOA LIVE",
+    "group": "海外",
+    "urls": [
+      "https://www.voanews.com/live/video/126"
+    ]
+  },
+  {
     "name": "新唐人美東台",
     "group": "海外",
     "urls": [
@@ -1842,20 +1863,6 @@
     "group": "海外",
     "urls": [
       "https://www.ntdtv.com/b5/live-tv?code\u003dntd_china"
-    ]
-  },
-  {
-    "name": "VOA English TV",
-    "group": "海外",
-    "urls": [
-      "https://www.voanews.com/live/video/116"
-    ]
-  },
-  {
-    "name": "VOA LIVE",
-    "group": "海外",
-    "urls": [
-      "https://www.voanews.com/live/video/126"
     ]
   }
 ]

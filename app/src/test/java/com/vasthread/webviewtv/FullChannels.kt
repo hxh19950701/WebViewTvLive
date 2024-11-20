@@ -352,6 +352,11 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "海外",
+        Channel("NHK World", "", listOf("https://www3.nhk.or.jp/nhkworld/common/player/tv/cclive/embed/embed.html")),
+
+        Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
+        Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
+
         Channel("新唐人美東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_east")),
         Channel("新唐人美西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_west")),
         Channel("新唐人歐洲台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_europe")),
@@ -361,7 +366,4 @@ val fullChannels = mutableListOf<Channel>()
         Channel("新唐人休斯頓台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_tx")),
         Channel("新唐人亞太台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_asia_tw")),
         Channel("新唐人中國台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_china")),
-
-        Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
-        Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
     )
