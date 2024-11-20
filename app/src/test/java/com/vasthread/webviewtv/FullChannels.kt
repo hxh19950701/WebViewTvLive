@@ -239,9 +239,12 @@ val fullChannels = mutableListOf<Channel>()
         Channel("宁波都市文体", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV3/index.shtml")),
         Channel("宁波影视剧", "", listOf("https://www.ncmc.nbtv.cn/gbds/folder8458/NBTV4/index.shtml")),
 
-        Channel("绍兴新闻综合", "", listOf("http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8")),
-        Channel("绍兴公共", "", listOf("http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8")),
-        Channel("绍兴文化影视", "", listOf("http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8")),
+        Channel("绍兴新闻综合", "", listOf("https://www.shaoxing.com.cn/app/tv/74",
+            "http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8")),
+        Channel("绍兴公共", "", listOf("https://www.shaoxing.com.cn/app/tv/78",
+            "http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8")),
+        Channel("绍兴文化影视", "", listOf("https://www.shaoxing.com.cn/app/tv/75",
+            "http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8")),
     )
     .addChannels(
         "安徽",

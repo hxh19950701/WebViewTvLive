@@ -1245,21 +1245,24 @@
     "name": "绍兴新闻综合",
     "group": "浙江",
     "urls": [
-      "https://www.shaoxing.com.cn/app/tv/74"
-    ]
-  },
-  {
-    "name": "绍兴文化影视",
-    "group": "浙江",
-    "urls": [
-      "https://www.shaoxing.com.cn/app/tv/75"
+      "https://www.shaoxing.com.cn/app/tv/74",
+      "http://live.shaoxing.com.cn/video/s10001-sxhb/index.m3u8"
     ]
   },
   {
     "name": "绍兴公共",
     "group": "浙江",
     "urls": [
-      "https://www.shaoxing.com.cn/app/tv/78"
+      "https://www.shaoxing.com.cn/app/tv/78",
+      "http://live.shaoxing.com.cn/video/s10001-sxtv2/index.m3u8"
+    ]
+  },
+  {
+    "name": "绍兴文化影视",
+    "group": "浙江",
+    "urls": [
+      "https://www.shaoxing.com.cn/app/tv/75",
+      "http://live.shaoxing.com.cn/video/s10001-sxtv3/index.m3u8"
     ]
   },
   {
