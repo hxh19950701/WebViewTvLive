@@ -60,6 +60,38 @@ val fullChannels = mutableListOf<Channel>()
             "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8")),
     )
     .addChannels(
+        "国家",
+        Channel("CETV-1 综合教育", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html")),
+        Channel("CETV-2 空中课堂", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html")),
+        Channel("CETV-4 职业教育", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
+            "https://edu.cctv.com/cetv/")),
+
+        Channel("CECTV-1 汉语文化", "", listOf("http://m3u8.cec-tv.com.cn/?url=http://play.cec-tv.com.cn/channel/cec-tv1.m3u8",
+            "http://play.cec-tv.com.cn/channel/cec-tv1.m3u8")),
+        Channel("CECTV-2 国际旅游", "", listOf("http://m3u8.cec-tv.com.cn/?url=http://play.cec-tv.com.cn/channel/cec-tv2.m3u8",
+            "http://play.cec-tv.com.cn/channel/cec-tv2.m3u8")),
+        Channel("CECTV-3 国际教育", "", listOf("http://m3u8.cec-tv.com.cn/?url=http://play.cec-tv.com.cn/channel/cec-tv3.m3u8",
+            "http://play.cec-tv.com.cn/channel/cec-tv3.m3u8")),
+        Channel("CECTV-4 国际建康", "", listOf("http://m3u8.cec-tv.com.cn/?url=http://play.cec-tv.com.cn/channel/cec-tv4.m3u8",
+            "http://play.cec-tv.com.cn/channel/cec-tv4.m3u8")),
+
+        Channel("CGTN", "", listOf("https://www.cgtn.com/tv",
+            "https://www.yangshipin.cn/tv/home?pid=600014550",)),
+        Channel("CGTN Español", "", listOf("https://espanol.cgtn.com/en-directo",
+            "https://www.yangshipin.cn/tv/home?pid=600084744")),
+        Channel("CGTN Français", "", listOf("https://francais.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084704")),
+        Channel("CGTN العربية", "", listOf("https://arabic.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084782")),
+        Channel("CGTN Русский", "", listOf("https://russian.cgtn.com/channel",
+            "https://www.yangshipin.cn/tv/home?pid=600084758")),
+        Channel("CGTN Documentary", "", listOf("https://www.cgtn.com/channel/documentary",
+            "https://www.yangshipin.cn/tv/home?pid=600084781")),
+
+        Channel("中国气象频道", "", listOf("http://www.weathertv.cn",
+            "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8")),
+    )
+    .addChannels(
         "卫视",
         Channel("北京卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002309",
             "https://www.brtn.cn/btv/btvsy_index")),

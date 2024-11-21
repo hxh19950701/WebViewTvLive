@@ -239,6 +239,116 @@
     ]
   },
   {
+    "name": "CETV-1 综合教育",
+    "group": "国家",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
+    ]
+  },
+  {
+    "name": "CETV-2 空中课堂",
+    "group": "国家",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html"
+    ]
+  },
+  {
+    "name": "CETV-4 职业教育",
+    "group": "国家",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
+      "https://edu.cctv.com/cetv/"
+    ]
+  },
+  {
+    "name": "CECTV-1 汉语文化",
+    "group": "国家",
+    "urls": [
+      "http://m3u8.cec-tv.com.cn/?url\u003dhttp://play.cec-tv.com.cn/channel/cec-tv1.m3u8",
+      "http://play.cec-tv.com.cn/channel/cec-tv1.m3u8"
+    ]
+  },
+  {
+    "name": "CECTV-2 国际旅游",
+    "group": "国家",
+    "urls": [
+      "http://m3u8.cec-tv.com.cn/?url\u003dhttp://play.cec-tv.com.cn/channel/cec-tv2.m3u8",
+      "http://play.cec-tv.com.cn/channel/cec-tv2.m3u8"
+    ]
+  },
+  {
+    "name": "CECTV-3 国际教育",
+    "group": "国家",
+    "urls": [
+      "http://m3u8.cec-tv.com.cn/?url\u003dhttp://play.cec-tv.com.cn/channel/cec-tv3.m3u8",
+      "http://play.cec-tv.com.cn/channel/cec-tv3.m3u8"
+    ]
+  },
+  {
+    "name": "CECTV-4 国际建康",
+    "group": "国家",
+    "urls": [
+      "http://m3u8.cec-tv.com.cn/?url\u003dhttp://play.cec-tv.com.cn/channel/cec-tv4.m3u8",
+      "http://play.cec-tv.com.cn/channel/cec-tv4.m3u8"
+    ]
+  },
+  {
+    "name": "CGTN",
+    "group": "国家",
+    "urls": [
+      "https://www.cgtn.com/tv",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600014550"
+    ]
+  },
+  {
+    "name": "CGTN Español",
+    "group": "国家",
+    "urls": [
+      "https://espanol.cgtn.com/en-directo",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084744"
+    ]
+  },
+  {
+    "name": "CGTN Français",
+    "group": "国家",
+    "urls": [
+      "https://francais.cgtn.com/channel",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084704"
+    ]
+  },
+  {
+    "name": "CGTN العربية",
+    "group": "国家",
+    "urls": [
+      "https://arabic.cgtn.com/channel",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084782"
+    ]
+  },
+  {
+    "name": "CGTN Русский",
+    "group": "国家",
+    "urls": [
+      "https://russian.cgtn.com/channel",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084758"
+    ]
+  },
+  {
+    "name": "CGTN Documentary",
+    "group": "国家",
+    "urls": [
+      "https://www.cgtn.com/channel/documentary",
+      "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
+    ]
+  },
+  {
+    "name": "中国气象频道",
+    "group": "国家",
+    "urls": [
+      "http://www.weathertv.cn",
+      "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8"
+    ]
+  },
+  {
     "name": "北京卫视",
     "group": "卫视",
     "urls": [
