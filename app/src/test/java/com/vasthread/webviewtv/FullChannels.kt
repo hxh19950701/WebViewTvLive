@@ -324,8 +324,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("福建公共", "", listOf("https://live.fjtv.net/ggpd/")),
         Channel("福建经视", "", listOf("https://live.fjtv.net/jspd/")),
         Channel("厦门新闻综合", "", listOf("https://live1b.kxm.xmtv.cn/xm1bf/tvzb/live.m3u8")),
-        Channel("厦门海峡", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8")),
-        Channel("厦门影视", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8")),
+        Channel("厦门海峡", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8", "https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8")),
     )
     .addChannels(
         "香港",

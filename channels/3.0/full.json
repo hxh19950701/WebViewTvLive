@@ -1650,13 +1650,7 @@
     "name": "厦门海峡",
     "group": "福建",
     "urls": [
-      "https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8"
-    ]
-  },
-  {
-    "name": "厦门影视",
-    "group": "福建",
-    "urls": [
+      "https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8",
       "https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8"
     ]
   },
