@@ -315,6 +315,19 @@ val fullChannels = mutableListOf<Channel>()
         Channel("海南自贸", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=1")),
     )
     .addChannels(
+        "福建",
+        Channel("东南卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002484",
+            "https://live.fjtv.net/setv/")),
+        Channel("海峡卫视", "", listOf("https://www.fjtv.net/folder526/folder536/")),
+        Channel("福建新闻", "", listOf("https://live.fjtv.net/xwpd/")),
+        Channel("福建旅游", "", listOf("https://live.fjtv.net/dspd/")),
+        Channel("福建公共", "", listOf("https://live.fjtv.net/ggpd/")),
+        Channel("福建经视", "", listOf("https://live.fjtv.net/jspd/")),
+        Channel("厦门新闻综合", "", listOf("https://live1b.kxm.xmtv.cn/xm1bf/tvzb/live.m3u8")),
+        Channel("厦门海峡", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8")),
+        Channel("厦门影视", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8")),
+    )
+    .addChannels(
         "香港",
         Channel("翡翠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ",
             "https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1")),

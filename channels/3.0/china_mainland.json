@@ -1595,5 +1595,69 @@
     "urls": [
       "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d1"
     ]
+  },
+  {
+    "name": "东南卫视",
+    "group": "福建",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002484",
+      "https://live.fjtv.net/setv/"
+    ]
+  },
+  {
+    "name": "海峡卫视",
+    "group": "福建",
+    "urls": [
+      "https://www.fjtv.net/folder526/folder536/"
+    ]
+  },
+  {
+    "name": "福建新闻",
+    "group": "福建",
+    "urls": [
+      "https://live.fjtv.net/xwpd/"
+    ]
+  },
+  {
+    "name": "福建旅游",
+    "group": "福建",
+    "urls": [
+      "https://live.fjtv.net/dspd/"
+    ]
+  },
+  {
+    "name": "福建公共",
+    "group": "福建",
+    "urls": [
+      "https://live.fjtv.net/ggpd/"
+    ]
+  },
+  {
+    "name": "福建经视",
+    "group": "福建",
+    "urls": [
+      "https://live.fjtv.net/jspd/"
+    ]
+  },
+  {
+    "name": "厦门新闻综合",
+    "group": "福建",
+    "urls": [
+      "https://live1b.kxm.xmtv.cn/xm1bf/tvzb/live.m3u8"
+    ]
+  },
+  {
+    "name": "厦门海峡",
+    "group": "福建",
+    "urls": [
+      "https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8"
+    ]
+  },
+  {
+    "name": "厦门影视",
+    "group": "福建",
+    "urls": [
+      "https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8"
+    ]
   }
 ]
