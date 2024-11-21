@@ -56,6 +56,8 @@ val fullChannels = mutableListOf<Channel>()
             "https://www.yangshipin.cn/tv/home?pid=600084758")),
         Channel("CGTN Documentary", "", listOf("https://www.cgtn.com/channel/documentary",
             "https://www.yangshipin.cn/tv/home?pid=600084781")),
+        Channel("中国气象频道", "", listOf("http://www.weathertv.cn",
+            "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8")),
     )
     .addChannels(
         "卫视",

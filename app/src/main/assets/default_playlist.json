@@ -229,5 +229,13 @@
       "https://www.cgtn.com/channel/documentary",
       "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
     ]
+  },
+  {
+    "name": "中国气象频道",
+    "group": "央视",
+    "urls": [
+      "http://www.weathertv.cn",
+      "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8"
+    ]
   }
 ]
