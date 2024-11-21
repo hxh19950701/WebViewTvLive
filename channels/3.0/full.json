@@ -1540,6 +1540,55 @@
     ]
   },
   {
+    "name": "海南卫视",
+    "group": "海南",
+    "urls": [
+      "http://tc.hnntv.cn/"
+    ]
+  },
+  {
+    "name": "三沙卫视",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d5"
+    ]
+  },
+  {
+    "name": "海南新闻",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d3"
+    ]
+  },
+  {
+    "name": "海南公共",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d4"
+    ]
+  },
+  {
+    "name": "海南文旅",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d6"
+    ]
+  },
+  {
+    "name": "海南少儿",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d7"
+    ]
+  },
+  {
+    "name": "海南自贸",
+    "group": "海南",
+    "urls": [
+      "https://www.hnntv.cn/live.html?playType\u003dlivePlay\u0026channelId\u003d1"
+    ]
+  },
+  {
     "name": "翡翠台",
     "group": "香港",
     "urls": [

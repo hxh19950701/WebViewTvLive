@@ -303,6 +303,16 @@ val fullChannels = mutableListOf<Channel>()
         Channel("哈尔滨影视", "", listOf("https://www.hrbtv.net/folder79/folder87/")),
     )
     .addChannels(
+        "海南",
+        Channel("海南卫视", "", listOf("http://tc.hnntv.cn/")),
+        Channel("三沙卫视", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=5")),
+        Channel("海南新闻", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=3")),
+        Channel("海南公共", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=4")),
+        Channel("海南文旅", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=6")),
+        Channel("海南少儿", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=7")),
+        Channel("海南自贸", "", listOf("https://www.hnntv.cn/live.html?playType=livePlay&channelId=1")),
+    )
+    .addChannels(
         "香港",
         Channel("翡翠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ",
             "https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
