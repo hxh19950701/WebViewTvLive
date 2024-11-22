@@ -63,7 +63,7 @@ A: 一般是设备 WebView 的问题，待X5内核下载完成，重启 App 即�
 A: 可能刚好遇到了官方X5内核下载限流时间段，请换个时间段重试。参见[《关于官网X5内核SDK加载不稳定问题说明》](https://doc.weixin.qq.com/doc/w3_AGoAtwbdAFwlo0hmqkbTl6p19tCOV)。<br/>
 <br/>
 **Q: 我打开怎么只有CCTV-1？**<br/>
-~~A: 频道列表托管在Github，出现此问题请检查您与Github之间的连接。~~<br/>
+A: ~~频道列表托管在Github，出现此问题请检查您与Github之间的连接。~~<br/>
 最新的版本应该不会出现这样的问题了。
 
 ## 注意
