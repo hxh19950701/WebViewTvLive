@@ -162,84 +162,6 @@
   },
   {
     "name": "CETV-1 综合教育",
-    "group": "央视",
-    "urls": [
-      "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
-    ]
-  },
-  {
-    "name": "CETV-2 空中课堂",
-    "group": "央视",
-    "urls": [
-      "https://tv.gxtv.cn/channel/channelivePlay_80d0ffb42c114eaf9663708629ff0a3e.html"
-    ]
-  },
-  {
-    "name": "CETV-4 职业教育",
-    "group": "央视",
-    "urls": [
-      "https://tv.gxtv.cn/channel/channelivePlay_67eace939278435bb4bca90800fb4225.html",
-      "https://edu.cctv.com/cetv/"
-    ]
-  },
-  {
-    "name": "CGTN",
-    "group": "央视",
-    "urls": [
-      "https://www.cgtn.com/tv",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600014550"
-    ]
-  },
-  {
-    "name": "CGTN Español",
-    "group": "央视",
-    "urls": [
-      "https://espanol.cgtn.com/en-directo",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600084744"
-    ]
-  },
-  {
-    "name": "CGTN Français",
-    "group": "央视",
-    "urls": [
-      "https://francais.cgtn.com/channel",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600084704"
-    ]
-  },
-  {
-    "name": "CGTN العربية",
-    "group": "央视",
-    "urls": [
-      "https://arabic.cgtn.com/channel",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600084782"
-    ]
-  },
-  {
-    "name": "CGTN Русский",
-    "group": "央视",
-    "urls": [
-      "https://russian.cgtn.com/channel",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600084758"
-    ]
-  },
-  {
-    "name": "CGTN Documentary",
-    "group": "央视",
-    "urls": [
-      "https://www.cgtn.com/channel/documentary",
-      "https://www.yangshipin.cn/tv/home?pid\u003d600084781"
-    ]
-  },
-  {
-    "name": "中国气象频道",
-    "group": "央视",
-    "urls": [
-      "http://www.weathertv.cn",
-      "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8"
-    ]
-  },
-  {
-    "name": "CETV-1 综合教育",
     "group": "国家",
     "urls": [
       "https://tv.gxtv.cn/channel/channelivePlay_ffa6b6e1b32b4a16a73eb3ef66f8bfc7.html"
@@ -285,7 +207,7 @@
     ]
   },
   {
-    "name": "CECTV-4 国际建康",
+    "name": "CECTV-4 国际健康",
     "group": "国家",
     "urls": [
       "http://m3u8.cec-tv.com.cn/?url\u003dhttp://play.cec-tv.com.cn/channel/cec-tv4.m3u8",
@@ -402,7 +324,8 @@
     "name": "广西卫视",
     "group": "卫视",
     "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600002509"
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002509",
+      "https://tv.gxtv.cn/channel/channelivePlay_e7a7ab7df9fe11e88bcfe41f13b60c62.html"
     ]
   },
   {
@@ -1013,6 +936,56 @@
     "group": "广东",
     "urls": [
       "http://xiubo.net/tv/gd/fsnh.html"
+    ]
+  },
+  {
+    "name": "广西卫视",
+    "group": "广西",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002509",
+      "https://tv.gxtv.cn/channel/channelivePlay_e7a7ab7df9fe11e88bcfe41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西综艺旅游",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_f3335975f9fe11e88bcfe41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西都市",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_fdbaf085f9fe11e88bcfe41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西影视",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_5e923d82058e11e9ba67e41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西新闻",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_9dfd8600075811e9ba67e41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西国际",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_bfa17b64157f11e999f0e41f13b60c62.html"
+    ]
+  },
+  {
+    "name": "广西移动",
+    "group": "广西",
+    "urls": [
+      "https://tv.gxtv.cn/channel/channelivePlay_78dbfd44e6b74ab687204d2d8113cbf5.html"
     ]
   },
   {
