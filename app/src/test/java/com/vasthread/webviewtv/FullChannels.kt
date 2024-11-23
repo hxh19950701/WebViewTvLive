@@ -199,6 +199,8 @@ val fullChannels = mutableListOf<Channel>()
         Channel("广西新闻", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_9dfd8600075811e9ba67e41f13b60c62.html")),
         Channel("广西国际", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_bfa17b64157f11e999f0e41f13b60c62.html")),
         Channel("广西移动", "", listOf("https://tv.gxtv.cn/channel/channelivePlay_78dbfd44e6b74ab687204d2d8113cbf5.html")),
+        Channel("玉林新闻综合", "", listOf("https://web.guangdianyun.tv/tv/3289?uin=4042")),
+        Channel("玉林公共", "", listOf("https://web.guangdianyun.tv/tv/3290?uin=4042")),
         )
     .addChannels(
         "江西",
@@ -350,7 +352,18 @@ val fullChannels = mutableListOf<Channel>()
         Channel("福建公共", "", listOf("https://live.fjtv.net/ggpd/")),
         Channel("福建经视", "", listOf("https://live.fjtv.net/jspd/")),
         Channel("厦门新闻综合", "", listOf("https://live1b.kxm.xmtv.cn/xm1bf/tvzb/live.m3u8")),
-        Channel("厦门海峡", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8", "https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8")),
+        Channel("厦门海峡", "", listOf("https://live1b.kxm.xmtv.cn/xm2bf/playlist.m3u8",
+            "https://live1b.kxm.xmtv.cn/xm2bf/tvzb/live.m3u8")),
+    )
+    .addChannels(
+        "甘肃",
+        Channel("甘肃卫视", "", listOf("http://hls.gstv.com.cn/9hvng2/hcoqhp.m3u8")),
+        Channel("甘肃经济", "", listOf("http://hls.gstv.com.cn/49048r/10iv1j.m3u8")),
+        Channel("甘肃文化影视", "", listOf("http://hls.gstv.com.cn/49048r/w1l6d5.m3u8")),
+        Channel("甘肃公共应急", "", listOf("http://hls.gstv.com.cn/49048r/3t5xyc.m3u8")),
+        Channel("甘肃少儿", "", listOf("http://hls.gstv.com.cn/49048r/922k96.m3u8")),
+        Channel("甘肃都市", "", listOf("http://hls.gstv.com.cn/49048r/l54391.m3u8")),
+        Channel("甘肃移动电视", "", listOf("http://hls.gstv.com.cn/94ycke/v9qci2.m3u8")),
     )
     .addChannels(
         "香港",
