@@ -1165,6 +1165,20 @@
     ]
   },
   {
+    "name": "河南卫视",
+    "group": "河南",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002525"
+    ]
+  },
+  {
+    "name": "河南都市",
+    "group": "河南",
+    "urls": [
+      "https://www.hntv2.net/index.html#/pages/tv/index"
+    ]
+  },
+  {
     "name": "东方卫视",
     "group": "上海",
     "urls": [
@@ -2078,6 +2092,7 @@
     "name": "新唐人美東台",
     "group": "海外",
     "urls": [
+      "https://www.ntdtv.com/",
       "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_east"
     ]
   },
@@ -2110,23 +2125,10 @@
     ]
   },
   {
-    "name": "新唐人舊金山台",
-    "group": "海外",
-    "urls": [
-      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_sf"
-    ]
-  },
-  {
-    "name": "新唐人休斯頓台",
-    "group": "海外",
-    "urls": [
-      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_tx"
-    ]
-  },
-  {
     "name": "新唐人亞太台",
     "group": "海外",
     "urls": [
+      "https://www.ntdtv.com.tw/",
       "https://www.ntdtv.com/b5/live-tv?code\u003dntd_asia_tw"
     ]
   },

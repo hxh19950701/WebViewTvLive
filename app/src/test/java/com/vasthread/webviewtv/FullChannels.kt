@@ -236,6 +236,11 @@ val fullChannels = mutableListOf<Channel>()
         Channel("少儿科教", "", listOf("https://www.hebtv.com/19/19js/st/xdszb/index.shtml?index=5")),
     )
     .addChannels(
+        "河南",
+        Channel("河南卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002525")),
+        Channel("河南都市", "", listOf("https://www.hntv2.net/index.html#/pages/tv/index")),
+    )
+    .addChannels(
         "上海",
         Channel("东方卫视", "", listOf("https://live.kankanews.com/huikan")),
         Channel("新闻综合", "", listOf("https://live.kankanews.com/huikan?id=2")),
@@ -425,13 +430,13 @@ val fullChannels = mutableListOf<Channel>()
         Channel("VOA English TV", "", listOf("https://www.voanews.com/live/video/116")),
         Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
 
-        Channel("新唐人美東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_east")),
+        Channel("新唐人美東台", "", listOf("https://www.ntdtv.com/", "https://www.ntdtv.com/b5/live-tv?code=ntd_usa_east")),
         Channel("新唐人美西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_west")),
         Channel("新唐人歐洲台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_europe")),
         Channel("新唐人加東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_east")),
         Channel("新唐人加西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_west")),
-        Channel("新唐人舊金山台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_sf")),
-        Channel("新唐人休斯頓台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_tx")),
-        Channel("新唐人亞太台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_asia_tw")),
+//        Channel("新唐人舊金山台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_sf")),
+//        Channel("新唐人休斯頓台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_tx")),
+        Channel("新唐人亞太台", "", listOf("https://www.ntdtv.com.tw/", "https://www.ntdtv.com/b5/live-tv?code=ntd_asia_tw")),
         Channel("新唐人中國台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_china")),
     )
