@@ -174,6 +174,8 @@ val fullChannels = mutableListOf<Channel>()
         Channel("GRTN生活频道", "", listOf("https://m.gdtv.cn/tvChannelDetail/102")),
         Channel("GRTN教育频道", "", listOf("https://m.gdtv.cn/tvChannelDetail/104")),
 
+        Channel("广州综合", "", listOf("https://www.gztv.com/#/channel")),
+
         Channel("深圳卫视", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7867")),
         Channel("深圳都市", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7868")),
         Channel("深圳电视剧", "", listOf("https://www.sztv.com.cn/pindao/index.html?id=7880")),
