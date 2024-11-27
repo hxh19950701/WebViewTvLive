@@ -1769,6 +1769,7 @@
     "name": "甘肃卫视",
     "group": "甘肃",
     "urls": [
+      "http://www.gstv.com.cn/zxc.jhtml",
       "http://hls.gstv.com.cn/9hvng2/hcoqhp.m3u8"
     ]
   },

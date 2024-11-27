@@ -362,7 +362,7 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "甘肃",
-        Channel("甘肃卫视", "", listOf("http://hls.gstv.com.cn/9hvng2/hcoqhp.m3u8")),
+        Channel("甘肃卫视", "", listOf("http://www.gstv.com.cn/zxc.jhtml", "http://hls.gstv.com.cn/9hvng2/hcoqhp.m3u8")),
         Channel("甘肃经济", "", listOf("http://hls.gstv.com.cn/49048r/10iv1j.m3u8")),
         Channel("甘肃文化影视", "", listOf("http://hls.gstv.com.cn/49048r/w1l6d5.m3u8")),
         Channel("甘肃公共应急", "", listOf("http://hls.gstv.com.cn/49048r/3t5xyc.m3u8")),
