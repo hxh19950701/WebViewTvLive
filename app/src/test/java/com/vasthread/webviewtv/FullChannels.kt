@@ -109,7 +109,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("内蒙古卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600190401",
             "https://www.nmtv.cn/liveTv")),
         Channel("陕西卫视", "", listOf("http://www.sxtvs.com/sxtvs_sxws/index.html")),
-        Channel("云南卫视", "", listOf("https://www.yntv.cn/live.html")),
+        Channel("云南卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600190402")),
         Channel("青海卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600190406",
             "http://www.qhbtv.com/new_index/live/folder2646/")),
         Channel("天津卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600152137")),
