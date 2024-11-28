@@ -75,7 +75,7 @@ A: ~~频道列表托管在Github，出现此问题请检查您与Github之间的
 
 ## 捐赠
 如果 App 对您有帮助，请捐赠作者。作者会更积极的维护此项目！<br/>
-<a href="DonationList.md">查看捐赠名单</a>
+<a href="DonationList.md">查看已捐赠名单</a>
 <br/>
 <br/>
 <img src="./images/image_5.png"/>
