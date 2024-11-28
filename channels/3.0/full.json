@@ -385,6 +385,13 @@
     ]
   },
   {
+    "name": "海峡卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.fjtv.net/folder526/folder536/"
+    ]
+  },
+  {
     "name": "贵州卫视",
     "group": "卫视",
     "urls": [
@@ -430,7 +437,15 @@
     "name": "山西卫视",
     "group": "卫视",
     "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190407",
       "https://www.sxrtv.com/tv/index.shtml"
+    ]
+  },
+  {
+    "name": "吉林卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190405"
     ]
   },
   {
@@ -438,13 +453,6 @@
     "group": "卫视",
     "urls": [
       "https://www.yb983.com/cys/index.html"
-    ]
-  },
-  {
-    "name": "新疆卫视",
-    "group": "卫视",
-    "urls": [
-      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
     ]
   },
   {
@@ -465,6 +473,7 @@
     "name": "内蒙古卫视",
     "group": "卫视",
     "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190401",
       "https://www.nmtv.cn/liveTv"
     ]
   },
@@ -486,7 +495,50 @@
     "name": "青海卫视",
     "group": "卫视",
     "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190406",
       "http://www.qhbtv.com/new_index/live/folder2646/"
+    ]
+  },
+  {
+    "name": "天津卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600152137"
+    ]
+  },
+  {
+    "name": "陕西卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190400"
+    ]
+  },
+  {
+    "name": "甘肃卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190408"
+    ]
+  },
+  {
+    "name": "宁夏卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190737"
+    ]
+  },
+  {
+    "name": "新疆卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.xjtvs.com.cn/column/tv/434?channelId\u003d1"
+    ]
+  },
+  {
+    "name": "西藏卫视",
+    "group": "卫视",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190403"
     ]
   },
   {
