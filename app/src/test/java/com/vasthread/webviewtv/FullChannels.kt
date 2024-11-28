@@ -322,6 +322,16 @@ val fullChannels = mutableListOf<Channel>()
         Channel("贵州移动", "", listOf("https://www.gzstv.com/tv/ch13")),
     )
     .addChannels(
+        "山东",
+        Channel("山东卫视", "", listOf("https://www.yangshipin.cn/tv/home?pid=600002513")),
+        Channel("青岛一套", "", listOf("http://www.qtv.com.cn/live/tv/index.shtml")),
+        Channel("青岛二套", "", listOf("http://www.qtv.com.cn/live/tv/tv_qtv2.shtml")),
+        Channel("青岛三套", "", listOf("http://www.qtv.com.cn/live/tv/tv_qtv3.shtml")),
+        Channel("青岛四套", "", listOf("http://www.qtv.com.cn/live/tv/tv_qtv4.shtml")),
+        Channel("青岛五套", "", listOf("http://www.qtv.com.cn/live/tv/tv_qtv5.shtml")),
+        Channel("青岛六套", "", listOf("http://www.qtv.com.cn/live/tv/tv_qtv6.shtml")),
+    )
+    .addChannels(
         "山西",
         Channel("山西卫视", "", listOf("https://www.sxrtv.com/tv/index.shtml")),
         Channel("太原新闻综合", "", listOf("https://www.sxtygdy.com/23/23mbdszb/index.shtml")),

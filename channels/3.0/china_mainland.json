@@ -1592,6 +1592,55 @@
     ]
   },
   {
+    "name": "山东卫视",
+    "group": "山东",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600002513"
+    ]
+  },
+  {
+    "name": "青岛一套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/index.shtml"
+    ]
+  },
+  {
+    "name": "青岛二套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/tv_qtv2.shtml"
+    ]
+  },
+  {
+    "name": "青岛三套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/tv_qtv3.shtml"
+    ]
+  },
+  {
+    "name": "青岛四套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/tv_qtv4.shtml"
+    ]
+  },
+  {
+    "name": "青岛五套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/tv_qtv5.shtml"
+    ]
+  },
+  {
+    "name": "青岛六套",
+    "group": "山东",
+    "urls": [
+      "http://www.qtv.com.cn/live/tv/tv_qtv6.shtml"
+    ]
+  },
+  {
     "name": "山西卫视",
     "group": "山西",
     "urls": [
