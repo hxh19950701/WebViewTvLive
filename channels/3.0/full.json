@@ -1936,7 +1936,9 @@
     "group": "香港",
     "urls": [
       "https://www.tiantianzhibo.net/player/index?id\u003d5e2avMI8JXyPe9rVuDSxwiCvsqAqCrPBqPsUSWrXDKN2L9rIzA",
-      "https://enz.gdplayertv.to/live-tv/tvb-news/?embed\u003d1"
+      "https://idx.gdplayertv.to/live-tv/tvb-news/?embed\u003d1",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d73\u0026pathid\u003d0",
+      "https://news.tvb.com/tc/live/83"
     ]
   },
   {
@@ -1951,6 +1953,7 @@
     "name": "鳳凰衛視資訊台",
     "group": "香港",
     "urls": [
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d99\u0026pathid\u003d0",
       "https://www.fengshows.com/live"
     ]
   },
@@ -2018,7 +2021,10 @@
     "name": "東森新聞",
     "group": "台灣",
     "urls": [
+      "https://idx.gdplayertv.to/live-tv/ebc-news-tv/?embed\u003d1",
       "https://www.tiantianzhibo.net/player/index?id\u003dd7c9cqojVv8HhOKJ21KwZvsYwApfnEiecpCVhysKZsYsWnGGTw",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d260165103\u0026pathid\u003d0",
+      "https://news.ebc.net.tw/video",
       "https://www.4gtv.tv/channel/4gtv-4gtv152?set\u003d4\u0026ch\u003d292"
     ]
   },
@@ -2026,28 +2032,36 @@
     "name": "東森財經",
     "group": "台灣",
     "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003d5440lDG41CDeziB7SsRoChqYyIiSs14oznWXOe6Pw3W09l32yA"
+      "https://www.tiantianzhibo.net/player/index?id\u003d5440lDG41CDeziB7SsRoChqYyIiSs14oznWXOe6Pw3W09l32yA",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d260165109\u0026pathid\u003d0",
+      "https://fnc.ebc.net.tw/"
     ]
   },
   {
     "name": "東森綜合",
     "group": "台灣",
     "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003df352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA"
+      "https://idx.gdplayertv.to/live-tv/ebc-variety-tv/?embed\u003d1",
+      "https://www.tiantianzhibo.net/player/index?id\u003df352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d260165106\u0026pathid\u003d0"
     ]
   },
   {
     "name": "東森電影",
     "group": "台灣",
     "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003dfaffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg"
+      "https://idx.gdplayertv.to/live-tv/ebc-movies-tv/?embed\u003d1",
+      "https://www.tiantianzhibo.net/player/index?id\u003dfaffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d260165104\u0026pathid\u003d0"
     ]
   },
   {
     "name": "東森戲劇",
     "group": "台灣",
     "urls": [
-      "https://www.tiantianzhibo.net/player/index?id\u003d0ba9U596e_liclHp-sRJyA497-B-o2Ff0ws_6SUz1Yv4ZDBsiQ"
+      "https://idx.gdplayertv.to/live-tv/ebc-drama-tv/?embed\u003d1",
+      "https://www.tiantianzhibo.net/player/index?id\u003d0ba9U596e_liclHp-sRJyA497-B-o2Ff0ws_6SUz1Yv4ZDBsiQ",
+      "https://www.chaojidianshi.net/e/DownSys/play/?classid\u003d3\u0026id\u003d260165107\u0026pathid\u003d0"
     ]
   },
   {
@@ -2173,6 +2187,7 @@
     "name": "原住民族電視台",
     "group": "台灣",
     "urls": [
+      "https://www.ipcf.org.tw/zh-TW/Vod/Home",
       "https://www.4gtv.tv/channel/4gtv-live014?set\u003d4\u0026ch\u003d273"
     ]
   },
@@ -2206,13 +2221,6 @@
     ]
   },
   {
-    "name": "新唐人美西台",
-    "group": "海外",
-    "urls": [
-      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_usa_west"
-    ]
-  },
-  {
     "name": "新唐人歐洲台",
     "group": "海外",
     "urls": [
@@ -2224,13 +2232,6 @@
     "group": "海外",
     "urls": [
       "https://www.ntdtv.com/b5/live-tv?code\u003dntd_ca_east"
-    ]
-  },
-  {
-    "name": "新唐人加西台",
-    "group": "海外",
-    "urls": [
-      "https://www.ntdtv.com/b5/live-tv?code\u003dntd_ca_west"
     ]
   },
   {

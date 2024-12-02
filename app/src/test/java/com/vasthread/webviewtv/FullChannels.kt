@@ -393,13 +393,24 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "香港",
-        Channel("翡翠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ",
-            "https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1")),
-        Channel("無線新聞", "", listOf("https://www.tiantianzhibo.net/player/index?id=5e2avMI8JXyPe9rVuDSxwiCvsqAqCrPBqPsUSWrXDKN2L9rIzA",
-            "https://enz.gdplayertv.to/live-tv/tvb-news/?embed=1")),
-        Channel("明珠台", "", listOf("https://www.tiantianzhibo.net/player/index?id=910drXCXuvox1KxMaCzEhMltq5JK1qSQy9zm-nkstsFwqLSw7i4",
-            "https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1")),
-        Channel("鳳凰衛視資訊台", "", listOf("https://www.fengshows.com/live")),
+        Channel("翡翠台", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=714fQdFOPs7fA2to6CG0UroN9l0YvCP5kVSLYnbvT654w1jlNQ",
+            "https://enz.gdplayertv.to/live-tv/tvb-jade/?embed=1"
+        )),
+        Channel("無線新聞", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=5e2avMI8JXyPe9rVuDSxwiCvsqAqCrPBqPsUSWrXDKN2L9rIzA",
+            "https://idx.gdplayertv.to/live-tv/tvb-news/?embed=1",
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=73&pathid=0",
+            "https://news.tvb.com/tc/live/83",
+        )),
+        Channel("明珠台", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=910drXCXuvox1KxMaCzEhMltq5JK1qSQy9zm-nkstsFwqLSw7i4",
+            "https://idx.gdplayertv.to/live-tv/tvb-pearl/?embed=1"
+        )),
+        Channel("鳳凰衛視資訊台", "", listOf(
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=99&pathid=0",
+            "https://www.fengshows.com/live"
+        )),
         Channel("香港衛視", "", listOf("http://zhibo.hkstv.tv/livestream/mutfysrq/playlist.m3u8",
             "http://www.hkstv.tv/index/live.html")),
         Channel("創世電視", "", listOf("https://cdn.deepcore.online/ctv_hk/")),
@@ -419,15 +430,41 @@ val fullChannels = mutableListOf<Channel>()
     .addChannels(
         "台灣",
         Channel("東森新聞", "", listOf(
+            "https://idx.gdplayertv.to/live-tv/ebc-news-tv/?embed=1",
             "https://www.tiantianzhibo.net/player/index?id=d7c9cqojVv8HhOKJ21KwZvsYwApfnEiecpCVhysKZsYsWnGGTw",
-            "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292")),
-        Channel("東森財經", "", listOf("https://www.tiantianzhibo.net/player/index?id=5440lDG41CDeziB7SsRoChqYyIiSs14oznWXOe6Pw3W09l32yA")),
-        Channel("東森綜合", "", listOf("https://www.tiantianzhibo.net/player/index?id=f352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA")),
-        Channel("東森電影", "", listOf("https://www.tiantianzhibo.net/player/index?id=faffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg")),
-        Channel("東森戲劇", "", listOf("https://www.tiantianzhibo.net/player/index?id=0ba9U596e_liclHp-sRJyA497-B-o2Ff0ws_6SUz1Yv4ZDBsiQ")),
-        Channel("東森洋片", "", listOf("https://www.tiantianzhibo.net/player/index?id=b731J0NuKSooz1MrvfF8lT9CFViu_ykbNOdGI7OkFYK7BbBy3A")),
-        Channel("東森幼幼", "", listOf("https://www.tiantianzhibo.net/player/index?id=8d89ITGSf0YWWa2GH1gY2jel3z4ciyTwW2dZKbQq43ZUD73YCg")),
-        Channel("年代新聞", "", listOf("https://www.tiantianzhibo.net/player/index?id=0c771kC3czYydY-9dMP-8087HfO99F_8NiDCWRdINHu9FLGGSQ")),
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=260165103&pathid=0",
+            "https://news.ebc.net.tw/video",
+            "https://www.4gtv.tv/channel/4gtv-4gtv152?set=4&ch=292"
+        )),
+        Channel("東森財經", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=5440lDG41CDeziB7SsRoChqYyIiSs14oznWXOe6Pw3W09l32yA",
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=260165109&pathid=0",
+            "https://fnc.ebc.net.tw/",
+        )),
+        Channel("東森綜合", "", listOf(
+            "https://idx.gdplayertv.to/live-tv/ebc-variety-tv/?embed=1",
+            "https://www.tiantianzhibo.net/player/index?id=f352Z9Iib4gt-4o-2JdjxD-Lcal2DNVSdFv8_KgVIpNEjBnMBA",
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=260165106&pathid=0"
+        )),
+        Channel("東森電影", "", listOf(
+            "https://idx.gdplayertv.to/live-tv/ebc-movies-tv/?embed=1",
+            "https://www.tiantianzhibo.net/player/index?id=faffRjOxK2m5W8AzdGxiWAst6NK0Bly9HTgNJP0Ni7KyWlF7tg",
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=260165104&pathid=0"
+        )),
+        Channel("東森戲劇", "", listOf(
+            "https://idx.gdplayertv.to/live-tv/ebc-drama-tv/?embed=1",
+            "https://www.tiantianzhibo.net/player/index?id=0ba9U596e_liclHp-sRJyA497-B-o2Ff0ws_6SUz1Yv4ZDBsiQ",
+            "https://www.chaojidianshi.net/e/DownSys/play/?classid=3&id=260165107&pathid=0"
+        )),
+        Channel("東森洋片", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=b731J0NuKSooz1MrvfF8lT9CFViu_ykbNOdGI7OkFYK7BbBy3A"
+        )),
+        Channel("東森幼幼", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=8d89ITGSf0YWWa2GH1gY2jel3z4ciyTwW2dZKbQq43ZUD73YCg"
+        )),
+        Channel("年代新聞", "", listOf(
+            "https://www.tiantianzhibo.net/player/index?id=0c771kC3czYydY-9dMP-8087HfO99F_8NiDCWRdINHu9FLGGSQ"
+        )),
         Channel("民視第一台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv003?set=4&ch=1")),
         Channel("民視台灣台", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv001?set=4&ch=2")),
         Channel("民視新聞台", "", listOf("https://www.4gtv.tv/channel/litv-ftv13?set=4&ch=31")),
@@ -442,7 +479,10 @@ val fullChannels = mutableListOf<Channel>()
         Channel("大愛電視", "", listOf("https://www.4gtv.tv/channel/4gtv-live007?set=4&ch=209")),
         Channel("番薯電視台", "", listOf("http://www.fanstv.tw/fans.html")),
         Channel("ARIRANG阿里郎頻道", "", listOf("https://www.4gtv.tv/channel/4gtv-4gtv079?set=4&ch=189")),
-        Channel("原住民族電視台", "", listOf("https://www.4gtv.tv/channel/4gtv-live014?set=4&ch=273")),
+        Channel("原住民族電視台", "", listOf(
+            "https://www.ipcf.org.tw/zh-TW/Vod/Home",
+            "https://www.4gtv.tv/channel/4gtv-live014?set=4&ch=273"
+        )),
     )
     .addChannels(
         "海外",
@@ -452,10 +492,10 @@ val fullChannels = mutableListOf<Channel>()
         Channel("VOA LIVE", "", listOf("https://www.voanews.com/live/video/126")),
 
         Channel("新唐人美東台", "", listOf("https://www.ntdtv.com/", "https://www.ntdtv.com/b5/live-tv?code=ntd_usa_east")),
-        Channel("新唐人美西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_west")),
+//        Channel("新唐人美西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_west")),
         Channel("新唐人歐洲台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_europe")),
         Channel("新唐人加東台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_east")),
-        Channel("新唐人加西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_west")),
+//        Channel("新唐人加西台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_ca_west")),
 //        Channel("新唐人舊金山台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_sf")),
 //        Channel("新唐人休斯頓台", "", listOf("https://www.ntdtv.com/b5/live-tv?code=ntd_usa_tx")),
         Channel("新唐人亞太台", "", listOf("https://www.ntdtv.com.tw/", "https://www.ntdtv.com/b5/live-tv?code=ntd_asia_tw")),

@@ -61,6 +61,9 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
 **Q: 在电视机/盒子上无法自动全屏？**<br/>
 A: 一般是设备 WebView 的问题，待X5内核下载完成，重启 App 即可。若无法自动下载X5内核，请在设置-TBS调试界面内选择“安装线上内核”来手动安装。<br/>
 <br/>
+**Q: 访问央视网总提示“您当前的浏览器不支持视频播放，请升级浏览器或更换设备”？**<br/>
+A: 和上面是一样的问题，安装X5内核或者升级设备的WebView即可解决。<br/>
+<br/>
 **Q: 在TBS调试界面“安装线上内核”老是失败？**<br/>
 A: 可能刚好遇到了官方X5内核下载限流时间段，请换个时间段重试。参见[《关于官网X5内核SDK加载不稳定问题说明》](https://doc.weixin.qq.com/doc/w3_AGoAtwbdAFwlo0hmqkbTl6p19tCOV)。<br/>
 <br/>
