@@ -1211,7 +1211,35 @@
     "name": "南京新闻综合",
     "group": "江苏",
     "urls": [
-      "https://www.nbs.cn/live"
+      "https://www.nbs.cn/live/?id\u003d109152"
+    ]
+  },
+  {
+    "name": "南京十八生活",
+    "group": "江苏",
+    "urls": [
+      "https://www.nbs.cn/live/?id\u003d110094"
+    ]
+  },
+  {
+    "name": "南京科技教育",
+    "group": "江苏",
+    "urls": [
+      "https://www.nbs.cn/live/?id\u003d109153"
+    ]
+  },
+  {
+    "name": "南京文旅纪录",
+    "group": "江苏",
+    "urls": [
+      "https://www.nbs.cn/live/?id\u003d110093"
+    ]
+  },
+  {
+    "name": "南京少年儿童",
+    "group": "江苏",
+    "urls": [
+      "https://www.nbs.cn/live/?id\u003d110095"
     ]
   },
   {
