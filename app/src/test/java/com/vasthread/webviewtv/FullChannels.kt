@@ -162,20 +162,48 @@ val fullChannels = mutableListOf<Channel>()
     )
     .addChannels(
         "广东",
-        Channel("广东卫视", "", listOf("https://m.gdtv.cn/tvChannelDetail/43")),
-        Channel("广东珠江", "", listOf("https://m.gdtv.cn/tvChannelDetail/44")),
-        Channel("广东新闻", "", listOf("https://m.gdtv.cn/tvChannelDetail/45")),
-        Channel("广东民生", "", listOf("https://m.gdtv.cn/tvChannelDetail/48")),
-        Channel("广东体育", "", listOf("https://m.gdtv.cn/tvChannelDetail/47")),
-        Channel("大湾区卫视", "", listOf("https://m.gdtv.cn/tvChannelDetail/51")),
-        Channel("大湾区卫视（海外版）", "", listOf("https://m.gdtv.cn/tvChannelDetail/46")),
-        Channel("经济科教", "", listOf("https://m.gdtv.cn/tvChannelDetail/49")),
-        Channel("广东影视", "", listOf("https://m.gdtv.cn/tvChannelDetail/53")),
-        Channel("4K超高清","", listOf( "https://m.gdtv.cn/tvChannelDetail/16")),
-        Channel("广东少儿", "", listOf("https://m.gdtv.cn/tvChannelDetail/54")),
-        Channel("嘉佳卡通", "", listOf("https://m.gdtv.cn/tvChannelDetail/66")),
-        Channel("岭南戏曲", "", listOf("https://m.gdtv.cn/tvChannelDetail/15")),
-        Channel("现代教育", "", listOf("https://m.gdtv.cn/tvChannelDetail/13")),
+        Channel("广东卫视", "", listOf(
+            "https://www.yangshipin.cn/tv/home?pid=600002485",
+            "https://m.gdtv.cn/tvChannelDetail/43")),
+        Channel("广东珠江", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdzj",
+            "https://m.gdtv.cn/tvChannelDetail/44")),
+        Channel("广东新闻", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdxw",
+            "https://m.gdtv.cn/tvChannelDetail/45")),
+        Channel("广东民生", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdms",
+            "https://m.gdtv.cn/tvChannelDetail/48")),
+        Channel("广东体育", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdty",
+            "https://m.gdtv.cn/tvChannelDetail/47")),
+        Channel("大湾区卫视", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=dwqws",
+            "https://m.gdtv.cn/tvChannelDetail/51")),
+        Channel("大湾区卫视（海外版）", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdgj",
+            "https://m.gdtv.cn/tvChannelDetail/46")),
+        Channel("经济科教", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=jjkj",
+            "https://m.gdtv.cn/tvChannelDetail/49")),
+        Channel("广东影视", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdys",
+            "https://m.gdtv.cn/tvChannelDetail/53")),
+        Channel("4K超高清","", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdzy",
+            "https://m.gdtv.cn/tvChannelDetail/16")),
+        Channel("广东少儿", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=gdse",
+            "https://m.gdtv.cn/tvChannelDetail/54")),
+        Channel("嘉佳卡通", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=jjkt",
+            "https://m.gdtv.cn/tvChannelDetail/66")),
+        Channel("岭南戏曲", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=lnxq",
+            "https://m.gdtv.cn/tvChannelDetail/15")),
+        Channel("现代教育", "", listOf(
+            "http://2017.ydns.eu/site/video.html?id=http://2017.ydns.eu/wap/v2.php?id=xdjy",
+            "https://m.gdtv.cn/tvChannelDetail/13")),
         Channel("荔枝台", "", listOf("https://m.gdtv.cn/tvChannelDetail/94")),
         Channel("纪录片", "", listOf("https://m.gdtv.cn/tvChannelDetail/100")),
         Channel("GRTN健康频道", "", listOf("https://m.gdtv.cn/tvChannelDetail/99")),
