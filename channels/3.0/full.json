@@ -1208,6 +1208,13 @@
     ]
   },
   {
+    "name": "南京新闻综合",
+    "group": "江苏",
+    "urls": [
+      "https://www.nbs.cn/live"
+    ]
+  },
+  {
     "name": "江宁综合",
     "group": "江苏",
     "urls": [

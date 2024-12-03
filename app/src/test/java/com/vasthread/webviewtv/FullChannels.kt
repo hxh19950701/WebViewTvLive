@@ -276,6 +276,7 @@ val fullChannels = mutableListOf<Channel>()
         Channel("江苏体育", "", listOf("https://live.jstv.com/?channelId=537")),
         Channel("江苏国际", "", listOf("https://live.jstv.com/?channelId=544")),
         Channel("优漫卡通", "", listOf("https://live.jstv.com/?channelId=543")),
+        Channel("南京新闻综合", "", listOf("https://www.nbs.cn/live")),
         Channel("江宁综合", "", listOf("http://tv.haoqu99.com/3/jiangsu/jiangning.html")),
     )
     .addChannels(
