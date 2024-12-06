@@ -424,5 +424,19 @@
     "urls": [
       "http://xiubo.net/tv/gd/fsnh.html"
     ]
+  },
+  {
+    "name": "揭阳综合",
+    "group": "央视\u0026广东",
+    "urls": [
+      "https://www.jyrtv.tv/fccommon/Home/detail?site_id\u003d75\u0026detail_type\u003d7\u0026cid\u003d11"
+    ]
+  },
+  {
+    "name": "揭阳公共",
+    "group": "央视\u0026广东",
+    "urls": [
+      "https://www.jyrtv.tv/fccommon/Home/detail?site_id\u003d75\u0026detail_type\u003d7\u0026cid\u003d12"
+    ]
   }
 ]

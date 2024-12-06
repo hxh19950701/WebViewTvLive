@@ -240,6 +240,9 @@ val fullChannels = mutableListOf<Channel>()
         Channel("佛山三水", "", listOf("http://xiubo.net/tv/gd/fsss.html")),
         Channel("佛山综合", "", listOf("http://xiubo.net/tv/gd/fszh.html")),
         Channel("佛山南海", "", listOf("http://xiubo.net/tv/gd/fsnh.html")),
+
+        Channel("揭阳综合", "", listOf("https://www.jyrtv.tv/fccommon/Home/detail?site_id=75&detail_type=7&cid=11")),
+        Channel("揭阳公共", "", listOf("https://www.jyrtv.tv/fccommon/Home/detail?site_id=75&detail_type=7&cid=12")),
     )
     .addChannels(
         "广西",
