@@ -371,6 +371,7 @@
     "name": "陕西卫视",
     "group": "央视\u0026卫视",
     "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190400",
       "http://www.sxtvs.com/sxtvs_sxws/index.html"
     ]
   },
@@ -394,13 +395,6 @@
     "group": "央视\u0026卫视",
     "urls": [
       "https://www.yangshipin.cn/tv/home?pid\u003d600152137"
-    ]
-  },
-  {
-    "name": "陕西卫视",
-    "group": "央视\u0026卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600190400"
     ]
   },
   {

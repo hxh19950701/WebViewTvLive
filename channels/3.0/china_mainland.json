@@ -481,6 +481,7 @@
     "name": "陕西卫视",
     "group": "卫视",
     "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190400",
       "http://www.sxtvs.com/sxtvs_sxws/index.html"
     ]
   },
@@ -504,13 +505,6 @@
     "group": "卫视",
     "urls": [
       "https://www.yangshipin.cn/tv/home?pid\u003d600152137"
-    ]
-  },
-  {
-    "name": "陕西卫视",
-    "group": "卫视",
-    "urls": [
-      "https://www.yangshipin.cn/tv/home?pid\u003d600190400"
     ]
   },
   {
@@ -1756,6 +1750,42 @@
     "group": "山西",
     "urls": [
       "https://www.yqrtv.com/folder74/folder139?id\u003d11"
+    ]
+  },
+  {
+    "name": "陕西卫视",
+    "group": "陕西",
+    "urls": [
+      "https://www.yangshipin.cn/tv/home?pid\u003d600190400",
+      "http://www.sxtvs.com/sxtvs_sxws/index.html"
+    ]
+  },
+  {
+    "name": "陕西新闻资讯",
+    "group": "陕西",
+    "urls": [
+      "http://live.snrtv.com/1"
+    ]
+  },
+  {
+    "name": "陕西都市青春",
+    "group": "陕西",
+    "urls": [
+      "http://live.snrtv.com/2"
+    ]
+  },
+  {
+    "name": "陕西生活",
+    "group": "陕西",
+    "urls": [
+      "http://live.snrtv.com/3"
+    ]
+  },
+  {
+    "name": "西安新闻综合",
+    "group": "陕西",
+    "urls": [
+      "https://v.xiancity.cn/folder8/folder39/folder29/"
     ]
   },
   {
