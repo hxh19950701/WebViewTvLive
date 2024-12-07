@@ -1,11 +1,3 @@
-## 禁止转载
-## 恩山这位朋友，请立即删除有关于这个项目的所有帖子和回复！
-## 托你的福，这个项目已经引起了触电官方的格外注意！
-## 另：没有什么收看方式是永久可用的，只要用的人多，就失效得越快！
-<img src="./images/image_6.png"/>
-<img src="./images/image_7.png"/>
-<br/>
-<br/>
 <div align="center">
     <h1>WebView 电视</h1>
 <div align="center">
