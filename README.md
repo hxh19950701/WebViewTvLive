@@ -68,6 +68,9 @@ A: 系统自带的 WebView 版本太低，安装 X5 内核或者升级设备的 
 **Q: 在TBS调试界面“安装线上内核”老是失败？**<br/>
 A: 可能刚好遇到了官方 X5 内核下载限流时间段，请换个时间段重试。参见[《关于官网X5内核SDK加载不稳定问题说明》](https://doc.weixin.qq.com/doc/w3_AGoAtwbdAFwlo0hmqkbTl6p19tCOV)。<br/>
 <br/>
+**Q: 在我的海信电视上安装 X5 内核会闪退？**<br/>
+A: 部分海信电视没有 /sdcard 分区导致的。需要将应用安装到U盘上，X5 内核安装才能成功。<br/>
+<br/>
 **Q: 尝试了以上所有的办法，在我的设备上依然闪退/无法自动全屏？**<br/>
 A: 如果是魔百盒设备，可以刷其他固件来解决问题。其他设备，请去这里反馈。https://github.com/hxh19950701/WebViewTvLive/issues/34<br/>
 <br/>
