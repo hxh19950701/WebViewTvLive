@@ -59,7 +59,7 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
 
 ## FAQ
 
-- [点击查看](FAQ.md)
+- [查看 FAQ](FAQ.md)
 
 ## 注意
 - 请尊重作者，源码仅供您学习、交流使用。<br/>
