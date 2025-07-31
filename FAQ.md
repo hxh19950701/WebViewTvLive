@@ -1,19 +1,19 @@
 <h1>WebView 电视 FAQ</h1>
 
-以下列举了开发者以往被问到的一些常见问题，使用时出现问题的用户，请先参照这篇文章自行解决。<br/>
+以下列举了开发者以往被常问到的一些问题，使用时出现问题的用户，请先参照这篇文章自行解决。<br/>
 如果依然无法解决你的问题，请前往[此issues](https://github.com/hxh19950701/WebViewTvLive/issues/94)和其他用户一起讨论。<br/>
 有过自行解决问题经验的用户，欢迎在issues区留下您的解决方案，来帮助其他用户。<br/>
 
 **Q: 在我的电视机/盒子上无法自动全屏？**<br/>
-请先确定系统 WebView 的类型和版本。<br/>
+一般是系统 WebView 出现了问题，请先确定系统 WebView 的类型和版本。<br/>
 按返回键或长按屏幕，打开左侧边栏。在 App 版本后面，会显示 WebView 的类型和版本。<br/>
-如下图所示（类型是 CHROME，版本是 124）。<br/>
+如下图所示（WebView 类型是 CHROME，版本是 124）。<br/>
 ![img.png](images/image_8.png)<br/>
 接下来，按下表解决问题。<br/>
 | 代号   | 名称 | 解释 | 解决方式 |
 |--------|-----------------|-----------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| AW     | Android WebView | 设备厂商自编译的 WebView，很难更新 | ● 版本过低，升级（如果厂商还提供更新）。<br/> ● 更换成 Google WebView（比较困难，一般需要 Root 或反编译）。<br/> ● 打开“全屏兼容模式”。<br/> ● 使用 X5 内核。 |
-| GW     | Google WebView  | Google 提供的 WebView| ● 版本过低，升级（[可从这里获取](https://www.apkmirror.com/apk/google-inc/android-system-webview/)）。<br/> ● 使用 X5 内核。            |
+| AW     | Android WebView | 设备厂商自编译的 WebView，很难更新 | ● 版本过低，升级系统 WebView（如果厂商还提供更新）。<br/> ● 更换成 Google WebView（比较困难，一般需要 Root 或反编译）。<br/> ● 打开“全屏兼容模式”。<br/> ● 使用 X5 内核。 |
+| GW     | Google WebView  | Google 提供的 WebView| ● 版本过低，升级系统 WebView（[可从这里获取](https://www.apkmirror.com/apk/google-inc/android-system-webview/)）。<br/> ● 使用 X5 内核。            |
 | HWW    | Huawei WebView  | Huawei 提供的 WebView | 暂无 |
 | AMW    | Amazon WebView  | Amazon 提供的 WebView  | 暂无 |
 | CHROME | Google Chrome | Chrome 作为 WebView | 一般不会出现无法全屏的问题 |
