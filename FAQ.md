@@ -1,4 +1,8 @@
-<center><h1>WebView 电视 FAQ</h1></center>
+<h1>WebView 电视 FAQ</h1>
+
+以下列举了开发者以往被问到的一些常见问题，使用时出现问题的用户，请先参照这篇文章自行解决。<br/>
+如果依然无法解决你的问题，请前往[此issues](https://github.com/hxh19950701/WebViewTvLive/issues/94)和其他用户一起讨论。<br/>
+有过自行解决问题经验的用户，欢迎在issues区留下您的解决方案，来帮助其他用户。<br/>
 
 **Q: 在我的电视机/盒子上无法自动全屏？**<br/>
 请先确定系统 WebView 的类型和版本。<br/>
