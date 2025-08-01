@@ -14,9 +14,9 @@
     <p>原理：加载官方直播网页，查找网页中的视频元素，然后自动全屏。</p>
 
     
-<img src="./images/image_1.jpg"/>
+<img src="./images/image_9.jpg"/>
 <br/>
-<img src="./images/image_2.jpg"/>
+<img src="./images/image_10.jpg"/>
 
 
 ## 功能
