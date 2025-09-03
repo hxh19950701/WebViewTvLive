@@ -17,7 +17,17 @@ data class Channel @JvmOverloads constructor(
             return urls[index]
         }
 
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }
+
     override fun toString(): String {
         return "name=$name, groupName=$groupName, urls=$urls"
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + groupName.hashCode()
+        return result
     }
 }
