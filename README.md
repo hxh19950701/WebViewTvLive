@@ -55,7 +55,7 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
 - 对低版本 Android 设备兼容性比较差，建议 Android 9 + WebView 78 以上的设备
 - 无法选择视频清晰度，大部分为 720P，少部分为 1080P
 - 帧率有限，大部分为 24FPS，基本没有 50FPS
-- 由于版权限制，可能无法播放某些时段的节目
+- 由于版权限制，官网可能不会播放某些时段的节目
 
 ## 常见问题（FAQ）
 
