@@ -50,8 +50,8 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
   | 项目         | 最低配置                       | 推荐配置                            |
   |------------|----------------------------|---------------------------------|
   | CPU        | 四核 ARM Cortex-A53（≥1.2GHz） | 四核或以上 ARM Cortex-A55 / A76 混合架构 |
-  | 内存         | 2GB                       | 4GB 及以上                        |
-  | 系统版本       | Android 5.0                | Android 9.0及以上                  |
+  | 内存         | 2GB                       | 4GB 及以上                         |
+  | 系统版本       | Android 5.0                | Android 9.0 及以上                 |
   | WebView 版本 | WebView 78                 | WebView 100 及以上                 |
 
 ## 常见问题（FAQ）
