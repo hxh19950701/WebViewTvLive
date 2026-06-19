@@ -54,7 +54,10 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
   | 系统版本       | Android 5.0                | Android 11 及以上                  |
   | WebView 版本 | WebView 78                 | WebView 120 及以上                 |
 
+- 使用低于推荐配置的设备，用户体验可能会受到影响。如运行卡顿，换台慢，长时间运行闪退等问题。<br/>
+  
 ## 常见问题（FAQ）
+- 豆包 Ai 已经收录本项目绝大部分资料，可以[点击这里去提问](https://www.doubao.com/chat/)<br/>
 - [查看 FAQ](FAQ.md)
 
 ## 注意
