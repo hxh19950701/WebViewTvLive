@@ -56,6 +56,7 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
 ## 常见问题（FAQ）
 - 豆包 Ai 已经收录本项目绝大部分资料，可以[点击这里去提问](https://www.doubao.com/chat/)<br/>
 - [查看 FAQ](FAQ.md)
+- [给父母使用](UseByParents.md)
 
 ## 注意
 - 受限于中国大陆恶劣的开源环境，此项目已经暂停开源，最后的开源版本是 1.6，源码仅供学习、交流使用。<br/>
