@@ -1,0 +1,78 @@
+<div align="center">
+    <h1>WebView 电视</h1>
+<div align="center">
+
+[English](README.md) | [中文](README_CN.md)
+
+![GitHub Repo stars](https://img.shields.io/github/stars/hxh19950701/WebViewTvLive)
+![GitHub top language](https://img.shields.io/github/languages/top/hxh19950701/WebViewTvLive)
+![GitHub repo size](https://img.shields.io/github/repo-size/hxh19950701/WebViewTvLive)
+![GitHub Release](https://img.shields.io/github/v/release/hxh19950701/WebViewTvLive)
+
+</div>
+    <p>使用 腾讯X5 WebView 开发的电视直播App</p>
+</div>
+    <p>一键打开官方网页，方便快捷的观看官网电视直播。</p>
+
+## 功能
+- 自动更新频道列表
+- 多直播源
+- 应用自定义设置
+- 数字键换台
+- 手势调节屏幕亮度和音量
+- 适配手机、平板、电视和车机
+
+## 待开发的功能
+- 播放异常自动换源/刷新
+- 自定义播放列表源
+- 局域网远程设置
+- 适配回看功能
+
+## 操作方式
+- [查看操作方式](UserGuide.md)
+
+## 获取应用
+- GitHub <br>
+https://github.com/hxh19950701/WebViewTvLive/releases <br>
+
+## 优势
+- 直接使用官网直播链接，非常稳定可靠
+- 兼容 m3u8 链接
+
+## 缺点
+- 基于 WebView 构建，对设备性能有一定的要求，详见[设备要求](#设备要求)
+- 载入频道稍长，需要等待一定时间
+- 无法选择视频清晰度，帧率有限（大部分为 24FPS）
+- 由于版权限制，官网可能不会播放某些时段的节目
+
+## 设备要求
+ 项目         | 最低配置                       | 推荐配置                            |
+------------|----------------------------|---------------------------------|
+ CPU        | 四核 ARM Cortex-A53（≥1.2GHz） | 四核或以上 ARM Cortex-A55 / A76 混合架构 |
+ 内存         | 2GB                       | 4GB 及以上                         |
+ 系统版本       | Android 5.0                | Android 11 及以上                  |
+ WebView 版本 | WebView 78                 | WebView 120 及以上                 |
+
+- 使用低于推荐配置的设备，用户体验可能会受到影响。如运行卡顿，换台慢，长时间运行会闪退等问题。<br/>
+  
+## 常见问题（FAQ）
+- 豆包 Ai 已经收录本项目绝大部分资料，可以[点击这里去提问](https://www.doubao.com/chat/)<br/>
+- [查看 FAQ](FAQ.md)
+- [给父母使用](UseByParents.md)
+
+## 注意
+- 受限于中国大陆恶劣的开源环境，此项目已经暂停开源，最后的开源版本是 1.6，源码仅供学习、交流使用。<br/>
+- 对于二次打包的应用，仅限自用，或者在注明原 App 名称的情况下适度分享。<br/>
+- 不要利用此项目牟利。<br/>
+
+## 声明
+- 本应用仅嵌套展示电视台公开的直播页面，所有内容来自原网站，版权归原网站所有。
+- 本应用不提供任何视频资源，不储存、不转发，仅用于学习研究用途。
+- 本应用不会破解或绕过源站的限制，若原站点内容变更或限制访问，本应用不作任何修复和破解。
+- 本应用中收录的官方直播地址均为网友自行收集提交，若无意中侵犯了版权方的权益，请联系开发者删除。<br/>
+
+## 捐赠
+如果项目对您有帮助，欢迎捐赠开发者。<br/>
+注意：捐赠仅用于支持开发者的开发和维护，与任何具体内容，节目无关。<br/>
+<br/>
+<img src="./images/image_5.png"/>
