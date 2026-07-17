@@ -2,7 +2,7 @@
     <h1>WebView TV</h1>
 <div align="center">
 
-[English](README.md) | [简体中文](README_CN.md) | [繁體中文](README_TW.md)
+**English** | [简体中文](README_CN.md) | [繁體中文](README_TW.md)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/hxh19950701/WebViewTvLive)
 ![GitHub top language](https://img.shields.io/github/languages/top/hxh19950701/WebViewTvLive)
