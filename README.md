@@ -46,12 +46,12 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
 - Due to copyright restrictions, official sites may not broadcast during certain time slots
 
 ## Device Requirements
- Item         | Minimum Configuration          | Recommended Configuration           |
-------------|----------------------------|---------------------------------|
- CPU        | Quad-core ARM Cortex-A53 (≥1.2GHz) | Quad-core or above ARM Cortex-A55 / A76 hybrid architecture |
- RAM        | 2GB                       | 4GB and above                   |
- OS Version | Android 5.0                | Android 11 and above            |
- WebView Version | WebView 78                 | WebView 120 and above           |
+| Item            | Minimum Configuration              | Recommended Configuration                                   |
+|-----------------|------------------------------------|-------------------------------------------------------------|
+| CPU             | Quad-core ARM Cortex-A53 (≥1.2GHz) | Quad-core or above ARM Cortex-A55 / A76 hybrid architecture |
+| RAM             | 2GB                                | 4GB and above                                               |
+| OS Version      | Android 5.0                        | Android 11 and above                                        |
+| WebView Version | WebView 78                         | WebView 120 and above                                       |
 
 - Using devices below the recommended configuration may affect user experience, causing issues like lag, slow channel switching, or crashes after prolonged use.<br/>
   
