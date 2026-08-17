@@ -53,7 +53,7 @@ https://github.com/hxh19950701/WebViewTvLive/releases <br>
  OS Version | Android 5.0                | Android 11 and above            |
  WebView Version | WebView 78                 | WebView 120 and above           |
 
-- Using devices below the recommended configuration may affect user experience, causing issues like lag, slow channel switching, or crashes during extended use.<br/>
+- Using devices below the recommended configuration may affect user experience, causing issues like lag, slow channel switching, or crashes after prolonged use.<br/>
   
 ## FAQ
 - Doubao AI has indexed most of the project's information; you can [click here to ask](https://www.doubao.com/chat/)<br/>
