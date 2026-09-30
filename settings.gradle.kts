@@ -17,4 +17,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "WebViewTvLive"
-include(":app")
+//include(":app")
